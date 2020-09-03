@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="../../dist/layui/css/layui.css">
+  <link rel="stylesheet" href="../../dist/bootstrap4/css/bootstrap.css">
+  <link rel="stylesheet" href="../../dist/fonts/iconfont.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/newHome.css" />
+  <script src="../../js/jquery-2.1.1.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../dist/layui/layui.all.js"></script>
+  <script>
+    var layer = layui.layer;
+    var laydate = layui.laydate;
+    var table = layui.table;
+    var laytree = layui.tree;
+    var layTreeSelect = layui.treeSelect;
+    var layUpload = layui.upload;
+    var layElement = layui.element;
+    // }); 
+  </script>
+  <style>
+    #dataChats_one,
+    #dataChats_two,
+    #dataChats_three,
+    #dataChats_four {
+      width: 100%;
+      height: 322px;
+    }
+  </style>
+</head>
+
+<body class="bg_white">
+  <div id="home" class="home">
+    <div class="home_head row">
+      <div class="col-md-8">
+        <ul id="homeNav">
+          <li><a href="javascript:;" class="active">我的主页</a></li>
+          <li>
+            <a href="javascript:;">账户设置</a>
+          </li>
+          <li>
+            <a href="javascript:;">背景图设置</a>
+          </li>
+          <li>
+            <a href="javascript:;">统计面板</a>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="col-md-4 text-right">
+      <button class="btn btn-primary">联系客服</button>
+    </div> -->
+    </div>
+    <div class="shop_modal comShadow">
+      <div class="row">
+        <div class="pic">
+          <img src="../../images/p1.jpg" />
+        </div>
+        <div class="msg col">
+          <div class="name">
+            <span class="fs18 c666">无心痛苦</span>
+            <span class="mark gray">未认证</span>
+            <span class="mark green">已认证</span>
+            <span class="mark red">上尉</span>
+            <span class="text orange">暂无爵位</span>
+            <span class="jingling blue">精灵1</span>
+          </div>
+          <div class="item">
+            <span>小铺ID：6556SSSS54</span>
+            <span>上次登录时间：2019-10-12 09:30</span>
+          </div>
+          <div class="item">
+            小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介小铺简介
+          </div>
+          <div class="edit">
+            <a href="javascript:;">修改</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="homeModalBox">
+      <div class="showmodal">
+        <div class="row modal_one">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="operShop">
+                <div class="row">
+                  <div class="col">
+                    <img src="../../images/home/oper1.png" alt="">
+                    <span>发帖子</span>
+                  </div>
+                  <div class="col">
+                    <img src="../../images/home/oper2.png" alt="">
+                    <span>上商品</span>
+                  </div>
+                  <div class="col">
+                    <img src="../../images/home/oper3.png" alt="">
+                    <span>优惠券</span></div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <img src="../../images/home/oper4.png" alt="">
+                    <span>买广告</span>
+                  </div>
+                  <div class="col">
+                    <img src="../../images/home/oper5.png" alt="">
+                    <span>买铺位</span>
+                  </div>
+                  <div class="col">
+                    <img src="../../images/home/oper6.png" alt="">
+                    <span>看评价</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col comShadow pd0 tableBox">
+                <div class="comTabBox comLinear">
+                  <div class="item active">代发货订单</div>
+                  <div class="item">待退货订单</div>
+                  <a class="more" href="javascript:;">更多</a>
+                </div>
+                <div class="comBoxModal">
+                  <!-- 在没有数据的情况下，加上class:noDataBg -->
+                  <div class="boxItem boxShow">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td width="200"><a href="">MS0111151515</a></td>
+                          <td width="200">商品名称</td>
+                          <td>数量：100</td>
+                          <td>价格：500.00</td>
+                          <td>
+                            <button class="btn btn-blue">发货</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="">MS0111151515</a></td>
+                          <td>商品名称</td>
+                          <td>数量：100</td>
+                          <td>价格：500.00</td>
+                          <td>
+                            <button class="btn btn-blue">发货</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="">MS0111151515</a></td>
+                          <td>商品名称</td>
+                          <td>数量：100</td>
+                          <td>价格：500.00</td>
+                          <td>
+                            <button class="btn btn-blue">发货</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="">MS0111151515</a></td>
+                          <td>
+                            商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称
+                          </td>
+                          <td>数量：100</td>
+                          <td>价格：500.00</td>
+                          <td>
+                            <button class="btn btn-blue">发货</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><a href="">MS0111151515</a></td>
+                          <td>商品名称</td>
+                          <td>数量：100</td>
+                          <td>价格：500.00</td>
+                          <td>
+                            <button class="btn btn-blue">发货</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="boxItem"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row comShadow  m-t-10">
+              <div class="col-md-12 pd0">
+                <div class="comTitle">
+                  <span class="text">最新公告</span>
+                  <a class="more" href="">更多</a>
+                </div>
+                <ul class="noticeList">
+                  <li>
+                    <div>
+                      <a href="">2019年10月星购平台销售店铺排行公布</a>
+                      <text>2019-10-10</text>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a href="">2019年10月星购平台销售店铺排行公布</a>
+                      <text>2019-10-10</text>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a href="">2019年10月星购平台销售店铺排行公布</a>
+                      <text>2019-10-10</text>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <a href="">2019年10月星购平台销售店铺排行公布</a>
+                      <text>2019-10-10</text>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 rightList">
+            <div class="comShadow">
+              <div class="comTitle">
+                <span class="text">客服与留言</span>
+                <a class="more" href="">更多</a>
+              </div>
+              <div class="messageList">
+                <div class="item row">
+                  <div class="pic">
+                    <img src="../../images/Face.png" alt="">
+                  </div>
+                  <div class="col pd0">
+                    <div class="name clearfix">
+                      <span class="user left">王二小</span>
+                      <span class="time right blue">回复</span>
+                    </div>
+                    <div class="c999">
+                      一天前
+                    </div>
+                    <div class="text">
+                      我的货怎么样了，好像还没收到啊，帮看看怎么回事？
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="pic">
+                    <img src="../../images/Face.png" alt="">
+                  </div>
+                  <div class="col pd0">
+                    <div class="name clearfix">
+                      <span class="user left">王二小</span>
+                      <span class="time right blue">回复</span>
+                    </div>
+                    <div class="c999">
+                      一天前
+                    </div>
+                    <div class="text">
+                      我的货怎么样了，好像还没收到啊，帮看看怎么回事？
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="pic">
+                    <img src="../../images/Face.png" alt="">
+                  </div>
+                  <div class="col pd0">
+                    <div class="name clearfix">
+                      <span class="user left">王二小</span>
+                      <span class="time right blue">回复</span>
+                    </div>
+                    <div class="c999">
+                      一天前
+                    </div>
+                    <div class="text">
+                      我的货怎么样了，好像还没收到啊，帮看看怎么回事？
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="pic">
+                    <img src="../../images/Face.png" alt="">
+                  </div>
+                  <div class="col pd0">
+                    <div class="name clearfix">
+                      <span class="user left">王二小</span>
+                      <span class="time right blue">回复</span>
+                    </div>
+                    <div class="c999">
+                      一天前
+                    </div>
+                    <div class="text">
+                      我的货怎么样了，好像还没收到啊，帮看看怎么回事？
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal_two comShadow">
+          <span>在售商品：23个/50个</span>
+          <span>
+            橱窗到期日期:2020-11-10
+          </span>
+        </div>
+        <div class="modal_three comShadow">
+          <div class="table_box">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>商品SKU</th>
+                  <th>商品编号</th>
+                  <th>商品信息</th>
+                  <th>主打商品</th>
+                  <th>分类途径</th>
+                  <th>销售价格（元）</th>
+                  <th>本月成交量</th>
+                  <th>累计成交量</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ML545156156151</td>
+                  <td>WJ65615155151</td>
+                  <td>这是产品的相关信息</td>
+                  <td>产品的名称</td>
+                  <td>是</td>
+                  <td>1000.00</td>
+                  <td>100（<span class="green">+10</span>）</td>
+                  <td>6015</td>
+                </tr>
+                <tr>
+                  <td>ML545156156151</td>
+                  <td>WJ65615155151</td>
+                  <td>这是产品的相关信息</td>
+                  <td>产品的名称</td>
+                  <td>是</td>
+                  <td>1000.00</td>
+                  <td>100（<span class="red">-10</span>）</td>
+                  <td>6015</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="showmodal pd15">
+        <div class="warp setTable">
+          <table id="table" class="layui-table" lay-skin="line" lay-size="lg">
+            <tbody>
+              <tr>
+                <td>真实姓名</td>
+                <td>*静 | 3************X 已认证</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>手机</td>
+                <td>180****5208</td>
+                <td id="mobile">
+                  <a href="javascript:;">修改</a>
+                </td>
+              </tr>
+              <tr>
+                <td>小铺名</td>
+                <td>外星人的铺 |ID：138495918</td>
+                <td id="shop"><a href="javascript:;">修改</a></td>
+              </tr>
+              <tr>
+                <td>支付密码</td>
+                <td>在资金变动时，需要输入的密码</td>
+                <td><span><a href="javascript:;">修改</a></span> | <span><a href="javascript:;">设置</a></span></td>
+              </tr>
+              <tr>
+                <td>登录密码</td>
+                <td>在登录供应商系统时，需要输入的密码</td>
+                <td><span><a href="javascript:;">修改</a></span> | <span><a href="javascript:;">设置</a></span></td>
+              </tr>
+              <tr>
+                <td>注册时间</td>
+                <td>2019年10月30日</td>
+                <td><a href="javascript:;">注销店铺</a></td>
+              </tr>
+              <tr>
+                <td>银行账户</td>
+                <td>已绑定3张银行卡</td>
+                <td id="bank"><a href="javascript:;">管理</a></td>
+              </tr>
+              <tr>
+                <td>精灵折扣</td>
+                <td>支持精灵1、精灵2折扣</td>
+                <td id="discount"><a href="javascript:;">管理</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="modify_mobile" class="hidden">
+          <div class="addFormModal form-horizontal">
+            <form>
+              <div class="row align-items-center">
+                <div class="col-md-2"></div>
+                <div class="col-md-8  row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <div class="circle active">1</div>
+                    <div class="varify-text">验证身份</div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="line"></div>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <div class="circle">2</div>
+                    <div class="varify-text">绑定手机号</div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="line"></div>
+                  </div>
+                  <div class="col-md-2 text-center">
+                    <div class="circle">3</div>
+                    <div class="varify-text">设置成功</div>
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+              </div>
+
+              <div class="row align-items-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-6  row align-items-center">
+                  <div class="control-label col-md-3 text-right required"><span class="red">*</span>
+                    原手机号
+                  </div>
+                  <div class="col-md-7">
+                    <input class="form-control" value="xxxxx" />
+                  </div>
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+
+              <div class="row align-items-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-6  row align-items-center">
+                  <div class="control-label col-md-3 text-right required"><span class="red">*</span>
+                    验证码
+                  </div>
+                  <div class="col-md-4">
+                    <input class="form-control" value="xxxxx" />
+                  </div>
+                  <div class="col-md-1">
+                    <span class="btn btn-primary">获取验证码</span>
+                  </div>
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+
+              <div class="row align-items-center">
+                <div class="col-md-3"></div>
+                <div class="col-md-6  align-items-center text-center">
+                  <div class="success-text">
+                    恭喜您，手机修改成功（152***3210）！
+                  </div>
+                </div>
+                <div class="col-md-3"></div>
+              </div>
+
+              <div class="row align-items-center">
+                <div class="control-label col-md-3 text-right"></div>
+                <div class="col-md-4">
+                  <div class="btnBox">
+                    <span class="btn btn-primary w120" type="submit">提交</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div style="display:none;" id="modify_shop">
+          <div class="addFormModal form-horizontal bg_white">
+            <form style="width:700px;">
+              <div class="row align-items-center">
+                <div class="control-label col-md-2 text-right">小铺名称</div>
+                <div class="col-md-10">
+                  <textarea class="form-textarea form-control" style="min-height:100px;"></textarea>
+                </div>
+              </div>
+
+              <div class="row align-items-center" style="margin-top:50px;">
+                <div class="control-label col-md-3 text-right"></div>
+                <div class="control-label col-md-3 text-right">
+                  <span class="btn btn-primary w120">确认</span>
+                </div>
+                <div class="col-md-3">
+                  <span class="btn btn-primary w120">取消</span>
+                </div>
+                <div class="control-label col-md-3 text-right"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="showmodal"></div>
+      <div class="showmodal">
+        <div class="modal_four row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="hotProduct comShadow">
+                <div class="comTitle">
+                  <span class="text">最热商品</span>
+                </div>
+                <table class="productTable table">
+                  <thead>
+                    <tr>
+                      <th>商品名称</th>
+                      <th>总成交量（单）</th>
+                      <th>总成交金额（万）</th>
+                    </tr>
+                  </thead>
+                </table>
+                <div class="tableBox">
+                  <table class="productTable table">
+                    <tbody>
+                      <tr>
+                        <td>这边商品的名称</td>
+                        <td>1000</td>
+                        <td>123</td>
+                      </tr>
+                      <tr>
+                        <td>这边商品的名称</td>
+                        <td>1000</td>
+                        <td>123</td>
+                      </tr>
+                      <tr>
+                        <td>这边商品的名称</td>
+                        <td>1000</td>
+                        <td>123</td>
+                      </tr>
+                      <tr>
+                        <td>这边商品的名称</td>
+                        <td>1000</td>
+                        <td>123</td>
+                      </tr>
+                      <tr>
+                        <td>这边商品的名称</td>
+                        <td>1000</td>
+                        <td>123</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col comShadow m-l-15 pd0">
+                <div class="comTitle">
+                  <span class="text">经营曲线-订单量\成交额\打赏额\兑奖额</span>
+                </div>
+                <div class="dataChats_one">
+                  <div id="dataChats_one"></div>
+                </div>
+              </div>
+            </div>
+            <div class="comShadow m-t-15" style="height:372px;">
+              <div class="comTitle">
+                <span class="text">粉丝分析</span>
+              </div>
+              <div class="dataChats_two row">
+                <div class="col" id="junxian" style="height:332px;"></div>
+                <div class="col" id="chengjiao" style="height:332px;"></div>
+                <div class="col" id="dashang" style="height:332px;"></div>
+                <div class="col" id="fanli" style="height:332px;"></div>
+                <div class="col" id="huoyue" style="height:332px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 center-right p-r-15">
+            <div class="item comShadow">
+              <div class="comTitle">
+                <span class="text">人民币</span>
+                <button class="btn operbtn">转账</button>
+              </div>
+              <div class="list">
+                <div class="li row">
+                  <div class="name">余额(含保证金)：</div>
+                  <div class="col">￥234 万元</div>
+                </div>
+                <div class="li row">
+                  <div class="name">可转账额：</div>
+                  <div class="col">￥158 万元</div>
+                </div>
+                <div class="li row">
+                  <div class="name">保证金：</div>
+                  <div class="col">￥10,000 元</div>
+                </div>
+                <div class="li row">
+                  <div class="name">待对账额：</div>
+                  <div class="col">￥54万元<button class="float-right btn btn-blue">对账</button></div>
+                </div>
+              </div>
+            </div>
+            <div class="item comShadow">
+              <div class="comTitle">
+                <span class="text">星票</span>
+                <button class="btn operbtn">兑奖</button>
+              </div>
+              <div class="list">
+                <div class="li row">
+                  <div class="name">余额：</div>
+                  <div class="col">￥234 万元</div>
+                </div>
+                <div class="li row">
+                  <div class="name">可兑金额：</div>
+                  <div class="col">￥158 万元</div>
+                </div>
+                <div class="li row">
+                  <div class="name">立即收益：</div>
+                  <div class="col">￥10,000 元</div>
+                </div>
+                <div class="li row">
+                  <div class="name">待对账额：</div>
+                  <div class="col">￥54万元<button class="float-right btn btn-blue">对账</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal_five row">
+          <div class="col-md-9 pd0">
+            <div class="comShadow m-15 ">
+              <div class="comTitle">
+                <span class="text">访问分析</span>
+              </div>
+              <div class="dataChats_three" id="dataChats_three">
+
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-3 p-r-15 m-t-15">
+            <div class="comShadow">
+              <div class="comTitle">
+                <span class="text">商品分析</span>
+              </div>
+              <div class="dataChats_four" id="dataChats_four"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="bgImageModal">
+        <div class="title">
+          上传背景图
+        </div>
+        <div class="uploadPic text-center">
+          <div class="picBox">
+            <span class="iconfont icon-jia"></span>
+            <input type="file" id="bgPicFile" />
+            <div class="imgBox">
+              <img src="" id="showPic" />
+              <span class="iconfont icon-false close"></span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center gray_75 m-t-b-20">上传小铺背景图片</div>
+        <div class="text-center c999 fs12 m-t-b-20">图片尺寸：###*###，图片不得超过300KB</div>
+        <div class="btnBox">
+          <button class="btn btn-blue">确认</button>
+          <button class="btn btn-cancel" onclick="closeImgModal();">返回</button>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="../../js/echarts.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    console.log(parent)
+    setTimeout(() => {
+      parent.FrameIds()
+    }, 2000);
+    $("#bgPicFile").on('change', function () {
+      var file = $(this)[0];
+      if (file.files && file.files[0]) {
+        var reader = new FileReader()
+        reader.readAsDataURL(file.files[0])
+        reader.onload = function (evt) {
+          $("#showPic").attr('src', evt.target.result);
+          $("#showPic").parent().show();
+        }
+      } else {
+        $("#showPic").attr('src',
+          "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src='" + file
+          .value + "'");
+        $("#showPic").parent().show();
+      }
+      $(this).val('');
+    });
+    $("#bgImageModal .close").on('click', function () {
+      $("#showPic").attr('src', '').parent().hide();
+    })
+
+    $('#mobile').click(function () {
+      // loadHtml('mainIframe', 'myhome/set_modify_mobile.html')
+      // $(this).parents('.setTable').hide().siblings('.addFormModal').fadeIn();
+      layer.open({
+        type: 1,
+        btn: false,
+        area: ['800px', '500px'],
+        content: $('#modify_mobile').html(),
+        title: '修改手机号码'
+      })
+    })
+
+    $('#shop').click(function () {
+      modify_shop()
+    })
+
+    $('#bank').click(function () {
+      loadHtml('mainIframe', 'myhome/bank.html')
+    })
+
+    $('#discount').click(function () {
+      loadHtml('mainIframe', 'myhome/discount.html')
+    })
+    // loadHtml('homeIframe',"html/myhome/index.html");
+    $('#homeNav li')
+      .off('click')
+      .on('click', function () {
+        var ind = $(this).index()
+        // loadHtml('homeIframe',src);
+        if (ind == 1) {
+          $(".shop_modal").hide()
+
+        } else if (ind == 2) {
+          layer.open({
+            type: 1,
+            closeBtn: 0, //不显示关闭按钮
+            anim: 2,
+            title: false,
+            area: ['500px', '420px'],
+            shadeClose: true, //开启遮罩关闭
+            content: $("#bgImageModal")
+          });
+          return false;
+        } else {
+          $(".shop_modal").show()
+        }
+
+        $(this)
+          .children('a')
+          .addClass('active');
+        $(this)
+          .siblings()
+          .children('a')
+          .removeClass('active');
+        $('.homeModalBox .showmodal')
+          .hide()
+          .eq(ind)
+          .fadeIn();
+        if (ind == 3) {
+          setChatsOne();
+          setChatsTwo();
+          setChatsThree();
+          setChatsFour();
+        }
+      });
+
+  })
+
+  function closeImgModal() {
+    layer.closeAll();
+    $("#bgImageModal").hide()
+  }
+
+  function modify_shop() {
+    layer.open({
+      type: 1,
+      btn: false,
+      area: ['800px', '500px'],
+      content: $('#modify_shop').html(),
+      title: '修改小铺名'
+    })
+  }
+
+  function addProduct() {
+    addTab('新增产品', 'html/shop/goods_add.html')
+  }
+
+  function setChatsOne(xData) {
+    if (!xData) {
+      xData = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+    }
+    var myChart = echarts.init(document.getElementById('dataChats_one'));
+    var myChatData = [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+    var yMax = 250;
+    var dataShadow = [];
+    var colors = ['#4870F3', '#DE4141', '#25C471', '#FFA820', '#9576F1', '#64A5FF'];
+    for (var i = 0; i < myChatData.length; i++) {
+      dataShadow.push(yMax);
+    }
+    var option = {
+      color: colors,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          crossStyle: {
+            color: '#999'
+          }
+        }
+      },
+      grid: {
+        top: '10%',
+        left: '3%',
+        right: '5%',
+        bottom: '3%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          dataView: {
+            show: true,
+            readOnly: false
+          },
+          magicType: {
+            show: true,
+            type: ['line', 'bar']
+          },
+          // restore: {
+          //   show: true
+          // },
+          // saveAsImage: {
+          //   show: true
+          // }
+        }
+      },
+      legend: {
+        show: false,
+        // data: ['蒸发量', '平均温度']
+      },
+      xAxis: [{
+        type: 'category',
+        data: xData,
+        axisPointer: {
+          type: 'shadow'
+        }
+      }],
+      yAxis: [{
+          type: 'value',
+          name: '',
+          // min: 0,
+          // max: 250,
+          // interval: 50,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        },
+        {
+          type: 'value',
+          name: '',
+          // min: 0,
+          // max: 25,
+          // interval: 5,
+          axisLabel: {
+            formatter: '{value}'
+          }
+        }
+      ],
+      series: [{
+          type: 'bar',
+          itemStyle: {
+            color: 'rgba(0,0,0,0.05)',
+            borderWidth: 10,
+            barBorderRadius: [5, 5, 0, 0]
+          },
+          barWidth: 10,
+          barGap: '-100%',
+          barCategoryGap: '40%',
+          data: dataShadow,
+          animation: false
+        }, {
+          name: '收入',
+          type: 'bar',
+          barWidth: 10,
+          data: myChatData,
+          itemStyle: {
+            color: '#4C8FF7',
+            borderWidth: 10,
+            barBorderRadius: [5, 5, 0, 0]
+          }
+        },
+        {
+          name: '最高收入',
+          type: 'line',
+          yAxisIndex: 1,
+          data: myChatData,
+          lineStyle: {
+            color: '#4C8FF7'
+          }
+        }
+      ]
+    };
+    myChart.setOption(option);
+  }
+
+  function setChatsTwo() {
+    var myChart1 = echarts.init(document.getElementById('junxian')),
+      myChart2 = echarts.init(document.getElementById('chengjiao')),
+      myChart3 = echarts.init(document.getElementById('dashang')),
+      myChart4 = echarts.init(document.getElementById('fanli')),
+      myChart5 = echarts.init(document.getElementById('huoyue'));
+    var colors = ['#4870F3', '#DE4141', '#25C471', '#FFA820', '#9576F1', '#64A5FF'];
+    var option1 = {
+      color: colors,
+      title: {
+        text: '军衔占比',
+        top: '25%',
+        left: 'center',
+        textStyle: {
+          fontSize: 14,
+          color: '#757575'
+        }
+      },
+      legend: {
+        show: true,
+        bottom: '5%'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)',
+        position: ['50%', '50%']
+      },
+      series: [{
+        type: 'pie',
+        radius: ['50%', '70%'],
+        center: ['50%', '30%'],
+        name: '军衔占比',
+        height: 322,
+        label: {
+          position: 'center',
+          show: false,
+        },
+        data: [{
+            value: 335,
+            name: '直达'
+          },
+          {
+            value: 679,
+            name: '营销广告'
+          },
+          {
+            value: 1548,
+            name: '搜索引擎'
+          }
+        ],
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        encode: {
+          itemName: 'product',
+          value: '2013'
+        }
+      }]
+    };
+    var option2 = {
+      color: colors,
+      title: {
+        text: '成交占比',
+        top: '25%',
+        left: 'center',
+        textStyle: {
+          fontSize: 14,
+          color: '#757575'
+        }
+      },
+      legend: {
+        show: true,
+        bottom: '5%'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)',
+        position: ['50%', '50%']
+      },
+      series: [{
+        type: 'pie',
+        radius: ['50%', '70%'],
+        center: ['50%', '30%'],
+        name: '成交占比',
+        height: 322,
+        label: {
+          position: 'center',
+          show: false,
+        },
+        data: [{
+            value: 335,
+            name: '直达'
+          },
+          {
+            value: 679,
+            name: '营销广告'
+          },
+          {
+            value: 1548,
+            name: '搜索引擎'
+          }
+        ],
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        encode: {
+          itemName: 'product',
+          value: '2013'
+        }
+      }]
+    };
+    var option3 = {
+      color: colors,
+      title: {
+        text: '打赏占比',
+        top: '25%',
+        left: 'center',
+        textStyle: {
+          fontSize: 14,
+          color: '#757575'
+        }
+      },
+      legend: {
+        show: true,
+        bottom: '5%'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)',
+        position: ['50%', '50%']
+      },
+      series: [{
+        type: 'pie',
+        radius: ['50%', '70%'],
+        center: ['50%', '30%'],
+        name: '打赏比例',
+        height: 322,
+        label: {
+          position: 'center',
+          show: false,
+        },
+        data: [{
+            value: 335,
+            name: '直达'
+          },
+          {
+            value: 679,
+            name: '营销广告'
+          },
+          {
+            value: 1548,
+            name: '搜索引擎'
+          }
+        ],
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        encode: {
+          itemName: 'product',
+          value: '2013'
+        }
+      }]
+    };
+    var option4 = {
+      color: colors,
+      title: {
+        text: '返利贡献占比',
+        top: '25%',
+        left: 'center',
+        textStyle: {
+          fontSize: 14,
+          color: '#757575'
+        }
+      },
+      legend: {
+        show: true,
+        bottom: '5%'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)',
+        position: ['50%', '50%']
+      },
+      series: [{
+        type: 'pie',
+        radius: ['50%', '70%'],
+        center: ['50%', '30%'],
+        name: '返利贡献占比',
+        height: 322,
+        label: {
+          position: 'center',
+          show: false,
+        },
+        data: [{
+            value: 335,
+            name: '直达'
+          },
+          {
+            value: 679,
+            name: '营销广告'
+          },
+          {
+            value: 1548,
+            name: '搜索引擎'
+          }
+        ],
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        encode: {
+          itemName: 'product',
+          value: '2013'
+        }
+      }]
+    };
+    var option5 = {
+      color: colors,
+      title: {
+        text: '活跃粉丝占比',
+        top: '25%',
+        left: 'center',
+        textStyle: {
+          fontSize: 14,
+          color: '#757575'
+        }
+      },
+      legend: {
+        show: true,
+        bottom: '5%'
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b}: {c} ({d}%)',
+        // position: ['50%', '50%']
+      },
+      series: [{
+        type: 'pie',
+        radius: ['50%', '70%'],
+        center: ['50%', '30%'],
+        name: '活跃粉丝占比',
+        height: 322,
+        label: {
+          position: 'center',
+          show: false,
+        },
+        data: [{
+            value: 335,
+            name: '直达'
+          },
+          {
+            value: 679,
+            name: '营销广告'
+          },
+          {
+            value: 1548,
+            name: '搜索引擎'
+          }
+        ],
+        labelLine: {
+          normal: {
+            show: false
+          }
+        },
+        encode: {
+          itemName: 'product',
+          value: '2013'
+        }
+      }]
+    };
+    myChart1.setOption(option1);
+    myChart2.setOption(option2);
+    myChart3.setOption(option3);
+    myChart4.setOption(option4);
+    myChart5.setOption(option5);
+  }
+
+  function setChatsThree() {
+    var myChart = echarts.init(document.getElementById('dataChats_three'));
+    var colors = ['#4870F3', '#25C471', ];
+    var option = {
+      color: colors,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      legend: {
+        data: ['非粉丝', '粉丝'],
+        right: '3%',
+        top: '15px',
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '5%',
+        // top:'5%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'value',
+        position: 'top',
+        boundaryGap: [0, 0.01]
+      },
+      yAxis: {
+        type: 'category',
+        data: ['7:00-9:00', '9:00-10:00', '10:00-13:00', '13:00-15:00', '15:00-17:00',
+          '17:00-19:00', '19:00-21:00', '21:00-7:00'
+        ]
+      },
+      series: [{
+          name: '非粉丝',
+          type: 'bar',
+          stack: '总量',
+          data: [18203, 23489, 29034, 104970, 131744, 630230, 12354, 2135],
+          barWidth: 10,
+          itemStyle: {
+            borderWidth: 10,
+          }
+        },
+        {
+          name: '粉丝',
+          type: 'bar',
+          stack: '总量',
+          data: [12541, 2455, 1245, 12454, 45444, 15454, 78745, 45545],
+          barWidth: 10,
+          itemStyle: {
+            borderWidth: 10,
+          }
+        }
+      ]
+    };
+    myChart.setOption(option);
+  }
+
+  function setChatsFour() {
+    var myChart = echarts.init(document.getElementById('dataChats_four'));
+    var colors = ['#4870F3', '#DE4141', '#25C471', '#FFA820', '#9576F1', '#64A5FF'];
+    var option = {
+      color: colors,
+      title: {
+        text: '商品成交占比',
+        top: 'middle',
+        left: '17%',
+        textStyle: {
+          fontSize: 14,
+          color: '#757575'
+        }
+      },
+      tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br />{b} : {c} ({d}%)"
+      },
+      legend: {
+        orient: 'vertical',
+        right: '5%',
+        top: 'middle',
+        show: true,
+        data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+      },
+      series: [{
+        name: '商品成交占比',
+        type: 'pie',
+        radius: ['40%', '55%'],
+        center: ['30%', '50%'],
+        label: {
+          show: false
+        },
+        data: [{
+            value: 335,
+            name: '直接访问'
+          },
+          {
+            value: 310,
+            name: '邮件营销'
+          },
+          {
+            value: 234,
+            name: '联盟广告'
+          },
+          {
+            value: 135,
+            name: '视频广告'
+          },
+          {
+            value: 1548,
+            name: '搜索引擎'
+          }
+        ],
+        itemStyle: {
+          emphasis: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }]
+    };
+    myChart.setOption(option);
+  }
+</script>

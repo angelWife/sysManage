@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title></title>
+  <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+  <link rel="stylesheet" href="../../dist/bootstrap4/css/bootstrap.css" />
+  <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+  <link rel="stylesheet" href="../../css/common.css" />
+  <link rel="stylesheet" href="../../css/list.css" />
+  <script src="../../js/jquery-2.1.1.js"></script>
+  <script src="../../dist/layui/layui.all.js"></script>
+  <script>
+    var layer = layui.layer
+    var carousel = layui.carousel
+    var laydate = layui.laydate
+    var table = layui.table
+    var laytree = layui.tree
+    var layTreeSelect = layui.treeSelect
+    var layUpload = layui.upload
+    var layElement = layui.element
+    // });
+  </script>
+</head>
+
+<body class="combody hasFoot">
+  <div class="addFormModal">
+    <form class="form-horizontal">
+      <div class="row">
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">工单类型<span class="red">*</span></label>
+          <div class="col-md-7">
+            <input type="email" class="form-control" id="" placeholder="">
+          </div>
+        </div>
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">井盖类型<span class="red">*</span></label>
+          <div class="col-md-7">
+            <input type="password" class="form-control" id="" placeholder="">
+          </div>
+        </div>
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">芯片编号<span class="red">*</span></label>
+          <div class="col-md-7">
+            <input type="password" class="form-control" id="" placeholder="">
+          </div>
+        </div>
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">经度</label>
+          <div class="col-md-7">
+            <input type="password" class="form-control" id="" placeholder="">
+          </div>
+        </div>
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">选择</label>
+          <div class="col-md-7">
+            <select class="form-control">
+              <option value="0">北京</option>
+              <option value="1">上海</option>
+              <option value="2">广州</option>
+              <option value="3">深圳</option>
+              <option value="4">杭州</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">开始时间</label>
+          <div class="col-md-7">
+            <input type="text" class="form-control layui-input" id="dateDemo" placeholder="">
+            <!-- <i class="dateIcon iconfont icon-rili"></i> -->
+          </div>
+        </div>
+        <div class="form-group col-md-6 row">
+          <label for="" class="col-md-3 control-label">备注</label>
+          <div class="col-md-7">
+            <textarea class="form-control"></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footOper">
+    <button class="btn btn-default">取消</button>
+    <button class="btn btn-primary">保存</button>
+  </div>
+</body>
+<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">操作</button>
+  </div>
+</script>
+<script>
+  $(function () {
+    laydate.render({ 
+    elem: '#dateDemo',
+    position:'fixed'
+  });
+  })
+</script>
+
+</html>

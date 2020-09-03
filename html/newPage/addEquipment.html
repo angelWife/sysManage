@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/bootstrap4/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/list.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script src="../../dist/bootstrap4/js/bootstrap.min.js"></script>
+    <script>
+        var layer = layui.layer
+        var carousel = layui.carousel
+        var laydate = layui.laydate
+        var table = layui.table
+        var laytree = layui.tree
+        var layTreeSelect = layui.treeSelect
+        var layUpload = layui.upload
+        var layElement = layui.element
+        // });
+    </script>
+    <script>
+        $(function () {
+            laydate.render({
+                elem: '#createDate',
+                position: 'fixed'
+            });
+            layUpload.render({
+                elem: '#uploadFile'
+                , url: 'https://httpbin.org/post' //改成您自己的上传接口
+                , done: function (res) {
+                    layer.msg('上传成功');
+                    layui.$('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.files.file);
+                }
+            });
+        })
+    </script>
+    <style>
+        .layui-upload-drag{
+            width: 100px;height:100px;line-height: 100px;
+            text-align: center;
+            padding:0;
+        }
+        .dateInput{
+            background: url(../../images/rili.png) right center no-repeat;
+            background-size: 24px auto;
+        }
+        .layui-form-label{
+            min-width: 120px;
+            max-width:120px;
+        }
+    </style>
+</head>
+
+<body class="combody hasFoot">
+
+    <div class="comModal">
+        <form class="form-horizontal">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label"><span class="red">*</span>设备编号</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label"><span class="red">*</span>规格型号</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label"><span class="red">*</span>开盖状态</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label">创建日期</label>
+                        <div class="col">
+                            <input type="text" class="form-control dateInput" id="createDate" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label">井盖材质</label>
+                        <div class="col">
+                            <select class="form-control">
+                                <option value="0">钢铁</option>
+                                <option value="1">塑料</option>
+                                <option value="2">模板</option>
+                              </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label">设备编号</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label">设备照片</label>
+                        <div class="col">
+                            <div class="layui-upload-drag" id="uploadFile">
+                                <i class="iconfont icon-add" style="font-size:30px;"></i>
+                                <div class="layui-hide" id="uploadDemoView">
+                                    <hr>
+                                    <img src="" alt="上传成功后渲染" style="max-width: 196px">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <label class="col-md-1 layui-form-label" style><span class="red">*</span>单位地址</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label"><span class="red">*</span>设备编号</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label">创建日期</label>
+                        <div class="col">
+                            <input type="text" class="form-control dateInput" id="createDate" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3 layui-form-label">设备编号</label>
+                        <div class="col">
+                            <input type="text" class="form-control" id="" placeholder="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footOper">
+        <button class="btn btn-default">取消</button>
+        <button class="btn btn-primary">立即添加</button>
+    </div>
+</body>
+
+
+</html>
