@@ -1,0 +1,823 @@
+@charset 'utf-8';
+a {
+  cursor: pointer;
+}
+a:hover {
+  color: #4C8FF7;
+  text-decoration: none;
+}
+a.picBox {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  overflow-x: auto;
+}
+html.body_gray,
+body.body_gray {
+  background: #EFF3F6;
+}
+html.hasFoot,
+body.hasFoot {
+  padding-bottom: 70px;
+  position: relative;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+}
+button i {
+  font-size: 12px;
+  margin-right: 5px;
+}
+button.btn {
+  height: 33.5px;
+  line-height: 33.5px;
+  padding: 0 0.75rem;
+}
+.table thead th {
+  border-width: 1px;
+}
+.hidden {
+  display: none;
+}
+.fullHeight {
+  height: 100%;
+}
+.combody {
+  background: #EFF3F6;
+  padding: 15px;
+}
+.row {
+  margin: 0;
+  padding: 0;
+}
+.comTitle {
+  line-height: 40px;
+  color: #145DCF;
+  font-size: 16px;
+}
+.myTable {
+  table-layout: fixed;
+}
+.myTable td {
+  min-height: 34px;
+  line-height: 34px !important;
+  font-size: 13px;
+  padding: 0 10px !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid #d9d9d9;
+}
+.myTable thead td {
+  font-weight: 600;
+  background: #f7f7f7;
+  border-top: 1px solid #d9d9d9 !important;
+}
+.myTable .enclPic {
+  height: 100px;
+  width: auto;
+  display: inline-block;
+  margin: 10px;
+}
+/*通用调整*/
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 1024px !important;
+  overflow: hidden;
+}
+.container .head {
+  height: 60px;
+  background: #145DCF;
+  position: relative;
+}
+.container .head .logo {
+  line-height: 60px;
+  min-width: 250px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+.container .head .menuClick {
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .head .menuClick i {
+  color: #999999;
+}
+.container .head .menuClick:hover i {
+  color: #4C8FF7;
+}
+.container .head .headBar {
+  float: left;
+  overflow: hidden;
+  margin-left: 50px;
+}
+.container .head .headBar a {
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.container .head .headBar a .iconfont {
+  font-size: 20px;
+}
+.container .head .headBar a.active {
+  background: #145DCF;
+}
+.container .head .headBar a:hover {
+  background: #145DCF;
+}
+.container .head .col-md {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  max-width: auto;
+  width: auto;
+}
+.container .head .headMenu {
+  float: right;
+  margin: 0;
+}
+.container .head .headMenu li {
+  float: left;
+}
+.container .head .headMenu li > a {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  min-width: 60px;
+  text-align: center;
+  color: #EBF4FF;
+}
+.container .head .headMenu li > a:hover {
+  color: #ffffff;
+}
+.container .head .headMenu li.more {
+  position: relative;
+  padding: 0 20px;
+}
+.container .head .headMenu li.more > a {
+  width: auto;
+  padding-right: 20px;
+  line-height: 60px;
+}
+.container .head .headMenu li.more > a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+}
+.container .head .headMenu li.more > .childNav {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 150px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  top: 70px;
+  right: 0;
+  padding: 10px 5px;
+}
+.container .head .headMenu li.more > .childNav a {
+  display: block;
+  line-height: 30px;
+  padding: 0 20px;
+}
+.container .head .headMenu li.more > .childNav a:hover {
+  color: #FF4400;
+}
+.container .body {
+  height: calc(100% - 60px);
+}
+.container .body .m_left {
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.container .body .m_left .menuBox {
+  min-height: 400px;
+  overflow-y: auto;
+}
+.container .body .m_left .menuBox ul {
+  font-size: 14px;
+  margin: 0;
+}
+.container .body .m_left .menuBox ul li {
+  position: relative;
+  font-weight: 500;
+}
+.container .body .m_left .menuBox ul li a {
+  color: #999999;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+}
+.container .body .m_left .menuBox ul li a.iconfont {
+  padding-left: 35px;
+}
+.container .body .m_left .menuBox ul li a text {
+  font-size: 14px;
+}
+.container .body .m_left .menuBox ul li a:hover {
+  color: #4C8FF7;
+}
+.container .body .m_left .menuBox ul li a::before {
+  position: absolute;
+  line-height: 40px;
+  height: 100%;
+  left: 10px;
+  margin-right: 10px;
+}
+.container .body .m_left .menuBox ul li i {
+  position: absolute !important;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  right: 20px;
+  top: 0;
+  color: #999999;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.container .body .m_left .menuBox ul li i.rotate {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.container .body .m_left .menuBox ul li.active a {
+  color: #ffffff;
+  background: #4C8FF7;
+}
+.container .body .m_left .menuBox ul li.showMenu > .childMenu {
+  height: auto;
+  display: block;
+  opacity: 1;
+  -webkit-transition: all 0.5s linear 0s;
+  -moz-transition: all 0.5s linear 0s;
+  -ms-transition: all 0.5s linear 0s;
+  -o-transition: all 0.5s linear 0s;
+  transition: all 0.5s linear 0s;
+}
+.container .body .m_left .menuBox ul li.showMenu > a i {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.container .body .m_left .menuBox ul.childMenu {
+  display: none;
+  opacity: 0;
+  height: 0;
+  -webkit-transition: all 0.5s linear 0s;
+  -moz-transition: all 0.5s linear 0s;
+  -ms-transition: all 0.5s linear 0s;
+  -o-transition: all 0.5s linear 0s;
+  transition: all 0.5s linear 0s;
+}
+.container .body .m_left .menuBox ul.childMenu li a {
+  padding-left: 70px;
+}
+.container .body .m_left .menuBox ul.childMenu li a::before {
+  left: 45px;
+}
+.container .body .m_right {
+  padding: 0;
+  margin: 0;
+  width: calc(100% - 250px);
+}
+.container .body .m_right .headData .map_head {
+  border-left: 1px solid #145DCF;
+  width: 100%;
+  height: auto;
+  background: #4C8FF7;
+  padding: 0 10px;
+  line-height: 39px;
+}
+.container .body .m_right .headData .map_head li {
+  float: left;
+  margin-right: 20px;
+  line-height: 39px;
+}
+.container .body .m_right .headData .map_head li .text {
+  color: #ffffff;
+}
+.container .body .m_right .headData .map_head li:last-child {
+  margin-right: 0;
+}
+.container .body .m_right .treeBox {
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.container .body .m_right .treeBox .treeList {
+  position: absolute;
+  width: calc(100% - 82px);
+  left: 40px;
+  top: 0px;
+  height: 40px;
+}
+.container .body .m_right .treeBox .treeList .treeMain {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+.container .body .m_right .treeBox .treeList .treeMain a {
+  float: left;
+  height: 100%;
+  line-height: 36px;
+  padding: 0 20px 0 10px;
+  box-sizing: border-box;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  text-align: center;
+  border-top: 2px solid #ffffff;
+  border-right: 1px solid #e6e6e6;
+  color: #666666;
+  font-size: 12px;
+}
+.container .body .m_right .treeBox .treeList .treeMain a i {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  color: #999999;
+  line-height: 20px;
+  font-style: normal;
+  right: 3px;
+  font-size: 16px;
+  top: 8px;
+}
+.container .body .m_right .treeBox .treeList .treeMain a i:hover {
+  color: #FF4400;
+  font-weight: 600;
+}
+.container .body .m_right .treeBox .treeList .treeMain a.active {
+  border-top-color: #145DCF;
+}
+.container .body .m_right .treeBox .home {
+  width: 40px;
+  line-height: 36px;
+  text-align: center;
+  border-right: 1px solid #e6e6e6;
+  vertical-align: top;
+  color: #666666;
+  cursor: pointer;
+  position: absolute;
+  border-top: 2px solid #ffffff;
+  top: 0;
+  left: 0;
+}
+.container .body .m_right .treeBox .home:hover {
+  color: #B40000;
+}
+.container .body .m_right .treeBox .home.active {
+  border-top-color: #145DCF;
+}
+.container .body .m_right .treeBox .closeAll {
+  width: 40px;
+  line-height: 38px;
+  text-align: center;
+  border-left: 1px solid #d6d6d6;
+  vertical-align: top;
+  color: #666666;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.container .body .m_right .treeBox .closeAll:hover {
+  color: #B40000;
+}
+.container .body .m_right .main {
+  height: calc(100vh - 140px);
+}
+.container .body .m_right .main .iframe {
+  background: #EFF3F6;
+}
+.container .showIcon .menuBox {
+  overflow: hidden;
+}
+.switchBox {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.switchBox .text {
+  display: inline-block;
+  color: #999999;
+}
+.switchBox .comSwitch {
+  margin: 0 20px;
+  display: inline-block;
+  width: 70px;
+  height: 28px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.switchBox .comSwitch::before {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background: #e6e6e6;
+  top: 2px;
+  left: 2px;
+  content: '';
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.switchBox .comSwitch.on {
+  background: #4C8FF7;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.switchBox .comSwitch.on::before {
+  background: #ffffff;
+  left: 43px;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+}
+.topOper {
+  margin-top: 15px !important;
+}
+.searchBox {
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  background: #ffffff;
+}
+.searchBox .layui-form-label {
+  min-width: 100px;
+}
+.searchBox select {
+  width: 173px !important;
+}
+.searchBox .form-group {
+  margin-bottom: 15px;
+}
+.searchBox .searchBtn {
+  padding: 0 20px;
+}
+.comModal {
+  background: #ffffff;
+  padding: 15px;
+}
+.listModal {
+  background: #ffffff;
+  margin-top: 15px;
+  padding: 15px;
+}
+.tableBox {
+  margin: 15px;
+}
+.addFormModal {
+  background: #ffffff;
+  padding-top: 20px;
+}
+.addFormModal .form-group {
+  margin-bottom: 20px;
+}
+.addFormModal .form-group .control-label {
+  text-align: right;
+  margin: 0 !important;
+  line-height: 40px;
+}
+.addFormModal .form-group .form-control {
+  height: 40px;
+  line-height: 40px;
+}
+.addFormModal .form-group .dateIcon {
+  position: absolute;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  top: 0;
+  color: #999999;
+  cursor: pointer;
+}
+.addFormModal .form-group textarea {
+  min-height: 120px;
+  resize: none;
+}
+.addFormModal .form-group select {
+  height: 40px !important;
+  line-height: 40px;
+}
+.addFormModal .form-textarea {
+  height: 100px;
+}
+.addFormModal .btnBox {
+  margin-top: 30px;
+  text-align: right;
+}
+.addFormModal .btnBox button {
+  width: 120px;
+}
+.footOper {
+  position: fixed;
+  z-index: 9999;
+  width: calc(100% + 30px);
+  left: -15px;
+  bottom: 0;
+  padding: 10px 20px;
+  background: #ffffff;
+  text-align: right;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
+}
+.footOper button {
+  width: 120px;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.pd15 {
+  padding: 15px;
+}
+.m-t-20 {
+  margin-top: 20px;
+}
+/*修改选项卡的样式*/
+.layui-tab .layui-this {
+  color: #145DCF !important;
+}
+.layui-tab .layui-this::after {
+  border-color: #145DCF !important;
+}
+/*上传图片*/
+.uploadPicBox .picList li {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  float: left;
+  margin: 0 10px 10px 0;
+  position: relative;
+}
+.uploadPicBox .picList li > div {
+  width: 100%;
+  height: 100%;
+}
+.uploadPicBox .picList li.img {
+  background: #f8f8f8;
+  border: 1px solid #d5d5d5;
+}
+.uploadPicBox .picList li .closePic {
+  position: absolute;
+  line-height: 100%;
+  color: #de0000;
+  font-size: 24px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.uploadPicBox .inputBtn {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+.uploadPicBox .inputBtn.inBtn {
+  line-height: 100px;
+  border: 1px dashed #d5d5d5;
+}
+.uploadPicBox .inputBtn .pic1 {
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+}
+.uploadPicBox .inputBtn .pic2 {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.uploadPicBox .inputBtn .hideFile {
+  position: absolute;
+  z-index: 10;
+  font-size: 100px;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+/*大图展示*/
+.bigPicBox {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+}
+.bigPicBox .bigPicModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bigPicBox .bigPicModal img {
+  width: auto;
+  height: auto;
+  max-width: 90vh;
+  max-height: 90vh;
+}
+.bigPicBox .bigPicModal .closePic {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: #fff;
+  z-index: 10000;
+  font-size: 28px;
+}
+.tableModal {
+  display: none;
+}
+.tableModal .modalSearchBox {
+  padding: 20px;
+}
+.tableModal .modalSearchBox .control-label {
+  min-width: 100px;
+  padding-top: 6px;
+}
+.tableModal .modalSearchBox .btnBox {
+  padding: 20px;
+  text-align: center;
+}
+.tableModal .modalSearchBox .btnBox button {
+  margin: 0 20px;
+}
+.tableModal .btnBox {
+  padding: 20px;
+  text-align: center;
+}
+.tableModal .btnBox button {
+  margin: 0 20px;
+}
+.pointer {
+  cursor: pointer;
+}
+.none {
+  display: none;
+}
+/*head样式*/
+.pd0 {
+  padding: 0 !important;
+}
+.p-r-15 {
+  padding: 0 15px 0 0;
+}
+.m-t-10 {
+  margin-top: 10px !important;
+}
+.m-t-15 {
+  margin-top: 15px !important;
+}
+.m-l-15 {
+  margin: 0 0 0 15px;
+}
+.m-r-15 {
+  margin: 0 15px 0 0;
+}
+.m-l-r-15 {
+  margin: 0 15px;
+}
+.m-t-b-20 {
+  margin: 20px 0;
+}
+.m-15 {
+  margin: 15px;
+}
+/*字体颜色*/
+.orange {
+  color: #FF4400;
+}
+.red {
+  color: #B40000;
+}
+.blue {
+  color: #4C8FF7;
+}
+.green {
+  color: #25C471;
+}
+.yello {
+  color: #f78e1e;
+}
+.c333 {
+  color: #333333;
+}
+.c666 {
+  color: #666666;
+}
+.c999 {
+  color: #999999;
+}
+/*字体大小*/
+.fs12 {
+  font-size: 12px;
+}
+.fs13 {
+  font-size: 13px;
+}
+.fs14 {
+  font-size: 14px;
+}
+.fs15 {
+  font-size: 15px;
+}
+.fs16 {
+  font-size: 16px;
+}
+.fs18 {
+  font-size: 18px;
+}
+.fs20 {
+  font-size: 20px;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw500 {
+  font-weight: 500;
+}

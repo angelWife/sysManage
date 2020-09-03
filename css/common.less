@@ -1,0 +1,927 @@
+@import 'base.less';
+
+a {
+  cursor: pointer;
+
+  &:hover {
+    color: @blue;
+    text-decoration: none;
+  }
+
+  &.picBox {
+    display: block;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  overflow-x: auto;
+  &.body_gray{
+    background: #EFF3F6;
+  }
+  &.hasFoot{
+    padding-bottom:70px;
+    position: relative;
+  }
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+}
+
+button {
+  i {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+
+  &.btn {
+    height: 33.5px;
+    line-height: 33.5px;
+    padding: 0 0.75rem;
+  }
+}
+
+.table thead th {
+  border-width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.combody {
+  background: #EFF3F6;
+  padding:15px;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+.comTitle{
+    line-height: 40px;
+    color:@dark_blue;
+    font-size: 16px;
+}
+.myTable{
+    table-layout: fixed;
+    
+    td{
+        min-height:34px;
+        line-height: 34px !important;
+        font-size:13px;
+        padding:0 10px !important;
+        overflow: hidden;  
+        white-space: nowrap;  
+        text-overflow: ellipsis;
+        border:1px solid #d9d9d9;
+    }
+    thead td{
+        font-weight:600;
+        background: #f7f7f7;
+        border-top:1px solid #d9d9d9 !important;
+    }
+    .enclPic{
+        height:100px;
+        width: auto;
+        display: inline-block;
+        margin:10px;
+    }
+}
+
+/*通用调整*/
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width:1024px !important;
+  overflow: hidden;
+
+  // background: #EFF3F6;
+  .head {
+    height: 60px;
+    background: @dark_blue;
+    position: relative;
+
+    .logo {
+      line-height: 60px;
+      min-width: 250px;
+      text-align: center;
+      color: @white;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .menuClick {
+      width: 50px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+
+      i {
+        color: @gray_99;
+      }
+
+      &:hover i {
+        color: @blue;
+      }
+    }
+
+    .headBar {
+      float: left;
+      overflow: hidden;
+      margin-left: 50px;
+
+      a {
+        display: inline-block;
+        height: 80px;
+        line-height: 80px;
+        padding: 0 20px;
+        font-size: 16px;
+        color: @white;
+
+        .iconfont {
+          font-size: 20px;
+        }
+
+        &.active {
+          background: @dark_blue;
+        }
+
+        &:hover {
+          background: @dark_blue;
+        }
+      }
+    }
+
+    .col-md {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0;
+      max-width: auto;
+      width: auto;
+    }
+
+    .headMenu {
+      float: right;
+      margin: 0;
+
+      li {
+        float: left;
+
+        >a {
+          display: inline-block;
+          height: 60px;
+          line-height: 60px;
+          min-width: 60px;
+          text-align: center;
+          color: @light_blue;
+
+          &:hover {
+            color: @white;
+          }
+        }
+
+        &.more {
+          position: relative;
+          padding: 0 20px;
+
+          >a {
+            width: auto;
+            padding-right: 20px;
+            line-height: 60px;
+
+            &::before {
+              position: absolute;
+              top: 0;
+              right: 0;
+              font-size: 12px;
+            }
+          }
+
+          >.childNav {
+            position: absolute;
+            z-index: 10;
+            display: none;
+            width: 150px;
+            background: @white;
+            .boxShadow(0, 0, 5px, rgba(0, 0, 0, 0.2));
+            top: 70px;
+            right: 0;
+            padding: 10px 5px;
+
+            a {
+              display: block;
+              line-height: 30px;
+              padding: 0 20px;
+
+              &:hover {
+                color: @red_orange;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
+  .body {
+    height: calc(100% - 60px);
+
+    .m_left {
+      width: 250px;
+      height: 100%;
+      background: #fff;
+      .boxShadow(0, 1px, 3px, rgba(0, 0, 0, 0.1));
+
+      .menuBox {
+        min-height: 400px;
+        overflow-y: auto;
+
+        ul {
+          font-size: 14px;
+          margin: 0;
+          li {
+            position: relative;
+            font-weight:500;
+            a {
+              color: @gray_99;
+              display: block;
+              height: 40px;
+              line-height: 40px;
+              overflow: hidden;
+              &.iconfont{
+                  padding-left:35px;
+              }
+              text{
+                  font-size:14px;
+              }
+              &:hover {
+                color: @blue;
+              }
+  
+              &::before {
+                position: absolute;
+                line-height: 40px;
+                height: 100%;
+                left: 10px;
+                margin-right: 10px;
+              }
+            }
+  
+            i {
+              position: absolute !important;
+              cursor: pointer;
+              height: 40px;
+              line-height: 40px;
+              font-size: 12px;
+              // width: 30px;
+              right: 20px;
+              top: 0;
+              color: @gray_99;
+              .transition(all, 0.3s);
+              .transform(rotate(0deg));
+  
+              &.rotate {
+                .transform(rotate(180deg));
+              }
+            }
+  
+            &.active {
+              a {
+                color: @white;
+                background: @blue;
+              }
+            }
+            &.showMenu{
+                > .childMenu{
+                    height:auto;
+                  display: block;
+                  opacity: 1;
+                  .transition(all, 0.5s);
+                }
+                > a {
+                  i{
+                      .transform(rotate(180deg))
+                    }
+                }
+            }
+          }
+          &.childMenu{
+              display: none;
+              opacity: 0;
+              height:0;
+              .transition(all, 0.5s);
+              li{
+                a{
+                    padding-left: 70px;
+                    &::before{
+                        left:45px;
+                    }
+                }
+              }
+              
+          }
+        }
+      }
+
+
+    }
+
+    .m_right {
+      padding: 0;
+      margin: 0;
+      width: calc(100% - 250px);
+        .headData{
+            .map_head{
+                border-left:1px solid @dark_blue;
+                width: 100%;
+                height:auto;
+                background: @blue;
+                padding:0 10px;
+                line-height: 39px;
+                li{
+                  float:left;
+                  margin-right:20px;
+                  line-height: 39px;
+                  .text{
+                      color:@white;
+                  }
+                  &:last-child{
+                    margin-right:0;
+                  }
+                }
+              }
+        }
+      .treeBox {
+        height: 40px;
+        border: 1px solid @gray_e6;
+        overflow: hidden;
+        .boxShadow(0, 3px, 3px, rgba(0, 0, 0, 0.1));
+        position: relative;
+
+        .treeList {
+          position: absolute;
+          width: calc(100% - 82px);
+          left: 40px;
+          top: 0px;
+          height: 40px;
+
+          .treeMain {
+            height: 100%;
+            position: absolute;
+            left: 0;
+            overflow: hidden;
+
+            a {
+              float: left;
+              height: 100%;
+              line-height: 36px;
+              padding: 0 20px 0 10px;
+              box-sizing: border-box;
+              width: 100px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              position: relative;
+              text-align: center;
+              border-top: 2px solid @white;
+              border-right: 1px solid @gray_e6;
+              color: @gray_66;
+              font-size:12px;
+              i {
+                position: absolute;
+                height: 20px;
+                width: 20px;
+                color: @gray_99;
+                line-height: 20px;
+                font-style: normal;
+                right: 3px;
+                font-size: 16px;
+                top: 8px;
+
+                &:hover {
+                  color: @red_orange;
+                  font-weight: 600;
+                }
+              }
+
+              &.active {
+                border-top-color: @dark_blue;
+              }
+            }
+          }
+        }
+
+        .home {
+          width: 40px;
+          line-height: 36px;
+          text-align: center;
+          border-right: 1px solid @gray_e6;
+          vertical-align: top;
+          color: @gray_66;
+          cursor: pointer;
+          position: absolute;
+          border-top: 2px solid @white;
+          top: 0;
+          left: 0;
+
+          &:hover {
+            color: @red;
+          }
+
+          &.active {
+            border-top-color: @dark_blue;
+          }
+        }
+
+        .closeAll {
+          width: 40px;
+          line-height: 38px;
+          text-align: center;
+          border-left: 1px solid @gray_d6;
+          vertical-align: top;
+          color: @gray_66;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          &:hover {
+            color: @red;
+          }
+        }
+      }
+
+      .main {
+        height: calc(100vh - 140px);
+        // overflow: hidden;
+
+        // overflow-y: scroll;
+        .iframe {
+          background: #EFF3F6;
+        }
+      }
+    }
+  }
+
+
+  .showIcon {
+    .menuBox {
+      overflow: hidden;
+    }
+
+  }
+
+}
+.switchBox{
+  height:100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+		align-items: center;
+  padding:0 20px;
+  .text{
+    display: inline-block;
+    color:@gray_99;
+  }
+  .comSwitch{
+    margin:0 20px;
+    display: inline-block;
+    width: 70px;
+    height:28px;
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    position: relative;
+    cursor: pointer;
+    .transition(all,0.3s);
+    &::before{
+      position: absolute;
+      height:24px;
+      width: 24px;
+      border-radius: 24px;
+      background: #e6e6e6;
+      top:2px;
+      left:2px;
+      content:'';
+      .transition(all,0.3s);
+    }
+    &.on{
+      background: @blue;
+      .transition(all,0.3s);
+      &::before{
+        background: @white;
+        left: 43px;
+        .transition(all,0.3s);
+      }
+    }
+  
+  }
+}
+
+
+.topOper {
+  margin-top: 15px !important;
+}
+
+.searchBox {
+  padding: 20px;
+  border: 1px solid @gray_e6;
+  background: @white;
+  .layui-form-label{
+    min-width: 100px;
+  }
+  select{
+    width: 173px !important;
+  }
+  .form-group{
+    margin-bottom:15px;
+  }
+  .searchBtn{
+    padding:0 20px;
+  }
+}
+.comModal{
+  background: @white;
+  padding:15px;
+}
+.listModal{
+  background: @white;
+  margin-top:15px;
+  padding:15px;
+}
+.tableBox {
+  margin: 15px;
+}
+
+.addFormModal {
+  background: @white;
+  padding-top:20px;
+  .form-group {
+    margin-bottom: 20px;
+    .control-label{
+      text-align: right;
+      margin:0 !important;
+      line-height: 40px;
+    }
+    .form-control{
+      height:40px;
+      line-height: 40px;
+    }
+    .dateIcon{
+      position: absolute;
+      right:15px;
+      width: 40px;
+      height:40px;
+      line-height: 40px;
+      text-align: center;
+      top:0;
+      color:@gray_99;
+      cursor: pointer;
+    }
+    textarea{
+      min-height:120px;
+      resize: none;
+    }
+    select{
+      height:40px !important;
+      line-height: 40px;
+    }
+  }
+
+  .form-textarea {
+    height: 100px;
+  }
+
+  .btnBox {
+    margin-top: 30px;
+    text-align: right;
+
+    button {
+      width: 120px;
+    }
+  }
+}
+.footOper{
+  position: fixed;
+  z-index: 9999;
+  width: calc(100% + 30px);
+  left:-15px;
+  bottom:0;
+  padding:10px 20px;
+  background: @white;
+  text-align: right;
+  box-shadow: 0 -5px 5px rgba(0,0,0,0.1);
+  button {
+    width: 120px;
+  }
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pd15 {
+  padding: 15px;
+}
+.m-t-20{
+    margin-top:20px;
+}
+
+/*修改选项卡的样式*/
+
+.layui-tab {
+  .layui-this {
+    color: @dark_blue  !important;
+
+    &::after {
+      border-color: @dark_blue  !important;
+    }
+  }
+}
+
+/*上传图片*/
+.uploadPicBox {
+  .picList {
+    li {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      float: left;
+      margin: 0 10px 10px 0;
+      position: relative;
+
+      >div {
+        width: 100%;
+        height: 100%;
+      }
+
+      &.img {
+        background: #f8f8f8;
+        border: 1px solid #d5d5d5;
+      }
+
+      .closePic {
+        position: absolute;
+        line-height: 100%;
+        color: #de0000;
+        font-size: 24px;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .inputBtn {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    &.inBtn {
+      line-height: 100px;
+      border: 1px dashed #d5d5d5;
+    }
+
+    .pic1 {
+      width: 70px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .pic2 {
+      width: 100%;
+
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .hideFile {
+      position: absolute;
+      z-index: 10;
+      font-size: 100px;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+
+  }
+}
+
+/*大图展示*/
+.bigPicBox {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+
+  .bigPicModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 90vh;
+      max-height: 90vh;
+    }
+
+    .closePic {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      color: #fff;
+      z-index: 10000;
+      font-size: 28px;
+    }
+  }
+}
+
+.tableModal {
+  display: none;
+  .modalSearchBox {
+    padding: 20px;
+
+    .control-label {
+      min-width: 100px;
+      padding-top: 6px;
+    }
+
+    .btnBox {
+      padding: 20px;
+      text-align: center;
+
+      button {
+        margin: 0 20px;
+      }
+    }
+  }
+
+  .btnBox {
+    padding: 20px;
+    text-align: center;
+
+    button {
+      margin: 0 20px;
+    }
+  }
+
+}
+.pointer {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
+/*head样式*/
+
+.pd0 {
+  padding: 0 !important;
+}
+
+.p-r-15 {
+  padding: 0 15px 0 0;
+}
+
+.m-t-10 {
+  margin-top: 10px !important;
+}
+
+.m-t-15 {
+  margin-top: 15px !important;
+}
+
+.m-l-15 {
+  margin: 0 0 0 15px;
+}
+
+.m-r-15 {
+  margin: 0 15px 0 0;
+}
+
+.m-l-r-15 {
+  margin: 0 15px;
+}
+
+.m-t-b-20 {
+  margin: 20px 0;
+}
+
+.m-15 {
+  margin: 15px;
+}
+
+/*字体颜色*/
+.orange {
+  color: @red_orange;
+}
+
+.red {
+  color: @red;
+}
+
+.blue {
+  color: @blue;
+}
+
+.green {
+  color: @green;
+}
+.yello{
+    color: @orange;
+}
+
+.c333 {
+  color: @gray_33;
+}
+
+.c666 {
+  color: @gray_66;
+}
+
+.c999 {
+  color: @gray_99;
+}
+
+/*字体大小*/
+.fs12 {
+  font-size: 12px;
+}
+
+.fs13 {
+  font-size: 13px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs15 {
+  font-size: 15px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fw600 {
+  font-weight: 600;
+}
+
+.fw500 {
+  font-weight: 500;
+}

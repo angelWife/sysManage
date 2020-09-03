@@ -1,0 +1,448 @@
+@charset 'utf-8';
+.login .container {
+  background-color: none;
+}
+.login .container.bg_img {
+  background-image: url('../images/bg1.jpg');
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.login .loginMian {
+  height: 100%;
+}
+.login .loginMian .tab-content-box .tab-content {
+  display: none;
+}
+.login .loginMian .tab-content-box .tab-content:first-child {
+  display: block;
+}
+.login .loginMian .tab-content-box .input {
+  position: relative;
+}
+.login .loginMian .tab-content-box .input .varify_code {
+  position: absolute;
+  line-height: 40px;
+  right: 0;
+  top: 0;
+  padding: 0 15px;
+}
+.login .loginMian .tab-content-box input {
+  outline: none;
+}
+.login .loginMian .tab-content-box span {
+  display: none;
+}
+.login .label1 {
+  height: 40px;
+  background-color: #d6e6ff;
+  color: #4c8ff7;
+  text-align: left;
+  font-size: 14px;
+  line-height: 40px;
+  text-indent: 50px;
+}
+.login .label2 {
+  height: 40px;
+  background-color: #d6e6ff;
+  color: #4c8ff7;
+  text-align: center;
+  font-size: 14px;
+  line-height: 40px;
+}
+.login .loginForm {
+  width: 30%;
+  min-width: 300px;
+  border-radius: 0.4em;
+  -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  min-height: 300px;
+  padding: 0 0px;
+}
+.login .loginForm .logo {
+  text-align: center;
+  font-size: 30px;
+  margin: 30px auto;
+  color: #fff;
+}
+.login .loginForm .logo img {
+  width: auto;
+  height: 30px;
+}
+.login .loginForm .input {
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.3em;
+  margin-bottom: 30px;
+}
+.login .loginForm .input .error {
+  position: absolute;
+  bottom: -25px;
+  left: 40px;
+  font-size: 13px;
+}
+.login .loginForm .input i {
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #ffffff;
+}
+.login .loginForm .input input {
+  height: 40px;
+  line-height: 40px;
+  background: none;
+  border: 0;
+}
+.login .loginForm .input input:focus {
+  box-shadow: none;
+}
+.login .operBox {
+  line-height: 30px;
+  color: #ffffff;
+}
+.login .operBox input {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  margin-right: 3px;
+}
+.login .varify_code {
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  color: #007bff;
+  cursor: pointer;
+}
+.login .btnBox {
+  margin: 50px 0 20px;
+}
+.login .btnBox button {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+}
+.login .label1 img,
+.login .label2 img {
+  width: 16px;
+  position: relative;
+  top: -3px;
+}
+.logo {
+  color: #b4b2b5;
+}
+.logo img {
+  margin-left: 30px;
+}
+#Dynamic,
+#password {
+  background-color: none;
+  height: 100%;
+}
+#Dynamic {
+  background-color: rgba(0, 0, 0, 0);
+  height: 100%;
+}
+#Dynamic .relative .form-control {
+  padding-right: 100px !important;
+}
+form input[type="checkbox"],
+form input[type="radio"] {
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+}
+form input[type="checkbox"] + label::before,
+form input[type="radio"] + label::before {
+  content: '\a0';
+  display: inline-block;
+  vertical-align: center;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  line-height: 17px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  top: 0px;
+  margin: 0px 4px;
+  border: 1px solid #999;
+}
+form input[type="checkbox"]:checked + label::before,
+form input[type="radio"]:checked + label::before {
+  content: '\2713';
+  font-weight: bold;
+}
+form input[type="checkbox"]:disabled + label::before,
+form input[type="radio"]:disabled + label::before {
+  background: gray;
+  box-shadow: none;
+  color: #555;
+}
+.layui-table-page {
+  position: relative;
+  width: 100%;
+  padding: 7px 7px 0;
+  height: 41px;
+  font-size: 12px;
+  white-space: nowrap;
+  text-align: right;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  padding: 1px;
+  width: 100%;
+  height: 100%;
+  background-color: #007bff;
+}
+.layui-form-checked[lay-skin=primary] i {
+  border-color: #007bff !important;
+  background-color: #007bff;
+  color: #fff;
+}
+.layui-layer-btn .layui-layer-btn0 {
+  border-color: #1e9fff;
+  background-color: #1e9fff;
+  color: #fff !important;
+}
+.layui-form-label {
+  float: left;
+  display: inline-block;
+  padding: 9px 15px;
+  width: auto;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: right;
+}
+.goods_img img {
+  width: 100px;
+  height: 100px;
+}
+.my-icon-search {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+}
+.my-icon-del {
+  position: absolute;
+  top: 8px;
+  right: -5px;
+}
+.mr30 {
+  margin-right: 100px;
+  margin-top: 100px;
+}
+.pd20 {
+  padding: 20px;
+}
+.mt60 {
+  margin-top: 60px;
+}
+.form {
+  margin-top: -20px;
+  width: 92%;
+}
+.exit-icon {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  background-image: url('../images/icon-exit@2x.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  border-radius: 100%;
+  display: inline-block;
+}
+.wrap-icon {
+  display: inline-block;
+  line-height: 20px;
+  margin-top: 16px;
+}
+.service-icon {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  background-image: url('../images/icon-service@2x.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  border-radius: 100%;
+  display: inline-block;
+}
+.user-text {
+  line-height: 20px;
+  text-align: left;
+}
+.letter-content {
+  width: 100%;
+  height: 250px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+.letter-content p span:nth-of-type(3) {
+  float: right;
+  margin-right: 20px;
+}
+.my-layer-con {
+  width: 800px;
+  height: 550px;
+}
+#ele-xl {
+  position: absolute;
+  z-index: 10;
+  background-color: white;
+  width: 90%;
+  border: 1px solid #c0c0c0;
+  display: none;
+}
+/*支付保证金*/
+.pay_bond .stepBox {
+  padding: 80px 0;
+  text-align: center;
+}
+.pay_bond .stepBox li {
+  display: inline-block;
+  margin-left: -4px;
+}
+.pay_bond .stepBox li > div {
+  float: left;
+}
+.pay_bond .stepBox li .line {
+  width: calc(100vw / 20);
+  height: 34px;
+  border-bottom: 2px solid #999999;
+}
+.pay_bond .stepBox li .text_box {
+  padding: 0 20px;
+  position: relative;
+}
+.pay_bond .stepBox li .text_box .number {
+  display: inline-block;
+  width: 68px;
+  height: 68px;
+  border-radius: 68px;
+  border: 2px solid #999999;
+  background: none;
+  line-height: 64px;
+  text-align: center;
+  font-size: 30px;
+  color: #999999;
+}
+.pay_bond .stepBox li .text_box .text {
+  position: absolute;
+  top: 78px;
+  color: #999999;
+  font-size: 18px;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.pay_bond .stepBox li.now .line {
+  border-color: #4C8FF7;
+}
+.pay_bond .stepBox li.now .line.after {
+  border-color: #999999;
+}
+.pay_bond .stepBox li.now .text_box .number {
+  border-color: #4C8FF7;
+  background: #4C8FF7;
+  color: #ffffff;
+}
+.pay_bond .stepBox li.now .text_box .text {
+  color: #4C8FF7;
+}
+.pay_bond .stepBox li.before .line {
+  border-color: #4C8FF7;
+}
+.pay_bond .stepBox li.before .text_box .number {
+  border-color: #4C8FF7;
+  color: #4C8FF7;
+}
+.pay_bond .stepBox li.before .text_box .text {
+  color: #4C8FF7;
+}
+.pay_bond .msg {
+  text-align: center;
+  font-size: 16px;
+  color: #757575;
+}
+.pay_bond .pay_way_list {
+  padding: 20px 30px;
+}
+.pay_bond .pay_way_list li {
+  float: left;
+  width: 348px;
+  height: 100px;
+  border: 1px solid #e6e6e6;
+  line-height: 98px;
+  padding: 0 20px;
+  margin: 20px 20px 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.pay_bond .pay_way_list li label {
+  margin: 0;
+  display: block;
+  cursor: pointer;
+}
+.pay_bond .pay_way_list li input {
+  display: inline-block;
+  margin-right: 20px;
+}
+.pay_bond .pay_way_list li img {
+  display: inline-block;
+  height: 48px;
+  vertical-align: middle;
+  transform: translateY(-5px);
+}
+.pay_bond .pay_way_list li span {
+  display: inline-block;
+  font-size: 30px;
+  margin-left: 20px;
+  color: #757575;
+}
+.pay_bond .pay_number {
+  padding: 20px 30px;
+  color: #999999;
+}
+.pay_bond .pay_number span {
+  font-size: 44px;
+}
+.pay_bond .btnBox {
+  padding: 0 30px 20px;
+}
+.pay_bond .btnBox button {
+  width: 100px;
+}
+.pay_bond .pay_modal {
+  display: none;
+  background: #fff;
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  padding: 30px 20px;
+}
+.pay_bond .pay_modal .msg {
+  line-height: 60px;
+  font-size: 30px;
+  color: #757575;
+}
+.pay_bond .pay_modal .msg img {
+  height: 60px;
+}
+.pay_bond .pay_modal .layui-row {
+  padding: 30px 0;
+}
+.pay_bond .pay_modal .modal_btn {
+  padding: 20px 0;
+}
+.pay_bond .pay_modal .modal_btn button {
+  width: 120px;
+  margin: 0 20px;
+}
