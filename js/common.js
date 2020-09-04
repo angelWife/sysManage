@@ -394,51 +394,60 @@ function clickBack() {
 	removeTab(tab)
 }
 
-function init_menu(menus) {
-	var str = ''
-	var a_str = ''
-	for (var i = 0; i < menus.length; i++) {
-		var mmmId = menus[i]['id']
-		var mmmDomId = 'indexMenu' + mmmId
-		if (menus[i]['icon']) {
-			a_str = '<span class="' + menus[i]['icon'] + '"></span>&nbsp;'
-		} else if (menus[i]['img_icon']) {
-			a_str =
-				'<img src="/images/yingxiao@2x.png" style="width:30px;height:30px;" />&nbsp;'
-		} else {
-			a_str = ''
-		}
-		if (i == 0) {
-			str +=
-				'<a id="' +
-				mmmDomId +
-				'"  class="active" href="javascript:display_left_menu(' +
-				menus[i]['id'] +
-				');">' +
-				a_str +
-				menus[i]['name'] +
-				'</a>'
-			init_left_menu(menus[i]['id'], menus[i]['children'], true)
-		} else {
-			str +=
-				'<a id="' +
-				mmmDomId +
-				'" href="javascript:display_left_menu(' +
-				menus[i]['id'] +
-				');">' +
-				a_str +
-				menus[i]['name'] +
-				'</a>'
-			init_left_menu(menus[i]['id'], menus[i]['children'], false)
-		}
+function init_menu (menus) {
+	if(menus.length==0){
+		loadMenuAfter();
+		return false;
 	}
-	$('#head_menu').html(str)
-	$('#head_menu a').click(function () {
-		$('#head_menu a').removeClass('active')
-		$(this).addClass('active')
-	})
+    var str = '<ul  class="menuItem">'
+    for (var i = 0; i < menus.length; i++) {
+        var item = menus[i];
+        if (i == 0) {
+            str += '<li class="active"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><text>' + item.name + '</text></a>'
+        } else {
+            var li_c_class=item.children?'hasChild':'';
+            if (item.icon) {
+                str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" class="' + item.icon + '" data-src="' +item.url + '" data-name="' + item.name + '"><text>'+ item.name + '</text>'
+            } else {
+                str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" data-src="' +item.url + '" data-name="' + item.name + '"><text>'+ item.name + '</text>'
+            }
+            if (item.children) {
+                str += '<i class="iconfont icon-down"></i></a>';
+                str += '<ul class="childMenu">'
+                for (var j = 0; j < menus.length; j++) {
+                    var item_c = menus[j]
+                    var li_class=item_c.children?'hasChild':'';
+                    if (item_c.icon) {
+                        str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" class="hasIcon ' + item_c.icon + '" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><text>'+ item_c.name + '</text>'
+                    } else {
+                        str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><text>'+ item_c.name + '</text>'
+                    }
 
-	loadMenuAfter()
+                    if (item_c.children) {
+                        str += '<i class="iconfont icon-down"></i></a>'
+                        str += '<ul class="childMenu">'
+                        for (var k = 0; k < item.children.length; k++) {
+                            var item_child = item.children[k]
+                            str += '<li><a class="noIcon" id="' + item_child.id + '" href="javascript:void(0);" data-src="' + item_child.url + '" data-name="' + item_child.name + '">' +
+                                '<text>' + item_child.name + '</text></a></li>'
+                        }
+                        str += '</ul>'
+                    } else {
+                        str += '</a>'
+                    }
+                    str += '</li>'
+
+                }
+                str += '</ul>'
+            } else {
+                str += '</a>'
+            }
+        }
+        str += '</li>'
+    }
+    str += '</ul>'
+    $('#menuBox').html(str)
+    loadMenuAfter()
 }
 
 function display_left_menu(id) {

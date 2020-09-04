@@ -11,15 +11,10 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../dist/fonts/iconfont.css">
-
-    <!-- <script src="/dist/layui/layui.js"></script> -->
     <script src="../js/jquery-2.1.1.js"></script>
-    <script src="../myadmin/"></script>
     <script src="../js/common.js"></script>
     <script src="../dist/layui/layui.all.js"></script>
-    <script type="text/javascript" src="//api.map.baidu.com/getscript?v=3.0&ak=4qo3nCgKtZuZCIEkAXVGLi3T"></script>
     <script>
-
         var layer = layui.layer;
         var laydate = layui.laydate;
         var table = layui.table;
@@ -142,29 +137,6 @@
                 </div>
             </div>
             <div class="m_right col" id="body_right">
-                <div class="headData">
-                    <ul class="map_head layui-form clearfix">
-                        <li onclick="openList()">
-                            井盖总数：<span class="red">65415</span>个
-                        </li>
-                        <li class="green" onclick="openList()">
-                            <span class="iconfont icon-zhuangtai1"></span>
-                            <span class="text">正常闭合：5554个</span>
-                        </li>
-                        <li class="blue">
-                            <span class="iconfont icon-zhuangtai"></span>
-                            <span class="text">合法开启：120个</span>
-                        </li>
-                        <li class="red">
-                            <span class="iconfont icon-zhuangtai"></span>
-                            <span class="text">非法开启：10个</span>
-                        </li>
-                        <li class="yello">
-                            <span class="iconfont icon-zhuangtai2"></span>
-                            <span class="text">故障：10个</span>
-                        </li>
-                    </ul> 
-                </div>
                 <div class="treeBox bg_white">
                     <div class="home" id="menuClick">《</div>
                     <div class="treeList">
@@ -179,9 +151,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="treeModal">
-        <div id="treeDemo"></div>
     </div>
 </body>
 <script>

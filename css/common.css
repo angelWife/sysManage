@@ -49,10 +49,6 @@ button.btn {
 .fullHeight {
   height: 100%;
 }
-.combody {
-  background: #EFF3F6;
-  padding: 15px;
-}
 .row {
   margin: 0;
   padding: 0;
@@ -237,6 +233,15 @@ button.btn {
   line-height: 40px;
   overflow: hidden;
 }
+.container .body .m_left .menuBox ul li a .img_icon {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 5px;
+  height: 18px;
+  vertical-align: center;
+  position: relative;
+  top: -2px;
+}
 .container .body .m_left .menuBox ul li a.iconfont {
   padding-left: 35px;
 }
@@ -312,6 +317,12 @@ button.btn {
   transition: all 0.5s linear 0s;
 }
 .container .body .m_left .menuBox ul.childMenu li a {
+  padding-left: 36px;
+}
+.container .body .m_left .menuBox ul.childMenu li a.hasIcon {
+  padding-left: 70px;
+}
+.container .body .m_left .menuBox ul.childMenu li a.noIcon {
   padding-left: 70px;
 }
 .container .body .m_left .menuBox ul.childMenu li a::before {
@@ -434,10 +445,15 @@ button.btn {
   color: #B40000;
 }
 .container .body .m_right .main {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 100px);
+  background: #EFF3F6;
+  padding: 15px 5px 15px 15px;
 }
 .container .body .m_right .main .iframe {
   background: #EFF3F6;
+}
+.container .body .m_right .main .combody {
+  padding-right: 10px;
 }
 .container .showIcon .menuBox {
   overflow: hidden;
@@ -820,4 +836,23 @@ button.btn {
 }
 .fw500 {
   font-weight: 500;
+}
+/*滚动条*/
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 7px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 7px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #999;
+}
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  background: #ededed;
 }

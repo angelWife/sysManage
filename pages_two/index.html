@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="../dist/layui/css/layui.css">
+    <link rel="stylesheet" href="../dist/bootstrap4/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../dist/fonts/iconfont.css">
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../dist/layui/layui.all.js"></script>
+    <script>
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+        var table = layui.table;
+        var carousel = layui.carousel
+        var laytree = layui.tree;
+        var layTreeSelect = layui.treeSelect;
+        var layUpload = layui.upload;
+        var layElement = layui.element;
+    // });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head row">
+            <div class="logo">
+                <!-- <img src="../images/icon-logo.png" /> -->
+                泉铸智慧管网管理平台
+            </div>
+
+            <!-- <div class="headBar" id="head_menu"></div> -->
+
+            <div class="col-md">
+                <ul class="headMenu" id="headNav">
+                    <li>
+                        <a href="javascript:;" title="联系客服">
+                            <div class="user-icon row align-items-center">
+                                欢迎您，张三
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="退出">
+                            <div class="wrap-icon">
+                                <!-- <div class="exit-icon"></div> -->
+                                <div class="icon-text">退出</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="body row">
+            <div class="m_left" id="body_left" style="overflow: auto;">
+                <div class="menuBox" id="menuBox">
+                    <ul class="menuItem">
+                        <li class="active">
+                            <a class="iconfont icon-yemian-copy-copy" href="javascript:void(0);" data-name="首页"
+                                data-src="/html/newPage/index.html">
+                                <text id="navHome">首页</text>
+                            </a>
+                        </li>
+                        <li class="hasChild">
+                            <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="列表数据"
+                                data-src="">
+                                <text id="navHome">监控中心</text>
+                                <i class="iconfont icon-down"></i>
+                            </a>
+                            <ul class="childMenu">
+                                <li class="hasChild">
+                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="列表数据"
+                                        data-src="/html/newPage/mapList.html">
+                                        <text id="navHome">菜单一</text>
+                                        <i class="iconfont icon-down"></i>
+                                    </a>
+                                    <ul class="childMenu">
+                                        <li>
+                                            <a href="javascript:void(0);" data-name="列表数据"
+                                                data-src="/html/newPage/mapList.html">
+                                                <text id="navHome">菜单一</text>
+                                            </a>
+                                            <li></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="列表数据"
+                                    data-src="/html/newPage/list.html">
+                                    <text id="navHome">菜单二</text>
+                                </a>
+                                </li>
+                                <li>
+                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="新增"
+                                    data-src="/html/newPage/form.html">
+                                        <text id="navHome">新增表单</text>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="新增"
+                                    data-src="/html/newPage/dialogDemo.html">
+                                        <text id="navHome">新增弹窗</text>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="状态数据"
+                                data-src="html/newPage/statuList.html">
+                                <text id="page_statuList">报警处理</text>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="添加设备"
+                                data-src="html/newPage/addEquipment.html">
+                                <text id="page_statuList">添加设备</text>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="上传工单"
+                                data-src="html/newPage/uploadPage.html">
+                                <text id="page_statuList">上传工单</text>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="新增角色"
+                                data-src="html/newPage/addUser.html">
+                                <text id="page_statuList">新增角色</text>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m_right col" id="body_right">
+                <div class="treeBox bg_white">
+                    <div class="home" id="menuClick">《</div>
+                    <div class="treeList">
+                        <div class="treeMain" id="headTree">
+                            <a class="active" href="javascript:;" data-url="/html/newPage/index.html" style="padding:0 10px;">首页</a>
+                        </div>
+                    </div>
+                    <div class="closeAll glyphicon glyphicon-off"></div>
+                </div>
+                <div class="main" id="mainIframe">
+                    <iframe src="/html/newPage/index.html" class="iframe" width="100%" height="100%" frameBorder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var menus = [
+        // {"id":"1","name":"营销管理","icon":"iconfont icon-yingxiaozhongxin","img_icon":"/images/yingxiao@2x.png","children":[
+        //       {"name":"营销管理","icon":"iconfont icon-yingxiaozhongxin","img_icon":"/images/yingxiao@2x.png","children":[
+        //         {"name":"粉丝管理","url":"html/marketing/funs_list.html"},
+        //         {"name":"私信管理","url":"html/marketing/private_letter_list.html"},
+        //         {"name":"发帖管理","url":"html/marketing/post_list.html"},
+        //         {"name":"广告管理","url":"html/marketing/ad_manage_list.html"},
+        //         {"name":"广告购买","url":"html/marketing/ad_list.html"},
+        //         {"name":"客服管理","url":"html/marketing/kefu_list.html"},
+        //         {"name":"在线客服","url":"html/marketing/chat.html"},
+        //         {"name":"知识库管理","url":"html/marketing/knowledge_list.html"},
+        //         {"name":"消息管理","url":"html/marketing/news_list.html"},
+        //       ]}
+
+        //       ]
+        // },
+        {
+            "id": "2",
+            "name": "商铺管理",
+            "icon": "iconfont icon-shangpu",
+            "children": [{
+                "name": "商铺管理",
+                "icon": "iconfont icon-shangpu",
+                "children": [{
+                    "name": "商品管理",
+                    "url": "html/shop/goods_list.html"
+                },
+                {
+                    "name": "优惠券管理",
+                    "url": "html/shop/coupon_list.html"
+                },
+                {
+                    "name": "订单管理",
+                    "url": "html/shop/order_list.html"
+                },
+                {
+                    "name": "退换货管理",
+                    "url": "html/shop/order_refund_list.html"
+                },
+                {
+                    "name": "商品评价管理",
+                    "url": "html/shop/evaluate_list.html"
+                },
+                {
+                    "name": "商品销售管理",
+                    "url": "html/shop/goods_sale_list.html"
+                },
+                {
+                    "name": "运费模板管理",
+                    "url": "html/shop/freight_template_list.html"
+                },
+
+                ]
+            }]
+        },
+        {
+            "id": "3",
+            "name": "财务管理",
+            "icon": "iconfont icon-caiwuguanli",
+            "children": [{
+                "name": "财务管理",
+                "icon": "iconfont icon-caiwuguanli",
+                "children": [{
+                    "name": "会员返利",
+                    "url": "html/finance/rebate_list.html"
+                },
+                {
+                    "name": "对账单管理",
+                    "url": "html/finance/reconciliation_list.html"
+                },
+                {
+                    "name": "人民币账户管理",
+                    "url": "html/finance/account_rmb.html"
+                },
+                {
+                    "name": "星票账户管理",
+                    "url": "html/finance/account_xingpiao.html"
+                },
+                {
+                    "name": "其他支付订单",
+                    "url": "html/finance/qita_pay.html"
+                },
+                ]
+            }]
+        },
+        {
+            "id": "4",
+            "name": "统计",
+            "icon": "iconfont icon-web-icon-",
+            "children": [{
+                "name": "统计",
+                "icon": "iconfont icon-web-icon-",
+                "children": [{
+                    "name": "商品评价统计",
+                    "url": "statistics/evaluation_list.html"
+                },
+                {
+                    "name": "帖子统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                {
+                    "name": "返利统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                {
+                    "name": "订单统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                {
+                    "name": "粉丝统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                {
+                    "name": "退换货统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                {
+                    "name": "财务支出统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                {
+                    "name": "财务收入统计",
+                    "url": "html/statistics/evaluation_list.html"
+                },
+                ]
+            }]
+        }
+
+    ];
+
+    init_menu([]);
+
+    // addTab('首页', 'html/newPage/index.html');
+
+
+
+    $(function () {
+        if ($("#head_menu").children("a").size() > 5) {
+            $(".logo").attr("style", "min-width: 80px;width:150px;overflow: hidden;");
+        }
+    })
+</script>
+
+</html>
