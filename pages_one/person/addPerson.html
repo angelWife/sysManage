@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/one/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+      var layer = layui.layer;
+      var form = layui.form;
+      var carousel = layui.carousel;
+      var laydate = layui.laydate;
+      var table = layui.table;
+      var laytree = layui.tree;
+      var layTreeSelect = layui.treeSelect;
+      var layUpload = layui.upload;
+      var layElement = layui.element;
+    </script>
+  </head>
+
+  <body class="combody">
+    <div class="layui-form layui-row p-t-20">
+      <div class="layui-col-md6">
+        <div class="layui-form-item">
+          <div class="layui-form-label">工号</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder="请输入员工工号"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">姓名</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder="请输入员工姓名"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">职位</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择</option>
+              <option value="0">总经理</option>
+              <option value="1">研发人员</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">户籍地址</div>
+          <div class="layui-input-inline">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择省</option>
+              <option value="0">江苏省</option>
+              <option value="1">浙江</option>
+            </select>
+          </div>
+            <div class="layui-input-inline">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择市</option>
+              <option value="0">苏州市</option>
+              <option value="1">南京市</option>
+            </select>
+            </div>
+            <div class="layui-input-inline">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择区</option>
+              <option value="0">建邺区</option>
+              <option value="1">虎丘区</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">详细地址</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder="请输入详细地址"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-form-item">
+          <div class="layui-form-label">职位</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择</option>
+              <option value="0">总经理</option>
+              <option value="1">研发人员</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">性别</div>
+          <div class="layui-input-block">
+            <input type="radio" name="sex" value="男" title="男" checked>
+            <input type="radio" name="sex" value="女" title="女">
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">联系电话</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder="请输入联系电话"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">备用电话</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder="请输入备用联系电话"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">入职日期</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="date"
+              id="entryDate"
+              placeholder="请选择入职日期"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block text-right">
+          <button type="button" class="layui-btn layui-btn-normal">保存</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      initTable();
+      laydate.render({
+        elem: "#entryDate",
+      });
+      form.render("select");
+      form.render("radio");
+    });
+    function initTable() {
+      table.render({
+        elem: "#personList",
+        data: [
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+          {
+            number: "Y201809060001",
+            username: "张三",
+            sex: "男",
+            age: "26",
+            entryDate: "2018-09-06",
+            bestStaff: "业务员",
+            workDate: "2年",
+            city: "苏州",
+            evaluate: "优秀",
+            remark: "",
+          },
+        ],
+        cellMinWidth: 80,
+        page: true,
+        cols: [
+          [
+            { field: "number", width: 100, title: "员工编号", sort: true },
+            { field: "username", width: 80, title: "姓名" },
+            { field: "sex", width: 80, title: "性别", sort: true },
+            { field: "age", width: 80, title: "年龄", sort: true },
+            { field: "entryDate", width: 120, title: "入职时间", sort: true },
+            { field: "bestStaff", title: "职位" }, //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+            { field: "workDate", title: "在职时间" },
+            { field: "city", title: "所在城市" },
+            { field: "evaluate", title: "评价" },
+            { field: "remark", title: "备注" },
+          ],
+        ],
+      });
+    }
+  </script>
+</html>

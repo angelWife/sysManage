@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/one/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+      var layer = layui.layer;
+      var form = layui.form;
+      var carousel = layui.carousel;
+      var laydate = layui.laydate;
+      var table = layui.table;
+      var laytree = layui.tree;
+      var layTreeSelect = layui.treeSelect;
+      var layUpload = layui.upload;
+      var layElement = layui.element;
+    </script>
+  </head>
+
+  <body class="combody">
+    <div class="searchBox">
+      <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">名称</div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder=""
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">类型</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择</option>
+              <option value="0">总经理</option>
+              <option value="1">研发人员</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">来源</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择</option>
+              <option value="0">总经理</option>
+              <option value="1">研发人员</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">分组</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position" id="position">
+              <option>请选择</option>
+              <option value="0">总经理</option>
+              <option value="1">研发人员</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+          <div class="layui-input-block">
+            <button type="button" class="layui-btn layui-btn-normal">
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listOper layui-row m-t-20 p-l-r-15">
+      <div class="layui-col-md6">
+        <span class="fs16">记录数（1452）</span>
+      </div>
+      <!-- <div class="layui-col-md6 text-right">
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-shangchuan"></i><span class="text">上传</span>
+        </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-xiazai"></i><span class="text">下载</span>
+        </button>
+      </div> -->
+    </div>
+    <div class="p-l-r-15">
+      <div id="recordList"></div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      form.render("select");
+      initTable();
+    });
+    function initTable() {
+      table.render({
+        elem: "#recordList",
+        data: [
+          {
+            type: "线性表",
+            name: "部门人员变化表",
+            source: "自定义报表",
+            group: "分组一",
+            creater: "工藤新一",
+          },
+          {
+            type: "柱状表",
+            name: "部门人员对比表",
+            source: "自定义报表",
+            group: "分组二",
+            creater: "工藤新一",
+          },
+          {
+            type: "线性表",
+            name: "部门人员变化表",
+            source: "自定义报表",
+            group: "分组三",
+            creater: "工藤新一",
+          },
+          {
+            type: "线性表",
+            name: "地区人员对比表",
+            source: "自定义报表",
+            group: "分组四",
+            creater: "工藤新一",
+          },
+        ],
+        cellMinWidth: 80,
+        page: true,
+        cols: [
+          [
+            { field: "type", title: "类型" },
+            { field: "name", title: "名称", templet: "#reportName" },
+            { field: "source", title: "来源" },
+            { field: "group", title: "分组" },
+            { field: "creater", title: "创建人" },
+          ],
+        ],
+      });
+    }
+    function linkToReport(obj) {
+      var name = $(obj).data("name");
+      parent.$.addTab(name, "/pages_one/report/lineView.html");
+    }
+  </script>
+  <script type="text/html" id="reportName">
+    <a
+      href="javascript:;"
+      onclick="linkToReport(this)"
+      data-name="{{d.name}}"
+      class="layui-table-link"
+      >{{ d.name }}</a
+    >
+  </script>
+</html>

@@ -1,4 +1,7 @@
 @import 'base.less';
+*{
+  box-sizing: border-box;
+}
 
 a {
   cursor: pointer;
@@ -487,14 +490,9 @@ button {
         .iframe {
           background: #EFF3F6;
         }
-        .combody{
-          padding-right:10px;
-        }
       }
     }
   }
-
-
   .showIcon {
     .menuBox {
       overflow: hidden;
@@ -549,29 +547,6 @@ button {
       }
     }
   
-  }
-}
-
-
-.topOper {
-  margin-top: 15px !important;
-}
-
-.searchBox {
-  padding: 20px;
-  border: 1px solid @gray_e6;
-  background: @white;
-  .layui-form-label{
-    min-width: 100px;
-  }
-  select{
-    width: 173px !important;
-  }
-  .form-group{
-    margin-bottom:15px;
-  }
-  .searchBtn{
-    padding:0 20px;
   }
 }
 .comModal{
@@ -837,11 +812,18 @@ button {
 .pd0 {
   padding: 0 !important;
 }
-
+.p-t-20{
+  padding-top:20px;
+}
 .p-r-15 {
   padding: 0 15px 0 0;
 }
-
+.p-l-r-15{
+  padding:0 15px;
+}
+.p-t-b-10{
+  padding:10px 0;
+}
 .m-t-10 {
   margin-top: 10px !important;
 }

@@ -1,4 +1,7 @@
 @charset 'utf-8';
+* {
+  box-sizing: border-box;
+}
 a {
   cursor: pointer;
 }
@@ -452,9 +455,6 @@ button.btn {
 .container .body .m_right .main .iframe {
   background: #EFF3F6;
 }
-.container .body .m_right .main .combody {
-  padding-right: 10px;
-}
 .container .showIcon .menuBox {
   overflow: hidden;
 }
@@ -520,26 +520,6 @@ button.btn {
   -ms-transition: all 0.3s linear 0s;
   -o-transition: all 0.3s linear 0s;
   transition: all 0.3s linear 0s;
-}
-.topOper {
-  margin-top: 15px !important;
-}
-.searchBox {
-  padding: 20px;
-  border: 1px solid #e6e6e6;
-  background: #ffffff;
-}
-.searchBox .layui-form-label {
-  min-width: 100px;
-}
-.searchBox select {
-  width: 173px !important;
-}
-.searchBox .form-group {
-  margin-bottom: 15px;
-}
-.searchBox .searchBtn {
-  padding: 0 20px;
 }
 .comModal {
   background: #ffffff;
@@ -760,8 +740,17 @@ button.btn {
 .pd0 {
   padding: 0 !important;
 }
+.p-t-20 {
+  padding-top: 20px;
+}
 .p-r-15 {
   padding: 0 15px 0 0;
+}
+.p-l-r-15 {
+  padding: 0 15px;
+}
+.p-t-b-10 {
+  padding: 10px 0;
 }
 .m-t-10 {
   margin-top: 10px !important;

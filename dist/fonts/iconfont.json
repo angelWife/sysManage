@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4562784",
+      "name": "总代理账号",
+      "font_class": "zongdailizhanghao",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "597548",
+      "name": "修改",
+      "font_class": "xiugai-copy",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "1190643",
+      "name": "人员",
+      "font_class": "renyuan",
+      "unicode": "e7e6",
+      "unicode_decimal": 59366
+    },
+    {
+      "icon_id": "1263386",
+      "name": "员工入职",
+      "font_class": "yuangongruzhi",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "2045586",
+      "name": "报表",
+      "font_class": "icon-p_mrpbaobiao",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "6265394",
+      "name": "流程-入职管理",
+      "font_class": "flow-entry",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "6773143",
+      "name": "文件-特殊登记",
+      "font_class": "wj-tsdj",
+      "unicode": "e752",
+      "unicode_decimal": 59218
+    },
+    {
+      "icon_id": "7534762",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "10149429",
+      "name": "离职",
+      "font_class": "lizhi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "13799825",
+      "name": "档案",
+      "font_class": "ziyuan",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
       "icon_id": "8348134",
       "name": "上传",
       "font_class": "shangchuan",

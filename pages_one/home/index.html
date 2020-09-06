@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../dist/bootstrap4/css/bootstrap.css" />
   <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
   <link rel="stylesheet" href="../../css/common.css" />
-  <link rel="stylesheet" href="../../css/map.css" />
+  <link rel="stylesheet" href="../../css/one/style.css" />
   <script src="../../js/jquery-2.1.1.js"></script>
   <script src="../../dist/layui/layui.all.js"></script>
   <script>
@@ -30,122 +30,166 @@
   <div class="row" style="background: #fff;height:100%;">
     <div class="col-md-6">
       <div class="comTitle">
-        最新报警
+        优秀员工
       </div>
-      <table class="table myTable" id="dataTable">
-        <thead>
-          <tr>
-            <td>报警时间</td>
-            <td>设备编号</td>
-            <td>设备类型</td>
-            <td>报警原因</td>
-            <td>所在区域</td>
-            <td>操作</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div id="bestStaff"></div>
     </div>
     <div class="col-md-6">
       <div class="comTitle">
-        报警类型
+        城市占比
       </div>
-      <div id="dataChats_two" style="height:280px;"></div>
+      <div class="graphic" id="dataChats_two"></div>
     </div>
     <div class="col-md-6">
       <div class="comTitle">
-        报警数据
+        人事变动
       </div>
-      <div id="dataChats_one" style="height:280px;"></div>
+      <div class="graphic" id="dataChats_one"></div>
     </div>
     <div class="col-md-6">
       <div class="comTitle">
-        区域报警
+        异动时间
       </div>
-      <div id="dataChats_three" style="height:280px;"></div>
+      <div class="graphic" id="dataChats_three"></div>
     </div>
   </div>
 </body>
 <script src="../../js/echarts.min.js"></script>
 <script>
   $(function () {
+    initTable();
     setChatsOne();
     setChatsTwo();
     setChatsThree();
     // setChatsFour();
   });
-
+  function initTable(){
+    table.render({
+    elem: '#bestStaff'
+    ,data:[{
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    },
+    {
+      number:"Y201809060001",
+      username:"张三",
+      sex:"男",
+      age:"26",
+      entryDate:"2018-09-06",
+      bestStaff:"业务员",
+      workDate:"2年",
+      city:"苏州",
+      evaluate:"优秀",
+      remark:"",
+    }
+  ]
+    ,cellMinWidth: 80
+    ,cols: [[
+      {field:'number', width:100, title: '员工编号', sort: true}
+      ,{field:'username', width:80, title: '姓名'}
+      ,{field:'sex', width:80, title: '性别', sort: true}
+      ,{field:'age', width:80, title: '年龄', sort: true}
+      ,{field:'entryDate', width:120, title: '入职时间',sort: true}
+      ,{field:'bestStaff', title: '职位',} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+      ,{field:'workDate', title: '在职时间',}
+      ,{field:'city', title: '所在城市',}
+      // ,{field:'evaluate', title: '评价',}
+      // ,{field:'remark', title: '备注',}
+    ]]
+  });
+  }
   function setChatsOne() {
 
     var myChart = echarts.init(document.getElementById('dataChats_one'));
@@ -196,9 +240,9 @@
       yAxis: [{
         type: 'value',
         name: '收入',
-        min: 0,
-        max: 250,
-        interval: 50,
+        // min: 0,
+        // max: 250,
+        // interval: 50,
         axisLabel: {
           formatter: '{value} ml'
         }
@@ -206,9 +250,9 @@
       {
         type: 'value',
         name: '温度',
-        min: 0,
-        max: 25,
-        interval: 5,
+        // min: 0,
+        // max: 25,
+        // interval: 5,
         axisLabel: {
           formatter: '{value} °C'
         }
@@ -252,8 +296,8 @@
       series: [
         {
           type: 'pie',
-          radius: '55%',
-          center: ['40%', '50%'],
+          radius: '60%',
+          center: ['50%', '50%'],
           data: [
             { value: 1548, name: '幽州', },
             { value: 535, name: '荆州' },

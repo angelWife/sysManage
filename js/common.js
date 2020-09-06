@@ -1,3 +1,304 @@
+(function($){
+	
+})(jQuery);
+jQuery.extend({
+	/**
+	 * 获取当前的iframe的id
+	 */
+	getIframeId:function() {
+		var iframs = $('#mainIframe > .iframe', parent.document)
+		var id = iframs.eq(0).attr('id')
+		$.each(iframs, function (i, v) {
+			if (!$(v).is(':hidden')) {
+				id = $(v).attr('id')
+			}
+		})
+		return id
+	},
+	/**
+	 * 
+	 * @param {string} title 标题 
+	 * @param {string} href 路径
+	 * @param {object} data 传参
+	 * @param {fn} callback 回调
+	 */
+	addTab:function(title, href, data, callback) {
+		if (!href) {
+			layer.alert('正在努力建设中......')
+			return false
+		}
+		var htm = ''
+		var child = $('#headTree', parent.document).children('a')
+		var hasChild = false
+		var index = 0,
+			a_ind = 0
+		var src = href
+		var c_href = setUrl(href);
+		if (child.length > 0) {
+			htm =
+				'<a class="active" href="javascript:;" data-url="' +
+				href +
+				'" title="' +
+				title +
+				'">' +
+				title +
+				'<i class="closeNav iconfont icon-remove"></i></a>'
+			for (var i = 0; i < child.length; i++) {
+				var _a = child.eq(i)
+				var _url = _a.data('url')
+				var a_href = setUrl(_url)
+				if (_a.hasClass('active')) {
+					a_ind = i
+				}
+				if (a_href == c_href) {
+					hasChild = true
+					_a.addClass('active')
+					index = i
+					var s = $("#menuBox [data-name='" + title + "']", parent.document).eq(0)
+					//console.log(s);
+					if (s) {
+						$('#menuBox', parent.document)
+							.find('.active')
+							.removeClass('active')
+						s.addClass('active')
+						var p = s
+							.parent()
+							.prev()
+							.children()
+							.eq(0)
+						if (!p.hasClass('active')) {
+							p.addClass('active')
+						}
+					}
+				} else {
+					_a.removeClass('active')
+				}
+			}
+			$('#navHome', parent.document).removeClass('active')
+			if (hasChild) {
+				$('#mainIframe', parent.document)
+					.children('.iframe')
+					.eq(index)
+					.removeClass('hidden')
+					.siblings()
+					.addClass('hidden')
+			} else {
+				child.eq(a_ind).after(htm)
+			}
+		} else {
+			htm =
+				'<a class="active" href="javascript:;" style="padding:0 10px;" data-url="' +
+				href +
+				'" title="' +
+				title +
+				'">' +
+				title +
+				'</a>'
+			$('#headTree', parent.document).append(htm)
+		}
+		$('#headTree a', parent.document)
+			.off('click')
+			.on('click', function () {
+				var ind = $(this).index()
+				$(this)
+					.addClass('active')
+					.siblings()
+					.removeClass('active')
+				$('#mainIframe', parent.document)
+					.children('.iframe')
+					.addClass('hidden')
+					.eq(ind)
+					.removeClass('hidden')
+				// addTab(title, href);
+			});
+	
+		if (data) {
+			src += src.indexOf("?") != -1 ? "&" : "?";
+			var sparam = "";
+			$.each(data, function (k, v) {
+				if (sparam.length > 0) sparam += "&";
+				sparam += k + "=" + v;
+				console.log(k + "=" + v)
+			});
+			src += sparam;
+		}
+	
+		// $.ajax({
+		// 	url: src,
+		// 	cache: true,
+		// 	type: 'get',
+		// 	dataType: 'html',
+		// 	success: function(res) {
+		var randomTime = new Date().getTime()
+		href +='?radom'+randomTime
+		var html = '<iframe id="iframe' + randomTime + '" class="iframe" data-url="' + href + '" width="100%" height="100%" frameBorder="0" src="' + href + '"></iframe>'
+		var myframe = $('#mainIframe', parent.document).children('.iframe')
+		if (hasChild) {
+			// $.each(myframe, function (i, v) {
+			// 	var n_url = $(v).data('url')
+			// 	var n_href = setUrl(n_url)
+			// 	if (n_href == c_href) {
+			// 		$(v).html(res)
+			// 		$(v).removeClass('hidden')
+			// 		// $(v).append("<div class='red'>我刷行了</div>")
+			// 	}
+			// })
+		} else {
+			$('#mainIframe', parent.document)
+				.children('.iframe')
+				.addClass('hidden')
+			if (myframe.length > 0) {
+				myframe.eq(a_ind).after(html)
+			} else {
+				$('#mainIframe', parent.document).append(html)
+			}
+		}
+		if (callback && typeof callback == 'function') {
+			callback(data)
+		}
+		// },
+		// error: function(error) {
+		// 	layer.alert('正在努力建设中......')
+		// 	$('#headTree .active').remove()
+		// }
+		// })
+		$(".closeNav").off('click').on('click',function(){
+			$.removeTab($(this));
+		});
+	},
+	/**
+	 * 
+	 * @param {string} obj 需要移除的id节点
+	 * @param {string} url 移除的url
+	 */
+	removeTab:function(obj, url) {
+		var $a = $(obj).parent('a')
+		var ind = $a.index()
+		var next = $a.next()
+		var prev = $a.prev()
+		if ($a.hasClass('active')) {
+			if (url) {
+				var ts = $('#headTree > a', parent.document)
+				ts.forEach(function (v, i) {
+					var dom = $(v)
+					if (dom.data('url') == url) {
+						dom.addClass('active')
+						$('#mainIframe', parent.document)
+							.find('.iframe')
+							.eq(i)
+							.removeClass('hidden')
+					} else {
+						dom.removeClass('active')
+					}
+				})
+			} else {
+				if (prev.length > 0) {
+					prev.addClass('active')
+					$('#mainIframe', parent.document)
+						.find('.iframe')
+						.eq(prev.index())
+						.removeClass('hidden')
+				} else if (next.length > 0) {
+					next.addClass('active')
+					$('#mainIframe', parent.document)
+						.find('.iframe')
+						.eq(next.index())
+						.removeClass('hidden')
+				} else {
+					// $("#defaultHome").removeClass('hidden');
+				}
+			}
+			// $('#menuBox')
+			// 	.find('.active')
+			// 	.removeClass('active')
+		}
+		$('#mainIframe', parent.document)
+			.children('.iframe')
+			.eq(ind)
+			.remove()
+		$a.remove()
+	},
+	/***/
+	layerOpen:function(url, title, width, height, data, callback) {
+		var w = width || '800px'
+		var h = height || '550px'
+		if (typeof data == 'function') {
+			callback = data
+			data = {}
+		}
+		layer.open({
+			type: 1,
+			btn: false,
+			area: [w, h],
+			content: '',
+			title: title || false,
+			success: function (dom, index) {
+				var a = $(dom).find('.layui-layer-content')
+				if (a.size() == 1) {
+					var t_id = 'temp_id' + new Date().getTime()
+					a.eq(0).attr('id', t_id)
+					a.eq(0).css('overflow-x', 'hidden')
+					loadHtml(t_id, url, data, callback)
+				}
+			}
+		})
+	},
+	/**
+	 * 上传图片   返回base64
+	 * @param {obj} file input选择的文件
+	 * @param {string} id 存放图片的地方
+	 * @param {string} type 上传图片位置
+	 */
+	preview:function(file, id, type) {
+		var prevDiv = $('#' + id)
+		if (file.files && file.files[0]) {
+			var reader = new FileReader()
+			reader.readAsDataURL(file.files[0])
+			reader.onload = function (evt) {
+				var li =
+					'<li class="img">' +
+					'<div  data-src="' + evt.target.result + '" style="background:url(' + evt.target.result + ') center center no-repeat;background-size:auto 100%;" onclick="showBigPIc(this)"></div>' +
+					'<i class="closePic layui-icon layui-icon-close-fill" onclick="deletePic(this)"></i>' +
+					'</li>'
+				prevDiv.prepend(li)
+			}
+		} else {
+			var li =
+				'<li class="img">' +
+				'<div style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>' +
+				'<i class="closePic layui-icon layui-icon-close-fill" onclick="deletePic(this)"></i></li>'
+			prevDiv.prepend(li)
+		}
+	},
+	/**展示大图 */
+	showBigPIc:function(obj) {
+		var src = $(obj).data('src');
+		if (src) {
+			var html = '<div class="bigPicBox">'
+			html += '<div class="bigPicModal"><img src="' + src + '"/><i class="closePic layui-icon layui-icon-close-fill" onclick="hideBigPic(this)"></i><div>'
+			html += '</div>'
+			$("body", parent.document).append(html)
+		}
+	},
+	/**删除大图 */
+	deletePic:function(obj) {
+		$(obj).parent('li').remove();
+	},
+	hideBigPi:function(obj) {
+		$(obj).parents('.bigPicBox').remove();
+	},
+	/**给必填项加上着重符号 */
+	setFormInput:function() {
+		var _html = $(".required");
+		for (var i = 0; i < _html.length; i++) {
+			if (_html.eq(i).html().indexOf('*') < 0) {
+				var htm = '<span class="red">*</span>' + _html.eq(i).html();
+				_html.eq(i).html(htm);
+			}
+		}
+	}
+
+});
 function loadMenuAfter() {
 	// 菜单缩小
 	$('#menuClick')
@@ -53,7 +354,7 @@ function loadMenuAfter() {
                 setTimeout(function(){
 									li.addClass('active');
 								}, 100);
-                addTab(title, href);
+                $.addTab(title, href);
             }
             return;
 			
@@ -108,163 +409,6 @@ function setUrl(url) {
 	return _url;
 }
 
-function addTab(title, href, data, callback) {
-	if (!href) {
-		layer.alert('正在努力建设中......')
-		return false
-	}
-	var htm = ''
-	var child = $('#headTree', parent.document).children('a')
-	var hasChild = false
-	var index = 0,
-		a_ind = 0
-    var src = href
-	var c_href = setUrl(href);
-	if (child.length > 0) {
-		htm =
-			'<a class="active" href="javascript:;" data-url="' +
-			href +
-			'" title="' +
-			title +
-			'">' +
-			title +
-			'<i class="closeNav iconfont icon-remove" onclick="removeTab(this)"></i></a>'
-		for (var i = 0; i < child.length; i++) {
-			var _a = child.eq(i)
-			var _url = _a.data('url')
-			var a_href = setUrl(_url)
-			if (_a.hasClass('active')) {
-				a_ind = i
-			}
-			if (a_href == c_href) {
-				hasChild = true
-				_a.addClass('active')
-				index = i
-				var s = $("#menuBox [data-name='" + title + "']", parent.document).eq(0)
-				//console.log(s);
-				if (s) {
-					$('#menuBox', parent.document)
-						.find('.active')
-						.removeClass('active')
-					s.addClass('active')
-					var p = s
-						.parent()
-						.prev()
-						.children()
-						.eq(0)
-					if (!p.hasClass('active')) {
-						p.addClass('active')
-					}
-				}
-			} else {
-				_a.removeClass('active')
-			}
-		}
-		$('#navHome', parent.document).removeClass('active')
-		if (hasChild) {
-			$('#mainIframe', parent.document)
-				.children('.iframe')
-				.eq(index)
-				.removeClass('hidden')
-				.siblings()
-				.addClass('hidden')
-		} else {
-			child.eq(a_ind).after(htm)
-		}
-	} else {
-		htm =
-			'<a class="active" href="javascript:;" style="padding:0 10px;" data-url="' +
-			href +
-			'" title="' +
-			title +
-			'">' +
-			title +
-			'</a>'
-		$('#headTree', parent.document).append(htm)
-	}
-	$('#headTree a', parent.document)
-		.off('click')
-		.on('click', function () {
-			var ind = $(this).index()
-			$(this)
-				.addClass('active')
-				.siblings()
-				.removeClass('active')
-			$('#mainIframe', parent.document)
-				.children('.iframe')
-				.addClass('hidden')
-				.eq(ind)
-				.removeClass('hidden')
-			// addTab(title, href);
-		})
-
-	// if (hasChild && !refresh) {
-	//     return false
-	// }
-
-	if (data) {
-		src += src.indexOf("?") != -1 ? "&" : "?";
-		var sparam = "";
-		$.each(data, function (k, v) {
-			if (sparam.length > 0) sparam += "&";
-			sparam += k + "=" + v;
-			console.log(k + "=" + v)
-		});
-		src += sparam;
-	}
-
-	// $.ajax({
-	// 	url: src,
-	// 	cache: true,
-	// 	type: 'get',
-	// 	dataType: 'html',
-	// 	success: function(res) {
-	var randomTime = new Date().getTime()
-	href +='?radom'+randomTime
-	var html = '<iframe id="iframe' + randomTime + '" class="iframe" data-url="' + href + '" width="100%" height="100%" frameBorder="0" src="' + href + '"></iframe>'
-	var myframe = $('#mainIframe', parent.document).children('.iframe')
-	if (hasChild) {
-		// $.each(myframe, function (i, v) {
-		// 	var n_url = $(v).data('url')
-		// 	var n_href = setUrl(n_url)
-		// 	if (n_href == c_href) {
-		// 		$(v).html(res)
-		// 		$(v).removeClass('hidden')
-		// 		// $(v).append("<div class='red'>我刷行了</div>")
-		// 	}
-		// })
-	} else {
-		$('#mainIframe', parent.document)
-			.children('.iframe')
-			.addClass('hidden')
-		if (myframe.length > 0) {
-			myframe.eq(a_ind).after(html)
-		} else {
-			$('#mainIframe', parent.document).append(html)
-		}
-	}
-	if (callback && typeof callback == 'function') {
-		callback(data)
-	}
-	// },
-	// error: function(error) {
-	// 	layer.alert('正在努力建设中......')
-	// 	$('#headTree .active').remove()
-	// }
-	// })
-}
-
-function getIframeId() {
-	var iframs = $('#mainIframe > .iframe', parent.document)
-	var id = iframs.eq(0).attr('id')
-	$.each(iframs, function (i, v) {
-		if (!$(v).is(':hidden')) {
-			id = $(v).attr('id')
-		}
-	})
-	return id
-}
-
 function loadHtml(dom, url, data, callback, title) {
 	if (callback && typeof callback == 'string') {
 		title = callback
@@ -298,100 +442,11 @@ function loadHtml(dom, url, data, callback, title) {
 	}
 }
 
-function removeTab(obj, url) {
-	var $a = $(obj).parent('a')
-	var ind = $a.index()
-	var next = $a.next()
-	var prev = $a.prev()
-	if ($a.hasClass('active')) {
-		if (url) {
-			var ts = $('#headTree > a', parent.document)
-			ts.forEach(function (v, i) {
-				var dom = $(v)
-				if (dom.data('url') == url) {
-					dom.addClass('active')
-					$('#mainIframe', parent.document)
-						.find('.iframe')
-						.eq(i)
-						.removeClass('hidden')
-				} else {
-					dom.removeClass('active')
-				}
-			})
-		} else {
-			if (prev.length > 0) {
-				prev.addClass('active')
-				$('#mainIframe', parent.document)
-					.find('.iframe')
-					.eq(prev.index())
-					.removeClass('hidden')
-			} else if (next.length > 0) {
-				next.addClass('active')
-				$('#mainIframe', parent.document)
-					.find('.iframe')
-					.eq(next.index())
-					.removeClass('hidden')
-			} else {
-				// $("#defaultHome").removeClass('hidden');
-			}
-		}
-		// $('#menuBox')
-		// 	.find('.active')
-		// 	.removeClass('active')
-	}
-	$('#mainIframe', parent.document)
-		.children('.iframe')
-		.eq(ind)
-		.remove()
-	$a.remove()
-	return
-	var children = $('#headTree').children()
-	if (!children || children.length <= 0) {
-		$('#menuBox')
-			.find('.active')
-			.removeClass('active')
-		if ($('#headTree').data('url')) {
-			loadHtml('mainIframe', $('#headTree').data('url'))
-		} else {
-			loadHtml('mainIframe', '/index/home')
-		}
-	} else {
-		var last = null
-		if (children.length > 0) {
-			last = children.eq(children.length - 1)
-		}
-		// console.log(last);
-
-		if (last && last.data('url')) {
-			var a_url = last.data('url')
-			var s = $("#menuBox [data-src='" + a_url + "']").eq(0)
-			// console.log(s);
-			if (s) {
-				$('#menuBox')
-					.find('.active')
-					.removeClass('active')
-				s.addClass('active')
-				var p = s
-					.parent()
-					.prev()
-					.children()
-					.eq(0)
-				if (!p.hasClass('active')) {
-					p.addClass('active')
-				}
-			}
-			loadHtml('mainIframe', a_url)
-		} else {
-			loadHtml('mainIframe', '')
-		}
-	}
-}
-
 function clickBack() {
 	var tab = $('#headTree', parent.document)
 		.children('a.active')
 		.children('.closeNav')
-	removeTab(tab)
+	$.removeTab(tab)
 }
 
 function init_menu (menus) {
@@ -508,87 +563,6 @@ function init_left_menu(id, menus, active) {
 	$('#menuBox').append(str)
 }
 
-function layerOpen(url, title, width, height, data, callback) {
-	var w = width || '800px'
-	var h = height || '550px'
-	if (typeof data == 'function') {
-		callback = data
-		data = {}
-	}
-	layer.open({
-		type: 1,
-		btn: false,
-		area: [w, h],
-		content: '',
-		title: title || false,
-		success: function (dom, index) {
-			var a = $(dom).find('.layui-layer-content')
-			if (a.size() == 1) {
-				var t_id = 'temp_id' + new Date().getTime()
-				a.eq(0).attr('id', t_id)
-				a.eq(0).css('overflow-x', 'hidden')
-				loadHtml(t_id, url, data, callback)
-			}
-		}
-	})
-}
-
-/**
- * 上传图片   返回base64
- * @param {obj} file input选择的文件
- * @param {string} id 存放图片的地方
- * @param {string} type 上传图片位置
- */
-function preview(file, id, type) {
-	var prevDiv = $('#' + id)
-	if (file.files && file.files[0]) {
-		var reader = new FileReader()
-		reader.readAsDataURL(file.files[0])
-		reader.onload = function (evt) {
-			var li =
-				'<li class="img">' +
-				'<div  data-src="' + evt.target.result + '" style="background:url(' + evt.target.result + ') center center no-repeat;background-size:auto 100%;" onclick="showBigPIc(this)"></div>' +
-				'<i class="closePic layui-icon layui-icon-close-fill" onclick="deletePic(this)"></i>' +
-				'</li>'
-			prevDiv.prepend(li)
-		}
-	} else {
-		var li =
-			'<li class="img">' +
-			'<div style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>' +
-			'<i class="closePic layui-icon layui-icon-close-fill" onclick="deletePic(this)"></i></li>'
-		prevDiv.prepend(li)
-	}
-}
-/**删除上传的图片展示 */
-function deletePic(obj) {
-	$(obj).parent('li').remove();
-}
-/**展示大图 */
-function showBigPIc(obj) {
-	var src = $(obj).data('src');
-	if (src) {
-		var html = '<div class="bigPicBox">'
-		html += '<div class="bigPicModal"><img src="' + src + '"/><i class="closePic layui-icon layui-icon-close-fill" onclick="hideBigPic(this)"></i><div>'
-		html += '</div>'
-		$("body", parent.document).append(html)
-	}
-}
-/**删除大图 */
-function hideBigPic(obj) {
-	$(obj).parents('.bigPicBox').remove();
-}
-
-/**给必填项加上着重符号 */
-function setFormInput() {
-	var _html = $(".required");
-	for (var i = 0; i < _html.length; i++) {
-		if (_html.eq(i).html().indexOf('*') < 0) {
-			var htm = '<span class="red">*</span>' + _html.eq(i).html();
-			_html.eq(i).html(htm);
-		}
-	}
-}
 
 // 开关切换
 function switchChange(obj){
