@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "169943",
+      "name": "文件导出",
+      "font_class": "wenjiandaochu",
+      "unicode": "e6a3",
+      "unicode_decimal": 59043
+    },
+    {
+      "icon_id": "521025",
+      "name": "会计核算",
+      "font_class": "huijihesuan",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "12683718",
+      "name": "数据",
+      "font_class": "icon_huabanfuben",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "16670800",
+      "name": "月度成本核算",
+      "font_class": "yueduchengbenhesuan",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
       "icon_id": "4562784",
       "name": "总代理账号",
       "font_class": "zongdailizhanghao",

@@ -1,324 +1,238 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/bootstrap4/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/two/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+      var layer = layui.layer;
+      var carousel = layui.carousel;
+      var laydate = layui.laydate;
+      var table = layui.table;
+      var laytree = layui.tree;
+      var layTreeSelect = layui.treeSelect;
+      var layUpload = layui.upload;
+      var layElement = layui.element;
+      // });
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title></title>
-  <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
-  <link rel="stylesheet" href="../../dist/bootstrap4/css/bootstrap.css" />
-  <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
-  <link rel="stylesheet" href="../../css/common.css" />
-  <link rel="stylesheet" href="../../css/map.css" />
-  <script src="../../js/jquery-2.1.1.js"></script>
-  <script src="../../dist/layui/layui.all.js"></script>
+  <body class="combody">
+    <div class="row" style="background: #fff; height: 100%">
+      <div class="col-md-6">
+        <div class="comTitle">薪资对比</div>
+        <div class="graphic" id="dataChats_one"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="comTitle">支出明细</div>
+        <div class="graphic" id="dataChats_two"></div>
+      </div>
+      <!-- <div class="col-md-6">
+        <div class="comTitle">预算</div>
+        <div class="graphic" id="dataChats_three"></div>
+      </div>
+      <div class="col-md-6">
+        <div class="comTitle">区域报警</div>
+        <div class="graphic" id="dataChats_four"></div>
+      </div> -->
+    </div>
+  </body>
+  <script src="../../js/echarts.min.js"></script>
   <script>
-    var layer = layui.layer
-    var carousel = layui.carousel
-    var laydate = layui.laydate
-    var table = layui.table
-    var laytree = layui.tree
-    var layTreeSelect = layui.treeSelect
-    var layUpload = layui.upload
-    var layElement = layui.element
-			// });
-  </script>
-</head>
+    $(function () {
+      setChatsOne();
+      setChatsTwo();
+      // setChatsThree();
+      // setChatsFour();
+    });
 
-<body class="combody">
-  <div class="row" style="background: #fff;height:100%;">
-    <div class="col-md-6">
-      <div class="comTitle">
-        最新报警
-      </div>
-      <table class="table myTable" id="dataTable">
-        <thead>
-          <tr>
-            <td>报警时间</td>
-            <td>设备编号</td>
-            <td>设备类型</td>
-            <td>报警原因</td>
-            <td>所在区域</td>
-            <td>操作</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-          <tr>
-            <td>18:30</td>
-            <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
-            <td>江苏-苏州</td>
-            <td>
-              <a href="">查看</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-6">
-      <div class="comTitle">
-        报警类型
-      </div>
-      <div id="dataChats_two" style="height:280px;"></div>
-    </div>
-    <div class="col-md-6">
-      <div class="comTitle">
-        报警数据
-      </div>
-      <div id="dataChats_one" style="height:280px;"></div>
-    </div>
-    <div class="col-md-6">
-      <div class="comTitle">
-        区域报警
-      </div>
-      <div id="dataChats_three" style="height:280px;"></div>
-    </div>
-  </div>
-</body>
-<script src="../../js/echarts.min.js"></script>
-<script>
-  $(function () {
-    setChatsOne();
-    setChatsTwo();
-    setChatsThree();
-    // setChatsFour();
-  });
+    function setChatsOne() {
+      var myChart = echarts.init(document.getElementById("dataChats_one"));
 
-  function setChatsOne() {
-
-    var myChart = echarts.init(document.getElementById('dataChats_one'));
-    var option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'cross',
-          crossStyle: {
-            color: '#999'
-          }
-        }
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      toolbox: {
-        feature: {
-          dataView: {
-            show: true,
-            readOnly: false
+      var colors = ["#5793f3", "#d14a61", "#675bba"];
+      var option = {
+        color: colors,
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "cross",
           },
-          magicType: {
-            show: true,
-            type: ['line', 'bar']
+        },
+        grid: {
+          right: "20%",
+        },
+        toolbox: {
+          feature: {
+            dataView: { show: true, readOnly: false },
+            restore: { show: true },
+            saveAsImage: { show: true },
           },
-          restore: {
-            show: true
+        },
+        legend: {
+          data: ["薪资支出"],
+          right: 50,
+        },
+        xAxis: [
+          {
+            type: "category",
+            axisTick: {
+              alignWithLabel: true,
+            },
+            data: [
+              "2010",
+              "2011",
+              "2012",
+              "2013",
+              "2014",
+              "2015",
+              "2016",
+              "2017",
+              "2018",
+              "2019",
+            ],
           },
-          saveAsImage: {
-            show: true
-          }
-        }
-      },
-      legend: {
-        data: ['蒸发量', '平均温度']
-      },
-      xAxis: [{
-        type: 'category',
-        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-        axisPointer: {
-          type: 'shadow'
-        }
-      }],
-      yAxis: [{
-        type: 'value',
-        name: '收入',
-        min: 0,
-        max: 250,
-        interval: 50,
-        axisLabel: {
-          formatter: '{value} ml'
-        }
-      },
-      {
-        type: 'value',
-        name: '温度',
-        min: 0,
-        max: 25,
-        interval: 5,
-        axisLabel: {
-          formatter: '{value} °C'
-        }
-      }
-      ],
-      series: [{
-        name: '与收入',
-        type: 'bar',
-        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
-      },
-      {
-        name: '平均收入',
-        type: 'line',
-        yAxisIndex: 1,
-        data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
-      }
-      ]
-    };
-    myChart.setOption(option);
-  }
-
-  function setChatsTwo() {
-    var myChart = echarts.init(document.getElementById('dataChats_two'));
-    var option = {
-      ltitle: {
-        text: '同名数量统计',
-        subtext: '纯属虚构',
-        left: 'center'
-      },
-      tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)'
-      },
-      legend: {
-        orient: 'vertical',
-        right: 10,
-        top: 20,
-        bottom: 20,
-        data: ['西凉', '益州', '兖州', '荆州', '幽州']
-      },
-      series: [
-        {
-          type: 'pie',
-          radius: '55%',
-          center: ['40%', '50%'],
-          data: [
-            { value: 1548, name: '幽州', },
-            { value: 535, name: '荆州' },
-            { value: 510, name: '兖州' },
-            { value: 634, name: '益州' },
-            { value: 735, name: '西凉' }
-          ],
-          emphasis: {
+        ],
+        yAxis: [
+          {
+            type: "value",
+            name: "",
+            position: "left",
+            axisLine: {
+              lineStyle: {
+                color: colors[2],
+              },
+            },
+            axisLabel: {
+              formatter: "{value} 万元",
+            },
+          },
+        ],
+        series: [
+          {
+            name: "薪资支出",
+            type: "bar",
+            barWidth: "40%",
             itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            }
-          }
-        }
-      ],
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: "#83bff6" },
+                { offset: 0.5, color: "#188df0" },
+                { offset: 1, color: "#188df0" },
+              ]),
+            },
+            data: [260, 270, 300, 290, 310, 320, 332, 341, 354, 350],
+          },
+        ],
+      };
+      myChart.setOption(option);
     }
-    myChart.setOption(option);
-  }
 
-  function setChatsThree() {
-    var myChart = echarts.init(document.getElementById('dataChats_three'));
-    var option = {
-      title: {
-        text: '',
-        subtext: ''
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      legend: {
-        data: ['11月11日', '11月12日']
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'value',
-        boundaryGap: [0, 0.01]
-      },
-      yAxis: {
-        type: 'category',
-        data: ['7:00-9:00', '9:00-10:00', '10:00-13:00', '13:00-15:00', '15:00-17:00',
-          '17:00-19:00', '19:00-21:00', '21:00-7:00'
-        ]
-      },
-      series: [{
-        name: '11月11日',
-        type: 'bar',
-        data: [18203, 23489, 29034, 104970, 131744, 630230, 12354, 2135]
-      }, {
-        name: '11月12日',
-        type: 'bar',
-        data: [18203, 23489, 29034, 104970, 131744, 630230, 12354, 2135]
-      }]
-    };
-    myChart.setOption(option);
-  }
+    function setChatsTwo() {
+      var myChart = echarts.init(document.getElementById("dataChats_two"));
+      var colors = ["#63b2ee", "#76da91", "#76da91","#f89588", "#7cd6cf", "#7cd6cf","#7898e1", "#7898e1", "#7898e1"];
+      var option = {
+        color:colors,
+        title: {
+          text: "财务支出统计",
+          subtext: "纯属虚构",
+          left: "center",
+        },
+        tooltip: {
+          trigger: "item",
+          formatter: "{a} <br/>{b} : {c} ({d}%)",
+        },
+        legend: {
+          orient: "vertical",
+          right: 10,
+          top: 20,
+          bottom: 20,
+          data: ["薪资", "生活", "投资", "消耗", "日常"],
+        },
+        series: [
+          {
+            type: "pie",
+            radius: "55%",
+            center: ["40%", "50%"],
+            data: [
+              { value: 1548, name: "薪资" },
+              { value: 535, name: "生活" },
+              { value: 510, name: "投资" },
+              { value: 634, name: "消耗" },
+              { value: 735, name: "日常" },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
+      };
+      myChart.setOption(option);
+    }
 
-</script>
-
+    function setChatsThree() {
+      var myChart = echarts.init(document.getElementById("dataChats_three"));
+      var option = {
+        title: {
+          text: "",
+          subtext: "",
+        },
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow",
+          },
+        },
+        legend: {
+          data: ["11月11日", "11月12日"],
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true,
+        },
+        xAxis: {
+          type: "value",
+          boundaryGap: [0, 0.01],
+        },
+        yAxis: {
+          type: "category",
+          data: [
+            "7:00-9:00",
+            "9:00-10:00",
+            "10:00-13:00",
+            "13:00-15:00",
+            "15:00-17:00",
+            "17:00-19:00",
+            "19:00-21:00",
+            "21:00-7:00",
+          ],
+        },
+        series: [
+          {
+            name: "11月11日",
+            type: "bar",
+            data: [18203, 23489, 29034, 104970, 131744, 630230, 12354, 2135],
+          },
+          {
+            name: "11月12日",
+            type: "bar",
+            data: [18203, 23489, 29034, 104970, 131744, 630230, 12354, 2135],
+          },
+        ],
+      };
+      myChart.setOption(option);
+    }
+  </script>
 </html>

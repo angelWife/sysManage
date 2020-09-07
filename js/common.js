@@ -469,8 +469,8 @@ function init_menu (menus) {
             if (item.children) {
                 str += '<i class="iconfont icon-down"></i></a>';
                 str += '<ul class="childMenu">'
-                for (var j = 0; j < menus.length; j++) {
-                    var item_c = menus[j]
+                for (var j = 0; j < item.children.length; j++) {
+                    var item_c = item.children[j]
                     var li_class=item_c.children?'hasChild':'';
                     if (item_c.icon) {
                         str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" class="hasIcon ' + item_c.icon + '" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><text>'+ item_c.name + '</text>'
@@ -481,8 +481,8 @@ function init_menu (menus) {
                     if (item_c.children) {
                         str += '<i class="iconfont icon-down"></i></a>'
                         str += '<ul class="childMenu">'
-                        for (var k = 0; k < item.children.length; k++) {
-                            var item_child = item.children[k]
+                        for (var k = 0; k < item_c.children.length; k++) {
+                            var item_child = item_c.children[k]
                             str += '<li><a class="noIcon" id="' + item_child.id + '" href="javascript:void(0);" data-src="' + item_child.url + '" data-name="' + item_child.name + '">' +
                                 '<text>' + item_child.name + '</text></a></li>'
                         }
