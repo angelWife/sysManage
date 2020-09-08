@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/two/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+      var layer = layui.layer;
+      var form = layui.form;
+      var carousel = layui.carousel;
+      var laydate = layui.laydate;
+      var table = layui.table;
+      var laytree = layui.tree;
+      var layTreeSelect = layui.treeSelect;
+      var layUpload = layui.upload;
+      var layElement = layui.element;
+    </script>
+  </head>
+
+  <body class="combody">
+    <div class="searchBox">
+      <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name=""
+              placeholder="请输入查询条件"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-input-block">
+            <button type="button" class="layui-btn layui-btn-normal">
+              确认
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listOper layui-row m-t-20 p-l-r-15">
+      <div class="layui-col-md6">
+        <span class="fs16">记录数（1452）</span>
+      </div>
+      <div class="layui-col-md6 text-right">
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-jia"></i
+          ><span class="text" onclick="addCost()">新增</span>
+        </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-shanchu"></i><span class="text">删除</span>
+        </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+            <i class="iconfont icon-shangchuan"></i><span class="text">上传</span>
+          </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-xiazai"></i><span class="text">下载</span>
+        </button>
+      </div>
+    </div>
+    <div class="p-l-r-15">
+      <div id="personList"></div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      initTable();
+      laydate.render({
+        elem: "#uploadStar",
+      });
+      laydate.render({
+        elem: "#uploadEnd",
+      });
+      form.render("select");
+    });
+    function initTable() {
+      table.render({
+        elem: "#personList",
+        data: [{"Id":3594,"company_id":610,"tax_area_code":"Beijing","tax_area_name":"\u5317\u4eac","report_tax_area":"Beijing","chinese":"\u5317\u4eac","big5":"\u5317\u4eac","english":"Beijing","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3598,"company_id":610,"tax_area_code":"Chengdu","tax_area_name":"\u6210\u90fd","report_tax_area":"Chengdu","chinese":"\u6210\u90fd","big5":"\u6210\u90fd","english":"Chengdu","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3599,"company_id":610,"tax_area_code":"Chongqing","tax_area_name":"\u91cd\u5e86","report_tax_area":"Chongqing","chinese":"\u91cd\u5e86","big5":"\u91cd\u6176","english":"Chongqing","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3597,"company_id":610,"tax_area_code":"Guangzhou","tax_area_name":"\u5e7f\u5dde","report_tax_area":"Guangzhou","chinese":"\u5e7f\u5dde","big5":"\u5ee3\u5dde","english":"Guangzhou","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3593,"company_id":610,"tax_area_code":"Jiangsu","tax_area_name":"\u6c5f\u82cf","report_tax_area":"Jiangsu","chinese":"\u6c5f\u82cf","big5":"\u6c5f\u8607","english":"Jiangsu","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3592,"company_id":610,"tax_area_code":"Shanghai","tax_area_name":"\u4e0a\u6d77","report_tax_area":"Shanghai","chinese":"\u4e0a\u6d77","big5":"\u4e0a\u6d77","english":"Shanghai","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3596,"company_id":610,"tax_area_code":"Shenzhen","tax_area_name":"\u6df1\u5733","report_tax_area":"Shenzhen","chinese":"\u6df1\u5733","big5":"\u6df1\u5733","english":"Shenzhen","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":6415,"company_id":610,"tax_area_code":"Suzhougongyeyuan","tax_area_name":"\u82cf\u5dde\u5de5\u4e1a\u56ed\u533a","report_tax_area":"Suzhougongyeyuan","chinese":"\u82cf\u5dde\u5de5\u4e1a\u56ed\u533a","big5":"\u8607\u5dde\u5de5\u696d\u5712\u5340","english":"Suzhou Gong Ye Yuan Qu","triple_salary":null,"minimum_salary":null,"create_time":"2018-09-11 16:53:01","create_by":null,"update_time":"2018-09-11 16:53:01","update_by":null,"update_by_name":null},{"Id":3600,"company_id":610,"tax_area_code":"Tianjin","tax_area_name":"\u5929\u6d25","report_tax_area":"Tianjin","chinese":"\u5929\u6d25","big5":"\u5929\u6d25","english":"Tianjin","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"},{"Id":3595,"company_id":610,"tax_area_code":"Zhejiang","tax_area_name":"\u6d59\u6c5f","report_tax_area":"Zhejiang","chinese":"\u6d59\u6c5f","big5":"\u6d59\u6c5f","english":"Zhejiang","triple_salary":null,"minimum_salary":null,"create_time":"2017-10-17 14:03:58","create_by":709,"update_time":"2017-10-17 14:03:58","update_by":709,"update_by_name":"SuperAdmin"}],
+        cellMinWidth: 80,
+        page: true,
+        cols: [
+          [
+            { type: "checkbox", fix: "left" },
+            { field: "tax_area_code", title: "税务地区编码"},
+            { field: "tax_area_name", title: "税务地区名称" },
+            { field: "report_tax_area", title: "税务地区" },
+            { field: "triple_salary", title: "三倍去年社平工资" },
+            { field: "minimum_salary", title: "最低工资" },
+            { field: "update_by_name", title: "最后修改用户" },
+            { field: "update_time", title: "最后更新时间" },
+          ],
+        ],
+      });
+    }
+    function addCost(){
+        parent.$.addTab('新增税务地区','/pages_two/setting/addTaxa.html')
+    }
+  </script>
+</html>
