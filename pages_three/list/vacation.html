@@ -124,7 +124,7 @@
         </div>
         <div class="layui-col-md6 text-right">
             <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
-                <i class="iconfont icon-jia"></i><span class="text" onclick="addCost()">新增</span>
+                <i class="iconfont icon-jia"></i><span class="text" onclick="addDate()">新增</span>
             </button>
             <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
                 <i class="iconfont icon-shanchu"></i><span class="text">删除</span>
@@ -416,6 +416,9 @@
                 ],
             ],
         });
+    }
+    function addDate(){
+        parent.$.addTab('新增成本分摊','/pages_three/list/addVacation.html')
     }
 </script>
 

@@ -37,9 +37,7 @@
   </head>
 
   <body class="combody" id="addRelationPage">
-      <div class="formTitle">
-        新增休假数据
-      </div>
+    <div class="formTitle">新增外出数据</div>
     <div class="layui-form layui-row p-t-20">
       <div class="layui-col-md6 layui-col-md-offset3">
         <div class="layui-form-item">
@@ -48,26 +46,28 @@
           </div>
           <div class="layui-input-block">
             <select name="people" lay-filter="people" id="people">
-                <option>请选择</option>
-                <option value="0">张三</option>
-                <option value="1">李四</option>
-              </select>
+              <option>请选择</option>
+              <option value="0">张三</option>
+              <option value="1">李四</option>
+            </select>
           </div>
         </div>
         <div class="layui-form-item">
           <div class="layui-form-label">
-            休假类型&nbsp;<span class="red">*</span>
+            外出类型&nbsp;<span class="red">*</span>
           </div>
           <div class="layui-input-block">
             <select name="people" lay-filter="people" id="people">
-                <option>请选择</option>
-                <option value="0">产假</option>
-                <option value="1">事假</option>
-              </select>
+              <option>请选择</option>
+              <option value="0">001</option>
+              <option value="1">002</option>
+            </select>
           </div>
         </div>
         <div class="layui-form-item">
-          <div class="layui-form-label">假期开始时间&nbsp;<span class="red">*</span></div>
+          <div class="layui-form-label">
+            外出开始时间&nbsp;<span class="red">*</span>
+          </div>
           <div class="layui-input-block">
             <input
               type="text"
@@ -79,78 +79,95 @@
           </div>
         </div>
         <div class="layui-form-item">
-            <div class="layui-form-label">假期结束时间&nbsp;<span class="red">*</span></div>
+          <div class="layui-form-label">
+            外出结束时间&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <input
+              type="text"
+              name="date"
+              id="endDate"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-inline">
+            <div class="layui-form-label">外出天数</div>
             <div class="layui-input-block">
               <input
                 type="text"
-                name="date"
-                id="endDate"
+                disabled
                 autocomplete="off"
                 class="layui-input"
               />
             </div>
           </div>
-        <div class="layui-form-item">
           <div class="layui-inline">
-            <div class="layui-form-label">
-                休假时间
-              </div>
-              <div class="layui-input-block">
-                <input
+            <div class="layui-form-label">外出小时数</div>
+            <div class="layui-input-block">
+              <input
                 type="text"
                 disabled
                 autocomplete="off"
                 class="layui-input"
               />
-              </div>
-          </div>
-          <div class="layui-inline">
-            <div class="layui-form-label">
-                休假小时数
-              </div>
-              <div class="layui-input-block">
-                <input
-                type="text"
-                disabled
-                autocomplete="off"
-                class="layui-input"
-              />
-              </div>
+            </div>
           </div>
         </div>
         <div class="layui-form-item">
           <div class="layui-form-label">来源</div>
           <div class="layui-input-block">
-            <input type="radio" name="sex" value="本人申请" title="本人申请" checked="">
-            <input type="radio" name="sex" value="代申请" title="代申请">
-            <input type="radio" name="sex" value="考情评估" title="考情评估">
-            <input type="radio" name="sex" value="考情评估" title="手动维护">
-            <input type="radio" name="sex" value="考情评估" title="班次预约">
+            <input
+              type="radio"
+              name="sex"
+              value="0"
+              title="本人申请"
+              checked=""
+            />
+            <input type="radio" name="sex" value="0" title="代申请" />
+            <input type="radio" name="sex" value="2" title="考情评估" />
+            <input type="radio" name="sex" value="3" title="手动维护" />
+            <input type="radio" name="sex" value="4" title="班次预约" />
           </div>
         </div>
         <div class="layui-form-item">
           <div class="layui-form-label">已确认</div>
           <div class="layui-input-block p-l-5">
-            <input type="checkbox" name="sex" value="" lay-skin="primary" title="">
+            <input
+              type="checkbox"
+              name="sex"
+              value=""
+              lay-skin="primary"
+              title=""
+            />
           </div>
         </div>
         <div class="layui-form-item">
-          <div class="layui-form-label">
-            附件
-          </div>
+          <div class="layui-form-label">附件</div>
           <div class="layui-input-block">
             <div class="layui-upload">
-                <button type="button" class="layui-btn layui-btn-normal" id="chooseFile">选择文件</button>
-                <button type="button" class="layui-btn" id="uploadFile">开始上传</button>
-              </div>
+              <button
+                type="button"
+                class="layui-btn layui-btn-normal"
+                id="chooseFile"
+              >
+                选择文件
+              </button>
+              <button type="button" class="layui-btn" id="uploadFile">
+                开始上传
+              </button>
+            </div>
           </div>
         </div>
         <div class="layui-form-item">
-          <div class="layui-form-label">
-            原因
-          </div>
+          <div class="layui-form-label">原因</div>
           <div class="layui-input-block">
-            <textarea placeholder="请输入原因" class="layui-textarea"></textarea>
+            <textarea
+              placeholder="请输入原因"
+              class="layui-textarea"
+            ></textarea>
           </div>
         </div>
       </div>
@@ -169,20 +186,23 @@
       laydate.render({
         elem: "#endDate",
       });
+      laydate.render({
+        elem: "#workDate",
+      });
       form.render("select");
       form.render("radio");
       form.render("checkbox");
       layUpload.render({
-        elem: '#chooseFile'
-        ,url: ''
-        ,auto: false
+        elem: "#chooseFile",
+        url: "",
+        auto: false,
         //,multiple: true
-        ,bindAction: '#uploadFile'
-        ,done: function(res){
-        layer.msg('上传成功');
-        console.log(res)
-        }
-    });
+        bindAction: "#uploadFile",
+        done: function (res) {
+          layer.msg("上传成功");
+          console.log(res);
+        },
+      });
     });
   </script>
 </html>

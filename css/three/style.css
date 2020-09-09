@@ -17,6 +17,7 @@
 .combody .layui-form-label {
   width: auto !important;
   min-width: 80px;
+  padding: 8px 0;
 }
 .combody .layui-row {
   padding-right: 40px;

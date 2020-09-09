@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/three/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+      var layer = layui.layer;
+      var form = layui.form;
+      var carousel = layui.carousel;
+      var laydate = layui.laydate;
+      var table = layui.table;
+      var laytree = layui.tree;
+      var layTreeSelect = layui.treeSelect;
+      var layUpload = layui.upload;
+      var layElement = layui.element;
+    </script>
+  </head>
+
+  <body class="combody">
+    <div class="searchBox">
+      <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">组织</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="0">中国大陆</option>
+              <option value="1">中国台湾</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">法人公司</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="0">阿里巴巴集团</option>
+              <option value="1">美的集团</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">员工</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="0">李晓春</option>
+              <option value="1">王艳</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">加班类型</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="0">001</option>
+              <option value="1">002</option>
+              <option value="2">003</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">加班补偿类型</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="0">加班调休</option>
+              <option value="1">正常加班</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">外出加班</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="1">是</option>
+              <option value="0">否</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">来源</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="1">本人申请</option>
+              <option value="0">代申请</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">已确认</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option>请选择</option>
+              <option value="0">是</option>
+              <option value="1">否</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">已撤销</div>
+          <div class="layui-input-block">
+            <select name="position" lay-filter="position">
+              <option value="0">否</option>
+              <option value="1">是</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-form-label">加班日期</div>
+          <div class="layui-inline">
+            <input
+              type="text"
+              name="date"
+              id="uploadStar"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+          <div class="layui-inline">至</div>
+          <div class="layui-inline">
+            <input
+              type="text"
+              name="date"
+              id="uploadEnd"
+              autocomplete="off"
+              class="layui-input"
+            />
+          </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-input-block">
+            <button type="button" class="layui-btn layui-btn-normal">
+              搜索
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listOper layui-row m-t-20 p-l-r-15">
+      <div class="layui-col-md6">
+        <span class="fs16">记录数（1452）</span>
+      </div>
+      <div class="layui-col-md6 text-right">
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-jia"></i
+          ><span class="text" onclick="addDate()">新增</span>
+        </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-shanchu"></i><span class="text">删除</span>
+        </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-shangchuan"></i><span class="text">上传</span>
+        </button>
+        <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+          <i class="iconfont icon-xiazai"></i><span class="text">下载</span>
+        </button>
+      </div>
+    </div>
+    <div class="p-l-r-15">
+      <div id="personList"></div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      initTable();
+      laydate.render({
+        elem: "#uploadStar",
+      });
+      laydate.render({
+        elem: "#uploadEnd",
+      });
+      form.render("select");
+    });
+    function initTable() {
+      table.render({
+        elem: "#personList",
+        data: [
+          {
+            Id: "848",
+            company_id: "610",
+            emp_id: "42835",
+            emp_code: "CN0013",
+            fullname: "刘伟",
+            othername: "july",
+            organization: "研发部",
+            convert_type: "1",
+            convert_type_name: "支付加班费",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2017-12-01",
+            begin_time: "18:00",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "20:00",
+            ot_hours: "2.0000",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "0",
+            pay_current: "0",
+            for_rest_time: "0",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E041712000002",
+            data_source: "4",
+            data_source_name: "手工维护",
+            egress_overtime: "0",
+            ot_begin_date_actuality: null,
+            begin_time_actuality: null,
+            ot_begin_date_time_actuality: null,
+            ot_end_date_actuality: null,
+            end_time_actuality: null,
+            ot_end_date_time_actuality: null,
+            ot_hours_actuality: "0.0000",
+            ot_hours_effective: "0.0000",
+            payment_flow_step: null,
+            data_instance_id: "0",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: null,
+            update_by: "3670",
+            update_by_name: "CN0010",
+            update_time: "2017-12-25 11:53:31",
+            create_by: "3670",
+            create_time: "2017-12-25 11:53:31",
+            attachment: null,
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0000",
+            ot_days_actuality: "0.0000",
+            ot_days: "0.0000",
+          },
+          {
+            Id: "867",
+            company_id: "610",
+            emp_id: "42703",
+            emp_code: "CN0010",
+            fullname: "丁宇",
+            othername: "Ding Yu",
+            organization: "研发部",
+            convert_type: "1",
+            convert_type_name: "支付加班费",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2018-02-01",
+            begin_time: "18:00",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "20:00",
+            ot_hours: "2.0000",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "1",
+            pay_current: "0",
+            for_rest_time: "0",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E041802000001",
+            data_source: "4",
+            data_source_name: "手工维护",
+            egress_overtime: "0",
+            ot_begin_date_actuality: "2018-02-01",
+            begin_time_actuality: "2018-02-01 18:00",
+            ot_begin_date_time_actuality: "2018-02-01 18:00",
+            ot_end_date_actuality: "2018-02-01",
+            end_time_actuality: "2018-02-01 20:00",
+            ot_end_date_time_actuality: "2018-02-01 20:00",
+            ot_hours_actuality: "2.0000",
+            ot_hours_effective: "2.0000",
+            payment_flow_step: null,
+            data_instance_id: "0",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: null,
+            update_by: "3631",
+            update_by_name: null,
+            update_time: "2018-02-07 11:36:36",
+            create_by: "3631",
+            create_time: "2018-02-06 17:20:23",
+            attachment: null,
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0000",
+            ot_days_actuality: "0.0000",
+            ot_days: "0.0000",
+          },
+          {
+            Id: "876",
+            company_id: "610",
+            emp_id: "42835",
+            emp_code: "CN0013",
+            fullname: "刘伟",
+            othername: "july",
+            organization: "研发部",
+            convert_type: "1",
+            convert_type_name: "支付加班费",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2018-03-01",
+            begin_time: "18:00",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "20:00",
+            ot_hours: "2.0000",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "1",
+            pay_current: "0",
+            for_rest_time: "0",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E041803000001",
+            data_source: "4",
+            data_source_name: "手工维护",
+            egress_overtime: "0",
+            ot_begin_date_actuality: "2018-03-01",
+            begin_time_actuality: "2018-03-01 18:00",
+            ot_begin_date_time_actuality: "2018-03-01 18:00",
+            ot_end_date_actuality: "2018-03-01",
+            end_time_actuality: "2018-03-01 20:00",
+            ot_end_date_time_actuality: "2018-03-01 20:00",
+            ot_hours_actuality: "2.0000",
+            ot_hours_effective: "2.0000",
+            payment_flow_step: null,
+            data_instance_id: "0",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: null,
+            update_by: "3670",
+            update_by_name: "CN0010",
+            update_time: "2018-03-04 20:03:57",
+            create_by: "3670",
+            create_time: "2018-03-04 20:03:57",
+            attachment: null,
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0000",
+            ot_days_actuality: "0.0000",
+            ot_days: "0.0000",
+          },
+          {
+            Id: "877",
+            company_id: "610",
+            emp_id: "42704",
+            emp_code: "CN0011",
+            fullname: "宫新",
+            othername: "newse",
+            organization: "理想化公司11111111",
+            convert_type: "1",
+            convert_type_name: "支付加班费",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2018-03-01",
+            begin_time: "18:00",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "20:00",
+            ot_hours: "2.0000",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "1",
+            pay_current: "0",
+            for_rest_time: "0",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E031803000001",
+            data_source: "1",
+            data_source_name: "本人申请",
+            egress_overtime: "0",
+            ot_begin_date_actuality: null,
+            begin_time_actuality: null,
+            ot_begin_date_time_actuality: null,
+            ot_end_date_actuality: null,
+            end_time_actuality: null,
+            ot_end_date_time_actuality: null,
+            ot_hours_actuality: "0.0000",
+            ot_hours_effective: "0.0000",
+            payment_flow_step: null,
+            data_instance_id: "983",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: null,
+            update_by: "3670",
+            update_by_name: "CN0010",
+            update_time: "2018-03-05 11:31:23",
+            create_by: "3670",
+            create_time: "2018-03-05 11:31:23",
+            attachment: null,
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0000",
+            ot_days_actuality: "0.0000",
+            ot_days: "0.0000",
+          },
+          {
+            Id: "49392",
+            company_id: "610",
+            emp_id: "96464",
+            emp_code: "10007",
+            fullname: "悟空",
+            othername: "xin",
+            organization: "项目开发部",
+            convert_type: "1",
+            convert_type_name: "支付加班费",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2018-10-09",
+            begin_time: "18:20",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "18:30",
+            ot_hours: "0.1667",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "1",
+            pay_current: "0",
+            for_rest_time: "0",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E031810000052",
+            data_source: "2",
+            data_source_name: "代申请",
+            egress_overtime: "0",
+            ot_begin_date_actuality: null,
+            begin_time_actuality: null,
+            ot_begin_date_time_actuality: null,
+            ot_end_date_actuality: null,
+            end_time_actuality: null,
+            ot_end_date_time_actuality: null,
+            ot_hours_actuality: "0.0000",
+            ot_hours_effective: "0.0000",
+            payment_flow_step: null,
+            data_instance_id: "1984",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: null,
+            update_by: "9968",
+            update_by_name: "Y004",
+            update_time: "2018-10-23 09:20:48",
+            create_by: "9968",
+            create_time: "2018-10-23 09:20:48",
+            attachment: null,
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0000",
+            ot_days_actuality: "0.0000",
+            ot_days: "0.0208",
+          },
+          {
+            Id: "1517",
+            company_id: "610",
+            emp_id: "55086",
+            emp_code: "10042",
+            fullname: "李梅",
+            othername: null,
+            organization: "人事部",
+            convert_type: "1",
+            convert_type_name: "支付加班费",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2018-08-07",
+            begin_time: "08:00",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "08:20",
+            ot_hours: "0.3333",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "1",
+            pay_current: "0",
+            for_rest_time: "0",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E031809000027",
+            data_source: "2",
+            data_source_name: "代申请",
+            egress_overtime: "0",
+            ot_begin_date_actuality: "2018-08-07",
+            begin_time_actuality: "2018-08-07 08:00",
+            ot_begin_date_time_actuality: "2018-08-07 08:00",
+            ot_end_date_actuality: "2018-08-07",
+            end_time_actuality: "2018-08-07 09:00",
+            ot_end_date_time_actuality: "2018-08-07 09:00",
+            ot_hours_actuality: "1.0000",
+            ot_hours_effective: "0.3333",
+            payment_flow_step: null,
+            data_instance_id: "1880",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: "",
+            update_by: "3670",
+            update_by_name: "CN0010",
+            update_time: "2018-09-10 15:32:10",
+            create_by: "3670",
+            create_time: "2018-09-10 15:32:10",
+            attachment: "",
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0417",
+            ot_days_actuality: "0.1250",
+            ot_days: "0.0417",
+          },
+          {
+            Id: "49378",
+            company_id: "610",
+            emp_id: "96857",
+            emp_code: "A103",
+            fullname: "李现03",
+            othername: "",
+            organization: "人力资源部",
+            convert_type: "2",
+            convert_type_name: "转调休假",
+            payroll_group_id: "1508",
+            ot_code: "ot1",
+            ot_name: "工作日加班",
+            ot_date: "2018-08-02",
+            begin_time: "18:00",
+            is_next_day_start: "0",
+            is_next_day_end: "0",
+            end_time: "18:30",
+            ot_hours: "0.5000",
+            pay_type: "0",
+            input_from: "1",
+            confirm: "1",
+            pay_current: "0",
+            for_rest_time: "1",
+            is_voluntary: "0",
+            is_out_ot: "0",
+            paid: "0",
+            paid_date: null,
+            is_post: "0",
+            serial_number: "00610E031810000046",
+            data_source: "1",
+            data_source_name: "本人申请",
+            egress_overtime: "0",
+            ot_begin_date_actuality: "2018-08-02",
+            begin_time_actuality: "2018-08-02 18:00",
+            ot_begin_date_time_actuality: "2018-08-02 18:00",
+            ot_end_date_actuality: "2018-08-02",
+            end_time_actuality: "2018-08-02 18:15",
+            ot_end_date_time_actuality: "2018-08-02 18:15",
+            ot_hours_actuality: "0.2500",
+            ot_hours_effective: "0.5000",
+            payment_flow_step: null,
+            data_instance_id: "1977",
+            is_cancelled: "0",
+            cancel_time: null,
+            cancel_reason: null,
+            cancel_by: "0",
+            remark: null,
+            update_by: "11438",
+            update_by_name: "E10021",
+            update_time: "2018-10-22 17:32:14",
+            create_by: "11438",
+            create_time: "2018-10-22 17:32:14",
+            attachment: null,
+            attachment_name: null,
+            attachment_path: null,
+            ot_days_effective: "0.0625",
+            ot_days_actuality: "0.0313",
+            ot_days: "0.0625",
+          },
+        ],
+
+        cellMinWidth: 80,
+        page: true,
+        width:'100%',
+        height:'500px',
+        cols: [
+          [
+          {type:'checkbox', fixed: 'left'},
+            { field: "emp_code", width: 160, title: "工号", sort: true },
+            { field: "fullname", width: 120, title: "中文名", sort: true },
+            { field: "otherName", width: 80, title: "英文名" },
+            { field: "ot_name",width: 160, title: "加班类型" },
+            { field: "ot_date",width: 160, title: "加班开始时间" },
+            
+            { field: "is_next_day_start",width: 160, title: "次日开始" },
+            { field: "end_time",width: 160, title: "加班结束时间" },
+            { field: "is_next_day_end",width: 160, title: "次日结束" },
+            { field: "ot_hours",width: 160, title: "加班小时数" },
+            { field: "ot_days",width: 160, title: "天数" },
+            { field: "begin_time_actuality",width: 160, title: "实际加班开始时间" },
+            { field: "end_time_actuality",width: 160, title: "实际加班结束时间" },
+            { field: "ot_hours_actuality",width: 160, title: "实际加班小时数" },
+            { field: "is_out_ot",width: 80, title: "外出加班" },
+            { field: "convert_type_name",width: 160, title: "加班补偿类型" },
+            { field: "data_source_name",width: 160, title: "来源" },
+            { field: "serial_number",width: 160, title: "单号",fixed: 'right'},
+          ],
+        ],
+      });
+    }
+    function addDate() {
+      parent.$.addTab("新增成本分摊", "/pages_three/list/addWork.html");
+    }
+  </script>
+</html>

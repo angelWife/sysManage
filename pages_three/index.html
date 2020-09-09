@@ -74,13 +74,15 @@
                     <div class="home" id="menuClick">《</div>
                     <div class="treeList">
                         <div class="treeMain" id="headTree">
-                            <a class="active" href="javascript:;" data-url="/pages_three/home/index.html" style="padding:0 10px;">首页</a>
+                            <a class="active" href="javascript:;" data-url="/pages_three/home/index.html"
+                                style="padding:0 10px;">首页</a>
                         </div>
                     </div>
                     <div class="closeAll glyphicon glyphicon-off"></div>
                 </div>
                 <div class="main" id="mainIframe">
-                    <iframe src="/pages_three/home/index.html" class="iframe" width="100%" height="100%" frameBorder="0"></iframe>
+                    <iframe src="/pages_three/home/index.html" class="iframe" width="100%" height="100%"
+                        frameBorder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -89,120 +91,99 @@
 <script>
     var menus = [
         {
-            id:10,
-            name:'首页',
-            icon:'iconfont icon-yemian-copy-copy',
-            url:'/pages_three/home/index.html',
-            children:null
+            id: 10,
+            name: '首页',
+            icon: 'iconfont icon-yemian-copy-copy',
+            url: '/pages_three/home/index.html',
+            children: null
         },
         {
-            id:20,
-            name:'休假记录',
-            icon:'iconfont icon-renyuan',
-            url:'/pages_three/list/vacation.html',
-            children:null
+            id: 20,
+            name: '休假记录',
+            icon: 'iconfont icon-renyuan',
+            url: '/pages_three/list/vacation.html',
+            children: null
         },
         {
-            id:30,
-            name:'加班记录',
-            icon:'iconfont icon-flow-entry',
-            url:'/pages_three/list/workTime.html',
-            children:null
+            id: 30,
+            name: '加班记录',
+            icon: 'iconfont icon-flow-entry',
+            url: '/pages_three/list/workTime.html',
+            children: null
         },
         {
-            id:40,
-            name:'外出记录',
-            icon:'iconfont icon-lizhi',
-            url:'/pages_three/list/goOut.html',
-            children:null
+            id: 40,
+            name: '外出记录',
+            icon: 'iconfont icon-lizhi',
+            url: '/pages_three/list/goOut.html',
+            children: null
         },
         {
-            id:50,
-            name:'打卡管理',
-            icon:'iconfont icon-wj-tsdj',
-            url:'/pages_three/person/changes.html',
-            children:[
+            id: 50,
+            name: '打卡记录',
+            icon: 'iconfont icon-wj-tsdj',
+            url: '/pages_three/list/clock.html',
+        },
+        {
+            id: 60,
+            name: '配额管理',
+            icon: 'iconfont icon-ziyuan',
+            url: '/pages_three/person/archives.html',
+            children: null
+        },
+        // {
+        //     id:70,
+        //     name:'排班管理',
+        //     icon:'iconfont icon-shanchu',
+        //     url:'/pages_three/operation/delPeople.html',
+        //     children:[
+        //         {
+        //             id:701,
+        //     name:'年度班次日历管理',
+        //     icon:null,
+        //     url:'/pages_three/person/changes.html',
+        //         },
+        //         {
+        //             id:702,
+        //     name:'快捷排班',
+        //     icon:null,
+        //     url:'/pages_three/person/changes.html',
+        //         },
+        //     ]
+        // },
+        {
+            id: 70,
+            name: '考勤结算',
+            icon: 'iconfont icon-xiugai-copy',
+            url: '/pages_three/attendance/settlement.html',
+            children: null
+        },
+        {
+            id: 80,
+            name: '考勤报表',
+            icon: 'iconfont icon-icon-p_mrpbaobiao',
+            url: '/pages_three/report/index.html',
+            children: null
+        },
+        {
+            id: 90,
+            name: '考情汇总',
+            icon: 'iconfont icon-icon-p_mrpbaobiao',
+            children: [
                 {
-                    id:501,
-            name:'打卡原始记录管理',
-            icon:null,
-            url:'/pages_three/person/changes.html',
-                },
-                {
-                    id:502,
-            name:'打卡记录预处理',
-            icon:null,
-            url:'/pages_three/person/changes.html',
-                },
-                {
-                    id:503,
-            name:'考勤记录及评估',
-            icon:null,
-            url:'/pages_three/person/changes.html',
-                },
-            ]
-        },
-        {
-            id:60,
-            name:'配额管理',
-            icon:'iconfont icon-ziyuan',
-            url:'/pages_three/person/archives.html',
-            children:null
-        },
-        {
-            id:70,
-            name:'排班管理',
-            icon:'iconfont icon-shanchu',
-            url:'/pages_three/operation/delPeople.html',
-            children:[
-                {
-                    id:701,
-            name:'年度班次日历管理',
-            icon:null,
-            url:'/pages_three/person/changes.html',
-                },
-                {
-                    id:702,
-            name:'快捷排班',
-            icon:null,
-            url:'/pages_three/person/changes.html',
-                },
-            ]
-        },
-        {
-            id:70,
-            name:'考勤结算',
-            icon:'iconfont icon-xiugai-copy',
-            url:'/pages_three/operation/editNumber.html',
-            children:null
-        },
-        {
-            id:80,
-            name:'考勤报表',
-            icon:'iconfont icon-icon-p_mrpbaobiao',
-            url:'/pages_three/report/index.html',
-            children:null
-        },
-        {
-            id:90,
-            name:'考情汇总',
-            icon:'iconfont icon-icon-p_mrpbaobiao',
-            url:'/pages_three/report/index.html',
-            children:[
-                {
-                    id:901,
-            name:'考勤年度汇总',
-            icon:null,
-            url:'/pages_three/person/changes.html',
+                    id: 901,
+                    name: '考勤年度汇总',
+                    icon: null,
+                    url: '/pages_three/report/summary.html',
                 }
             ]
         },
         {
-            id:100,
-            name:'考情人员维护',
-            icon:'iconfont icon-zongdailizhanghao',
-            url:'/pages_three/person/relation.html',
-            children:null
+            id: 100,
+            name: '考情人员维护',
+            icon: 'iconfont icon-zongdailizhanghao',
+            url: '/pages_three/home/maintain.html',
+            children: null
         },
     ];
 
