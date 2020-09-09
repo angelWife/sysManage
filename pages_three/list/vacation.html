@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/three/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+        var layer = layui.layer;
+        var form = layui.form;
+        var carousel = layui.carousel;
+        var laydate = layui.laydate;
+        var table = layui.table;
+        var laytree = layui.tree;
+        var layTreeSelect = layui.treeSelect;
+        var layUpload = layui.upload;
+        var layElement = layui.element;
+    </script>
+</head>
+
+<body class="combody">
+    <div class="searchBox">
+        <div class="layui-form">
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">组织</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option>请选择</option>
+                        <option value="0">中国大陆</option>
+                        <option value="1">中国台湾</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">法人公司</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option>请选择</option>
+                        <option value="0">阿里巴巴集团</option>
+                        <option value="1">美的集团</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">员工</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option>请选择</option>
+                        <option value="0">李晓春</option>
+                        <option value="1">王艳</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">休假类型</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option>请选择</option>
+                        <option value="0">病假</option>
+                        <option value="1">事假</option>
+                        <option value="2">陪产假</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">休假类型</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option>请选择</option>
+                        <option value="0">年假</option>
+                        <option value="1">调休</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">已确认</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option>请选择</option>
+                        <option value="0">是</option>
+                        <option value="1">否</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">已撤销</div>
+                <div class="layui-input-block">
+                    <select name="position" lay-filter="position">
+                        <option value="0">否</option>
+                        <option value="1">是</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-form-label">休假日期</div>
+                <div class="layui-inline">
+                    <input type="text" name="date" id="uploadStar" autocomplete="off" class="layui-input" />
+                </div>
+                <div class="layui-inline">至</div>
+                <div class="layui-inline">
+                    <input type="text" name="date" id="uploadEnd" autocomplete="off" class="layui-input" />
+                </div>
+            </div>
+            <div class="layui-form-item layui-inline">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn layui-btn-normal">
+                        搜索
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="listOper layui-row m-t-20 p-l-r-15">
+        <div class="layui-col-md6">
+            <span class="fs16">记录数（1452）</span>
+        </div>
+        <div class="layui-col-md6 text-right">
+            <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+                <i class="iconfont icon-jia"></i><span class="text" onclick="addCost()">新增</span>
+            </button>
+            <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+                <i class="iconfont icon-shanchu"></i><span class="text">删除</span>
+            </button>
+            <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+                <i class="iconfont icon-shangchuan"></i><span class="text">上传</span>
+            </button>
+            <button type="button" class="layui-btn layui-btn-sm layui-btn-primary">
+                <i class="iconfont icon-xiazai"></i><span class="text">下载</span>
+            </button>
+        </div>
+    </div>
+    <div class="p-l-r-15">
+        <div id="personList"></div>
+    </div>
+</body>
+<script>
+    $(function () {
+        initTable();
+        laydate.render({
+            elem: "#uploadStar",
+        });
+        laydate.render({
+            elem: "#uploadEnd",
+        });
+        form.render("select");
+    });
+    function initTable() {
+        table.render({
+            elem: "#personList",
+            data: [
+                {
+                    "Id": "1293100",
+                    "company_id": "610",
+                    "emp_id": "129051",
+                    "emp_code": "A222",
+                    "fullname": "李现222",
+                    "othername": "",
+                    "organization": "人力资源部",
+                    "leave_code": "AnnualLeave",
+                    "payroll_group_id": "1508",
+                    "leave_type_name": "年假",
+                    "category": "2",
+                    "leave_begin_date": "2021-03-29",
+                    "leave_begin_time": "09:00",
+                    "leave_begin_date_time": "2021-03-29 09:00",
+                    "leave_end_date": "2021-06-01",
+                    "leave_end_time": "18:00",
+                    "serial_number": "00610E022004000022",
+                    "data_source": "4",
+                    "data_source_name": "手工维护",
+                    "leave_end_date_time": "2021-06-01 18:00",
+                    "leave_days": "47.0000",
+                    "leave_hours": "376.0000",
+                    "leave_days_hours": "47.0000 天(376.0000 小时)",
+                    "leave_begin_date_actuality": null,
+                    "leave_begin_time_actuality": "",
+                    "leave_begin_date_time_actuality": null,
+                    "leave_end_date_actuality": null,
+                    "leave_end_time_actuality": "",
+                    "leave_end_date_time_actuality": null,
+                    "leave_days_actuality": "0.0000",
+                    "leave_hours_actuality": "0.0000",
+                    "leave_days_hours_actuality": "0.0000 天(0.0000 小时)",
+                    "leave_days_effective": "0.0000",
+                    "leave_hours_effective": "0.0000",
+                    "leave_days_hours_effective": "0.0000 天(0.0000 小时)",
+                    "pay_type": "0",
+                    "pay_days": "0.00000000",
+                    "input_from": "1",
+                    "confirm": "1",
+                    "pay_current": "0",
+                    "paid": "0",
+                    "is_post": "0",
+                    "payment_flow_step": null,
+                    "is_cancelled": "0",
+                    "cancel_time": null,
+                    "cancel_reason": null,
+                    "cancel_by": null,
+                    "remark": null,
+                    "attachment": null,
+                    "attachment_name": "微信图片_20180724091248.jpg|10ren.xlsx",
+                    "attachment_path": "/attendance/leave_data_edit/1293100?back=/attendance/leave_list",
+                    "data_instance_id": "0",
+                    "update_by": "3670",
+                    "update_by_name": "CN0010",
+                    "update_time": "2020-07-08 17:43:38",
+                    "create_by": "3631",
+                    "create_time": "2020-04-29 19:25:07"
+                },
+                {
+                    "Id": "1293099",
+                    "company_id": "610",
+                    "emp_id": "129051",
+                    "emp_code": "A222",
+                    "fullname": "李现222",
+                    "othername": "",
+                    "organization": "人力资源部",
+                    "leave_code": "AnnualLeave",
+                    "payroll_group_id": "1508",
+                    "leave_type_name": "年假",
+                    "category": "2",
+                    "leave_begin_date": "2021-01-04",
+                    "leave_begin_time": "09:00",
+                    "leave_begin_date_time": "2021-01-04 09:00",
+                    "leave_end_date": "2021-01-05",
+                    "leave_end_time": "18:00",
+                    "serial_number": "00610E022004000021",
+                    "data_source": "4",
+                    "data_source_name": "手工维护",
+                    "leave_end_date_time": "2021-01-05 18:00",
+                    "leave_days": "2.0000",
+                    "leave_hours": "16.0000",
+                    "leave_days_hours": "2.0000 天(16.0000 小时)",
+                    "leave_begin_date_actuality": null,
+                    "leave_begin_time_actuality": "",
+                    "leave_begin_date_time_actuality": null,
+                    "leave_end_date_actuality": null,
+                    "leave_end_time_actuality": "",
+                    "leave_end_date_time_actuality": null,
+                    "leave_days_actuality": "0.0000",
+                    "leave_hours_actuality": "0.0000",
+                    "leave_days_hours_actuality": "0.0000 天(0.0000 小时)",
+                    "leave_days_effective": "0.0000",
+                    "leave_hours_effective": "0.0000",
+                    "leave_days_hours_effective": "0.0000 天(0.0000 小时)",
+                    "pay_type": "0",
+                    "pay_days": "0.00000000",
+                    "input_from": "1",
+                    "confirm": "1",
+                    "pay_current": "0",
+                    "paid": "0",
+                    "is_post": "0",
+                    "payment_flow_step": null,
+                    "is_cancelled": "0",
+                    "cancel_time": null,
+                    "cancel_reason": null,
+                    "cancel_by": null,
+                    "remark": null,
+                    "attachment": null,
+                    "attachment_name": null,
+                    "attachment_path": null,
+                    "data_instance_id": "0",
+                    "update_by": "3631",
+                    "update_by_name": null,
+                    "update_time": "2020-04-29 18:25:20",
+                    "create_by": "3631",
+                    "create_time": "2020-04-29 18:25:20"
+                },
+                {
+                    "Id": "1291615",
+                    "company_id": "610",
+                    "emp_id": "96889",
+                    "emp_code": "A110",
+                    "fullname": "李现10",
+                    "othername": "",
+                    "organization": "人力资源部",
+                    "leave_code": "AnnualLeave",
+                    "payroll_group_id": "1508",
+                    "leave_type_name": "年假",
+                    "category": "2",
+                    "leave_begin_date": "2021-01-04",
+                    "leave_begin_time": "09:00",
+                    "leave_begin_date_time": "2021-01-04 09:00",
+                    "leave_end_date": "2021-01-06",
+                    "leave_end_time": "18:00",
+                    "serial_number": "00610E012001000007",
+                    "data_source": "1",
+                    "data_source_name": "本人申请",
+                    "leave_end_date_time": "2021-01-06 18:00",
+                    "leave_days": "3.0000",
+                    "leave_hours": "24.0000",
+                    "leave_days_hours": "3.0000 天(24.0000 小时)",
+                    "leave_begin_date_actuality": null,
+                    "leave_begin_time_actuality": "",
+                    "leave_begin_date_time_actuality": null,
+                    "leave_end_date_actuality": null,
+                    "leave_end_time_actuality": "",
+                    "leave_end_date_time_actuality": null,
+                    "leave_days_actuality": "0.0000",
+                    "leave_hours_actuality": "0.0000",
+                    "leave_days_hours_actuality": "0.0000 天(0.0000 小时)",
+                    "leave_days_effective": "0.0000",
+                    "leave_hours_effective": "0.0000",
+                    "leave_days_hours_effective": "0.0000 天(0.0000 小时)",
+                    "pay_type": "0",
+                    "pay_days": "0.00000000",
+                    "input_from": "1",
+                    "confirm": "1",
+                    "pay_current": "0",
+                    "paid": "0",
+                    "is_post": "0",
+                    "payment_flow_step": null,
+                    "is_cancelled": "0",
+                    "cancel_time": null,
+                    "cancel_reason": null,
+                    "cancel_by": null,
+                    "remark": null,
+                    "attachment": null,
+                    "attachment_name": null,
+                    "attachment_path": null,
+                    "data_instance_id": "12468",
+                    "update_by": "9968",
+                    "update_by_name": "Y004",
+                    "update_time": "2020-01-06 13:49:06",
+                    "create_by": "9968",
+                    "create_time": "2020-01-06 13:49:06"
+                },
+                {
+                    "Id": "1292949",
+                    "company_id": "610",
+                    "emp_id": "129045",
+                    "emp_code": "A221",
+                    "fullname": "李现221",
+                    "othername": "",
+                    "organization": "人力资源部",
+                    "leave_code": "AnnualLeave",
+                    "payroll_group_id": "1508",
+                    "leave_type_name": "年假",
+                    "category": "2",
+                    "leave_begin_date": "2020-12-01",
+                    "leave_begin_time": "09:00",
+                    "leave_begin_date_time": "2020-12-01 09:00",
+                    "leave_end_date": "2020-12-04",
+                    "leave_end_time": "14:00",
+                    "serial_number": "00610E022004000008",
+                    "data_source": "4",
+                    "data_source_name": "手工维护",
+                    "leave_end_date_time": "2020-12-04 14:00",
+                    "leave_days": "3.5000",
+                    "leave_hours": "28.0000",
+                    "leave_days_hours": "3.5000 天(28.0000 小时)",
+                    "leave_begin_date_actuality": null,
+                    "leave_begin_time_actuality": "",
+                    "leave_begin_date_time_actuality": null,
+                    "leave_end_date_actuality": null,
+                    "leave_end_time_actuality": "",
+                    "leave_end_date_time_actuality": null,
+                    "leave_days_actuality": "0.0000",
+                    "leave_hours_actuality": "0.0000",
+                    "leave_days_hours_actuality": "0.0000 天(0.0000 小时)",
+                    "leave_days_effective": "0.0000",
+                    "leave_hours_effective": "0.0000",
+                    "leave_days_hours_effective": "0.0000 天(0.0000 小时)",
+                    "pay_type": "0",
+                    "pay_days": "0.00000000",
+                    "input_from": "1",
+                    "confirm": "1",
+                    "pay_current": "0",
+                    "paid": "0",
+                    "is_post": "0",
+                    "payment_flow_step": null,
+                    "is_cancelled": "0",
+                    "cancel_time": null,
+                    "cancel_reason": null,
+                    "cancel_by": null,
+                    "remark": null,
+                    "attachment": null,
+                    "attachment_name": null,
+                    "attachment_path": null,
+                    "data_instance_id": "0",
+                    "update_by": "3631",
+                    "update_by_name": null,
+                    "update_time": "2020-04-10 17:22:35",
+                    "create_by": "3631",
+                    "create_time": "2020-04-10 17:20:03"
+                }
+            ],
+
+            cellMinWidth: 80,
+            page: true,
+            cols: [
+                [
+                    { field: "serial_number", width: 160, title: "工号", sort: true },
+                    { field: "otherName", width: 80, title: "英文名" },
+                    { field: "fullname", width: 120, title: "中文名", sort: true },
+                    { field: "leave_type_name", title: "休假类型" },
+                    { field: "leave_begin_date_time", title: "开始时间" },
+                    { field: "leave_end_date_time", title: "结束时间" },
+                    { field: "leave_days", title: "休假天数" },
+                    { field: "leave_hours", title: "休假小时数" },
+                    { field: "leave_begin_date_actuality", title: "实际休假开始时间" },
+                    { field: "leave_end_date_actuality", title: "实际休假结束时间" },
+                    { field: "leave_days_effective", title: "实际休假天数" },
+                    { field: "data_source_name", title: "来源" },
+                    { field: "leave_hours_effective", title: "实际休假小时数" },
+                    { field: "create_by", title: "创建人" },
+                    { field: "create_time", title: "创建时间" },
+                ],
+            ],
+        });
+    }
+</script>
+
+</html>
