@@ -397,7 +397,7 @@
             cellMinWidth: 80,
             page: true,
             cols: [
-                [
+                [{type:'checkbox', fixed: 'left'},
                     { field: "serial_number", width: 160, title: "工号", sort: true },
                     { field: "otherName", width: 80, title: "英文名" },
                     { field: "fullname", width: 120, title: "中文名", sort: true },
@@ -418,7 +418,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增成本分摊','/pages_three/list/addVacation.html')
+        parent.$.addTab('新增休假数据','/pages_three/list/addVacation.html')
     }
 </script>
 
