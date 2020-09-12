@@ -26,25 +26,32 @@
     <div class="searchBox">
       <div class="layui-form">
         <div class="layui-form-item layui-inline">
-            <div class="layui-form-label">机构名称</div>
+            <div class="layui-form-label">名称</div>
             <div class="layui-input-block">
                 <input
                 type="text"
-                name="date"
-                id="beginDate"
                 autocomplete="off"
                 class="layui-input"
                 />
             </div>
         </div>
         <div class="layui-form-item layui-inline">
-            <div class="layui-form-label">上级机构名称</div>
+            <div class="layui-form-label">所属机构</div>
             <div class="layui-input-block">
                 <select name="position" lay-filter="position" id="position">
                     <option>请选择</option>
-                <option value="0">中国大陆</option>
-                <option value="1">中国台湾</option>
-                <option value="2">中国香港</option>
+                    <option value="0">淘宝平台</option>
+                    <option value="1">京东平台</option>
+                </select> 
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <div class="layui-form-label">角色</div>
+            <div class="layui-input-block">
+                <select name="position" lay-filter="position" id="position">
+                    <option>请选择</option>
+                    <option value="0">普通用户</option>
+                    <option value="1">管理员</option>
                 </select> 
             </div>
         </div>
@@ -53,8 +60,11 @@
             <button type="button" class="layui-btn layui-btn-normal">
               搜索
             </button>
-            <button type="button" class="layui-btn layui-btn-normal" onclick="addOrg();">
-                创建机构
+            <button type="button" class="layui-btn layui-btn-normal" onclick="addPerson();">
+                新增员工
+            </button>
+            <button type="button" class="layui-btn layui-btn-normal">
+                批量导入
             </button>
           </div>
         </div>
@@ -71,72 +81,36 @@
       form.render("select");
     });
     function initTable() {
+        var data = [];
+        for(var i = 0;i<10;i++){
+            var obj={};
+            obj.number = "A00"+(i<10?'0'+i:i);
+            obj.name = "张三"+i
+            obj.phone = "188888888888"
+            obj.status = (i%2) ? '启用' : '禁用'
+            data.push(obj)
+        }
       table.render({
         elem: "#personList",
-        data: [{
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-          {
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-          {
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-          {
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-          {
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-          {
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-        ],
+        data: data,
         cellMinWidth: 80,
         page: true,
         cols: [
           [
-            { field: "orgName",title: "机构名称",},
-            { field: "supOrgName",title: "上级机构",},
-            { field: "address",title: "机构位置",},
-            { field: "gps",title: "GPS定位",},
-            { field: "status",title: "是否启用",},
+            { field: "number",title: "序号",},
+            { field: "name",title: "姓名",},
+            { field: "phone",title: "手机",},
+            { field: "status",title: "状态"},
             {fixed: 'right', title: "操作", align:'center', toolbar: '#operList'}
           ],
         ],
       });
     }
-    function addOrg(){
-        parent.$.addTab('新增机构','/pages_four/organization/addOrg.html')
+    function addPerson(){
+        parent.$.addTab('新增角色','/pages_four/person/addPerson.html')
     }
   </script>
   <script type="text/html" id="operList">
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="open">启用</a>
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="close">禁用</a>
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
   </script>

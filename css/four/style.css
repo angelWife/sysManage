@@ -46,3 +46,12 @@
 .searchBox .searchBtn {
   padding: 0 20px;
 }
+.layui-dialog {
+  display: none;
+  padding: 15px;
+}
+.layui-tree-icon {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}

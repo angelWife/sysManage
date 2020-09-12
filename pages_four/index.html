@@ -100,62 +100,67 @@
             id: 30,
             name: '角色管理',
             icon: 'iconfont icon-wenjiandaochu',
-            url: '/pages_four/accounts/uploadInfo.html',
-            children: null
+            children: [
+            {
+                id: 301,
+                name: '角色列表',
+                icon: null,
+                url: '/pages_four/user/list.html'
+            },
+            {
+                id: 302,
+                name: '权限设置',
+                icon: null,
+                url: '/pages_four/user/setAuth.html'
+            },
+        ]
         },
         {
             id: 40,
             name: '员工管理',
             icon: 'iconfont icon-yueduchengbenhesuan',
-            url: '/pages_four/accounts/costShare.html',
-            children: null
+            children: [
+            {
+                id: 401,
+                name: '员工列表',
+                icon: null,
+                url: '/pages_four/person/list.html'
+            },
+            {
+                id: 402,
+                name: '员工授权',
+                icon: null,
+                url: '/pages_four/person/personAuth.html'
+            },
+        ]
         },
         {
             id: 50,
             name: '安全管理',
             icon: 'iconfont icon-icon_huabanfuben',
-            url: '/pages_four/accounts/historyDate.html',
-            children: null
+            children: [
+            {
+                id: 501,
+                name: '修改密码',
+                icon: null,
+                url: '/pages_four/setting/editPassword.html'
+            },
+            {
+                id: 502,
+                name: '绑定手机号码',
+                icon: null,
+                url: '/pages_four/setting/bindPhone.html'
+            },
+        ]
         },
         {
             id: 60,
             name: '操作日志',
             icon: 'iconfont icon-icon-p_mrpbaobiao',
-            url: '/pages_four/report/index.html',
+            url: '/pages_four/operLog/list.html',
             children: null
         },
-        {
-            id: 70,
-            name: '薪资设置',
-            icon: 'iconfont icon-icon',
-            url: '/pages_four/operation/delPeople.html',
-            children: [
-            {
-                id: 702,
-                name: '银行信息',
-                icon: null,
-                url: '/pages_four/setting/bankInfo.html'
-            },
-            {
-                id: 703,
-                name: '薪资单',
-                icon: null,
-                url: '/pages_four/setting/costOrder.html'
-            },
-            {
-                id: 704,
-                name: '税务地区信息',
-                icon: null,
-                url: '/pages_four/setting/taxation.html'
-            },
-            {
-                id: 705,
-                name: '薪资回退',
-                icon: null,
-                url: '/pages_four/setting/costBack.html'
-            }
-        ]
-        },
+       
     ];
 
     init_menu(menus);

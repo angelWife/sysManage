@@ -29,15 +29,15 @@
   <div class="row" style="background: #fff;height:100%;">
     <div class="col-md-6">
       <div class="comTitle">
-        最新报警
+        最新入驻
       </div>
       <table class="table myTable" id="dataTable">
         <thead>
           <tr>
-            <td>报警时间</td>
-            <td>设备编号</td>
-            <td>设备类型</td>
-            <td>报警原因</td>
+            <td>入住时间</td>
+            <td>企业编号</td>
+            <td>企业类型</td>
+            <td>备注</td>
             <td>所在区域</td>
             <td>操作</td>
           </tr>
@@ -46,8 +46,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>私营</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -56,8 +56,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>国有</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -66,8 +66,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>股份制</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -76,8 +76,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>私营</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -86,8 +86,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>国有</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -96,8 +96,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>股份制</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -106,8 +106,8 @@
           <tr>
             <td>18:30</td>
             <td>00001</td>
-            <td>雨水</td>
-            <td>非法开启</td>
+            <td>股份制</td>
+            <td>测试数据</td>
             <td>江苏-苏州</td>
             <td>
               <a href="">查看</a>
@@ -118,22 +118,56 @@
     </div>
     <div class="col-md-6">
       <div class="comTitle">
-        报警类型
+        历史操作
+      </div>
+      <div style="padding-left:50px;padding-top:10px;">
+        <ul class="layui-timeline">
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+              <div class="layui-timeline-title">2018-05-06，XXX修改了XXX的权限</div>
+            </div>
+          </li>
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+              <div class="layui-timeline-title">2018-05-05，XXX新增一条用户数据</div>
+            </div>
+          </li>
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+              <div class="layui-timeline-title">2018-05-02，XXX对用XXX进行了编辑</div>
+            </div>
+          </li>
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+              <div class="layui-timeline-title">2018-05-01，XXX新增一条用户数据</div>
+            </div>
+          </li>
+          <li class="layui-timeline-item">
+            <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
+            <div class="layui-timeline-content layui-text">
+              <div class="layui-timeline-title">更久前，请查看操作日志。</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="comTitle">
+        入住占比
       </div>
       <div id="dataChats_two" style="height:280px;"></div>
     </div>
     <div class="col-md-6">
       <div class="comTitle">
-        报警数据
+        员工数据
       </div>
       <div id="dataChats_one" style="height:280px;"></div>
     </div>
-    <div class="col-md-6">
-      <div class="comTitle">
-        区域报警
-      </div>
-      <div id="dataChats_three" style="height:280px;"></div>
-    </div>
+   
   </div>
 </body>
 <script src="../../js/echarts.min.js"></script>
@@ -141,7 +175,6 @@
   $(function () {
     setChatsOne();
     setChatsTwo();
-    setChatsThree();
     // setChatsFour();
   });
 
@@ -183,7 +216,7 @@
         }
       },
       legend: {
-        data: ['蒸发量', '平均温度']
+        data: ['总人数', '平均新增']
       },
       xAxis: [{
         type: 'category',
@@ -194,32 +227,32 @@
       }],
       yAxis: [{
         type: 'value',
-        name: '收入',
+        name: '总人数',
         min: 0,
-        max: 250,
+        max: 1000,
         interval: 50,
         axisLabel: {
-          formatter: '{value} ml'
+          formatter: '{value}'
         }
       },
       {
         type: 'value',
-        name: '温度',
+        name: '平均新增',
         min: 0,
         max: 25,
         interval: 5,
         axisLabel: {
-          formatter: '{value} °C'
+          formatter: '{value} 人'
         }
       }
       ],
       series: [{
-        name: '与收入',
+        name: '总人数',
         type: 'bar',
-        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+        data: [500, 550, 490, 527, 482,600, 610, 570, 540, 580, 720, 770]
       },
       {
-        name: '平均收入',
+        name: '平均新增',
         type: 'line',
         yAxisIndex: 1,
         data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
@@ -246,7 +279,7 @@
         right: 10,
         top: 20,
         bottom: 20,
-        data: ['西凉', '益州', '兖州', '荆州', '幽州']
+        data: ['国有企业', '私营企业', '股份公司', '外企', '其他']
       },
       series: [
         {
@@ -254,11 +287,11 @@
           radius: '55%',
           center: ['40%', '50%'],
           data: [
-            { value: 1548, name: '幽州', },
-            { value: 535, name: '荆州' },
-            { value: 510, name: '兖州' },
-            { value: 634, name: '益州' },
-            { value: 735, name: '西凉' }
+            { value: 1548, name: '国有企业', },
+            { value: 535, name: '私营企业' },
+            { value: 510, name: '股份公司' },
+            { value: 634, name: '外企' },
+            { value: 735, name: '其他' }
           ],
           emphasis: {
             itemStyle: {

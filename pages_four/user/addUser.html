@@ -38,109 +38,25 @@
   </head>
 
   <body class="combody" id="addRelationPage">
-    <div class="formTitle">新建机构</div>
+    <div class="formTitle">新增角色</div>
     <div class="layui-form layui-row p-t-20">
       <div class="layui-col-md6 layui-col-md-offset3">
         <div class="layui-form-item">
           <div class="layui-form-label">
-            机构名称&nbsp;<span class="red">*</span>
+            角色名称&nbsp;<span class="red">*</span>
           </div>
           <div class="layui-input-block">
             <input type="text" autocomplete="off" class="layui-input" />
           </div>
         </div>
         <div class="layui-form-item">
-          <div class="layui-form-label">上级机构</div>
+          <div class="layui-form-label">所属平台</div>
           <div class="layui-input-block">
             <select name="people" lay-filter="people" id="people">
               <option>请选择</option>
               <option value="0">阿里爸爸集团</option>
               <option value="1">阿里妈妈集团</option>
             </select>
-          </div>
-        </div>
-        <div class="layui-form-item">
-          <div class="layui-form-label">机构类型</div>
-          <div class="layui-input-block">
-            <select name="people" lay-filter="people" id="people">
-              <option>请选择</option>
-              <option value="0">私营</option>
-              <option value="1">国有</option>
-            </select>
-          </div>
-        </div>
-        <div class="layui-form-item">
-          <div class="layui-form-label">菜单设置&nbsp;<span class="red">*</span></div>
-          <div class="layui-input-block">
-            <input
-              type="text"
-              autocomplete="off"
-              class="layui-input"
-              id="choosemenu"
-            />
-          </div>
-        </div>
-        <div class="layui-form-item">
-          <div class="layui-form-label">
-            机构位置&nbsp;<span class="red">*</span>
-          </div>
-          <div class="layui-input-block">
-            <div class="layui-input-inline">
-              <select name="quiz1">
-                <option value="">请选择省</option>
-                <option value="浙江" selected="">浙江省</option>
-                <option value="你的工号">江西省</option>
-                <option value="你最喜欢的老师">福建省</option>
-              </select>
-            </div>
-            <div class="layui-input-inline">
-              <select name="quiz2">
-                <option value="">请选择市</option>
-                <option value="杭州">杭州</option>
-                <option value="宁波" disabled="">宁波</option>
-                <option value="温州">温州</option>
-                <option value="温州">台州</option>
-                <option value="温州">绍兴</option>
-              </select>
-            </div>
-            <div class="layui-input-inline">
-              <select name="quiz3">
-                <option value="">请选择县/区</option>
-                <option value="西湖区">西湖区</option>
-                <option value="余杭区">余杭区</option>
-                <option value="拱墅区">临安市</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="layui-form-item">
-          <div class="layui-form-label">GPS定位</div>
-          <div class="layui-input-block">
-            <input
-              type="text"
-              disabled
-              autocomplete="off"
-              class="layui-input"
-            />
-          </div>
-        </div>
-        <div class="layui-form-item">
-          <label class="layui-form-label">机构状态</label>
-          <div class="layui-input-block">
-            <input
-              type="checkbox"
-              checked=""
-              name="open"
-              lay-skin="switch"
-              lay-filter="switchTest"
-              lay-text="ON|OFF"
-            />
-          </div>
-        </div>
-        <div class="layui-form-item layui-form-text">
-          <label class="layui-form-label">备注</label>
-          <div class="layui-input-block">
-            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
           </div>
         </div>
       </div>
@@ -159,30 +75,9 @@
   </body>
   <script>
     $(function () {
-      laydate.render({
-        elem: "#beginDate",
-      });
-      laydate.render({
-        elem: "#endDate",
-      });
-      laydate.render({
-        elem: "#workDate",
-      });
       form.render("select");
       form.render("radio");
       form.render("checkbox");
-      layUpload.render({
-        elem: "#chooseFile",
-        url: "",
-        auto: false,
-        //,multiple: true
-        bindAction: "#uploadFile",
-        done: function (res) {
-          layer.msg("上传成功");
-          console.log(res);
-        },
-      });
-
       var data = [
         {
           title: "一级1",

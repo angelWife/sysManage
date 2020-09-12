@@ -26,25 +26,22 @@
     <div class="searchBox">
       <div class="layui-form">
         <div class="layui-form-item layui-inline">
-            <div class="layui-form-label">机构名称</div>
+            <div class="layui-form-label">角色名称</div>
             <div class="layui-input-block">
                 <input
                 type="text"
-                name="date"
-                id="beginDate"
                 autocomplete="off"
                 class="layui-input"
                 />
             </div>
         </div>
         <div class="layui-form-item layui-inline">
-            <div class="layui-form-label">上级机构名称</div>
+            <div class="layui-form-label">所属平台</div>
             <div class="layui-input-block">
                 <select name="position" lay-filter="position" id="position">
                     <option>请选择</option>
-                <option value="0">中国大陆</option>
-                <option value="1">中国台湾</option>
-                <option value="2">中国香港</option>
+                    <option value="0">淘宝平台</option>
+                    <option value="1">京东平台</option>
                 </select> 
             </div>
         </div>
@@ -53,8 +50,8 @@
             <button type="button" class="layui-btn layui-btn-normal">
               搜索
             </button>
-            <button type="button" class="layui-btn layui-btn-normal" onclick="addOrg();">
-                创建机构
+            <button type="button" class="layui-btn layui-btn-normal" onclick="addUser();">
+                创建角色
             </button>
           </div>
         </div>
@@ -73,70 +70,55 @@
     function initTable() {
       table.render({
         elem: "#personList",
-        data: [{
-            orgName: "淘宝",
+        data: [ {
+            userName: "淘宝",
             supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
+            createBy: "张三",
+            createDate: "2018-05-15",
           },
           {
-            orgName: "淘宝",
+            userName: "京东",
             supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
+            createBy: "张三",
+            createDate: "2018-05-15",
           },
           {
-            orgName: "淘宝",
+            userName: "拼多多",
             supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
+            createBy: "张三",
+            createDate: "2018-05-15",
           },
           {
-            orgName: "淘宝",
+            userName: "苏宁电器",
             supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
+            createBy: "张三",
+            createDate: "2018-05-15",
           },
           {
-            orgName: "淘宝",
+            userName: "唯品会",
             supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
-          },
-          {
-            orgName: "淘宝",
-            supOrgName: "阿里巴巴集团",
-            address: "浙江金华",
-            gps: "中国北京",
-            status: "正常",
+            createBy: "张三",
+            createDate: "2018-05-15",
           },
         ],
         cellMinWidth: 80,
         page: true,
         cols: [
           [
-            { field: "orgName",title: "机构名称",},
-            { field: "supOrgName",title: "上级机构",},
-            { field: "address",title: "机构位置",},
-            { field: "gps",title: "GPS定位",},
-            { field: "status",title: "是否启用",},
+            { field: "userName",title: "角色名称",},
+            { field: "supOrgName",title: "所属平台",},
+            { field: "createBy",title: "创建人",},
+            { field: "createDate",title: "创建时间",},
             {fixed: 'right', title: "操作", align:'center', toolbar: '#operList'}
           ],
         ],
       });
     }
-    function addOrg(){
-        parent.$.addTab('新增机构','/pages_four/organization/addOrg.html')
+    function addUser(){
+        parent.$.addTab('新增角色','/pages_four/user/addUser.html')
     }
   </script>
   <script type="text/html" id="operList">
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="open">启用</a>
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="close">禁用</a>
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
   </script>
