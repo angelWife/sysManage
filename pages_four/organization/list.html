@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/four/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+      var layer = layui.layer;
+      var form = layui.form;
+      var table = layui.table;
+    </script>
+  </head>
+
+  <body class="combody">
+    <div class="searchBox">
+      <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+            <div class="layui-form-label">机构名称</div>
+            <div class="layui-input-block">
+                <input
+                type="text"
+                name="date"
+                id="beginDate"
+                autocomplete="off"
+                class="layui-input"
+                />
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <div class="layui-form-label">上级机构名称</div>
+            <div class="layui-input-block">
+                <select name="position" lay-filter="position" id="position">
+                    <option>请选择</option>
+                <option value="0">中国大陆</option>
+                <option value="1">中国台湾</option>
+                <option value="2">中国香港</option>
+                </select> 
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+          <div class="layui-input-block">
+            <button type="button" class="layui-btn layui-btn-normal">
+              搜索
+            </button>
+            <button type="button" class="layui-btn layui-btn-normal" onclick="addOrg();">
+                创建机构
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="p-l-r-15">
+      <div id="personList"></div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      initTable();
+      form.render("select");
+    });
+    function initTable() {
+      table.render({
+        elem: "#personList",
+        data: [{
+            orgName: "淘宝",
+            supOrgName: "阿里巴巴集团",
+            address: "浙江金华",
+            gps: "中国北京",
+            status: "正常",
+          },
+          {
+            orgName: "淘宝",
+            supOrgName: "阿里巴巴集团",
+            address: "浙江金华",
+            gps: "中国北京",
+            status: "正常",
+          },
+          {
+            orgName: "淘宝",
+            supOrgName: "阿里巴巴集团",
+            address: "浙江金华",
+            gps: "中国北京",
+            status: "正常",
+          },
+          {
+            orgName: "淘宝",
+            supOrgName: "阿里巴巴集团",
+            address: "浙江金华",
+            gps: "中国北京",
+            status: "正常",
+          },
+          {
+            orgName: "淘宝",
+            supOrgName: "阿里巴巴集团",
+            address: "浙江金华",
+            gps: "中国北京",
+            status: "正常",
+          },
+          {
+            orgName: "淘宝",
+            supOrgName: "阿里巴巴集团",
+            address: "浙江金华",
+            gps: "中国北京",
+            status: "正常",
+          },
+        ],
+        cellMinWidth: 80,
+        page: true,
+        cols: [
+          [
+            { field: "orgName",title: "机构名称",},
+            { field: "supOrgName",title: "上级机构",},
+            { field: "address",title: "机构位置",},
+            { field: "gps",title: "GPS定位",},
+            { field: "status",title: "是否启用",},
+            {fixed: 'right', title: "操作",width: 240, align:'center', toolbar: '#operList'}
+          ],
+        ],
+      });
+    }
+    function addOrg(){
+        parent.$.addTab('新增休假数据','/pages_four/organization/addOrg.html')
+    }
+  </script>
+  <script type="text/html" id="operList">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="open">启用</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="close">禁用</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+  </script>
+</html>
