@@ -60,9 +60,112 @@ button {
     background:#2a83cf;
     color:#fff;
     .logo{
+        float: left;
         line-height: 65px;
         font-size:24px;
         padding:0 15px;
         text-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .headMenu {
+        float: right;
+        margin: 0;
+  
+        li {
+          float: left;
+  
+          >a {
+            display: inline-block;
+            height: 60px;
+            line-height: 60px;
+            min-width: 60px;
+            text-align: center;
+            color: @light_blue;
+  
+            &:hover {
+              color: @white;
+            }
+          }
+  
+          &.more {
+            position: relative;
+            padding: 0 20px;
+  
+            >a {
+              width: auto;
+              padding-right: 20px;
+              line-height: 60px;
+  
+              &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 12px;
+              }
+            }
+  
+            >.childNav {
+              position: absolute;
+              z-index: 10;
+              display: none;
+              width: 150px;
+              background: @white;
+              .boxShadow(0, 0, 5px, rgba(0, 0, 0, 0.2));
+              top: 70px;
+              right: 0;
+              padding: 10px 5px;
+  
+              a {
+                display: block;
+                line-height: 30px;
+                padding: 0 20px;
+  
+                &:hover {
+                  color: @red_orange;
+                }
+              }
+            }
+          }
+        }
+  
+  
+      }
+}
+.comBody{
+    height:calc(100% - 70px);
+    background: @white;
+    padding:5px;
+    position: relative;
+    .m_left{
+        float:left;
+        width:240px;
+        height:100%;
+        background: #2a83cf;
+        .menuItem{
+            li{
+                height:36px;
+                line-height: 36px;
+                a{
+                    color:@white;
+                    &::before{
+                        width: 40px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .m_oper{
+        position: absolute;
+        width: 5px;
+        background: @seablue;
+        color:#fff;
+    }
+    .m_right{
+        float:left;
+        width:calc(100% - 245px);
+        height:100%;
+        .main{
+            height:100%;
+        }
     }
 }

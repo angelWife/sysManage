@@ -458,13 +458,13 @@ function init_menu (menus) {
     for (var i = 0; i < menus.length; i++) {
         var item = menus[i];
         if (i == 0) {
-            str += '<li class="active"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><text>' + item.name + '</text></a>'
+            str += '<li class="active"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><span>' + item.name + '</span></a>'
         } else {
             var li_c_class=item.children?'hasChild':'';
             if (item.icon) {
-                str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" class="' + item.icon + '" data-src="' +item.url + '" data-name="' + item.name + '"><text>'+ item.name + '</text>'
+                str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" class="' + item.icon + '" data-src="' +item.url + '" data-name="' + item.name + '"><span>'+ item.name + '</span>'
             } else {
-                str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" data-src="' +item.url + '" data-name="' + item.name + '"><text>'+ item.name + '</text>'
+                str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" data-src="' +item.url + '" data-name="' + item.name + '"><span>'+ item.name + '</span>'
             }
             if (item.children) {
                 str += '<i class="iconfont icon-down"></i></a>';
@@ -473,9 +473,9 @@ function init_menu (menus) {
                     var item_c = item.children[j]
                     var li_class=item_c.children?'hasChild':'';
                     if (item_c.icon) {
-                        str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" class="hasIcon ' + item_c.icon + '" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><text>'+ item_c.name + '</text>'
+                        str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" class="hasIcon ' + item_c.icon + '" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><span>'+ item_c.name + '</span>'
                     } else {
-                        str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><text>'+ item_c.name + '</text>'
+                        str += '<li class="'+li_class+'"><a id="' + item_c.id + '" href="javascript:void(0);" data-src="' +item_c.url + '" data-name="' + item_c.name + '"><span>'+ item_c.name + '</span>'
                     }
 
                     if (item_c.children) {
@@ -484,7 +484,7 @@ function init_menu (menus) {
                         for (var k = 0; k < item_c.children.length; k++) {
                             var item_child = item_c.children[k]
                             str += '<li><a class="noIcon" id="' + item_child.id + '" href="javascript:void(0);" data-src="' + item_child.url + '" data-name="' + item_child.name + '">' +
-                                '<text>' + item_child.name + '</text></a></li>'
+                                '<span>' + item_child.name + '</span></a></li>'
                         }
                         str += '</ul>'
                     } else {

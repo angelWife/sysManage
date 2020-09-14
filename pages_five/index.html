@@ -28,7 +28,7 @@
 <body>
     <div class="container comPage">
         <div class="comHead layui-row">
-            <div class="logo layui-md-">
+            <div class="logo">
                 <!-- <img src="../images/icon-logo.png" /> -->
                 智慧农业运维管理系统
             </div>
@@ -55,14 +55,22 @@
                 </ul>
             </div>
         </div>
-        <div class="body row">
+        <div class="comBody row">
             <div class="m_left" id="body_left" style="overflow: auto;">
                 <div class="menuBox" id="menuBox">
-                    
+                    <ul class="menuItem">
+                        <li>
+                            <a href="javascript:void(0);" data-src="/pages_five/home/index.html" data-name="首页">
+                                <img src=""/>
+                                <span>首页</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            <div class="m_oper"></div>
             <div class="m_right col" id="body_right">
-                <div class="treeBox bg_white">
+                <!-- <div class="treeBox bg_white">
                     <div class="home" id="menuClick">《</div>
                     <div class="treeList">
                         <div class="treeMain" id="headTree">
@@ -70,7 +78,7 @@
                         </div>
                     </div>
                     <div class="closeAll glyphicon glyphicon-off"></div>
-                </div>
+                </div> -->
                 <div class="main" id="mainIframe">
                     <iframe src="/pages_five/home/index.html" class="iframe" width="100%" height="100%" frameBorder="0"></iframe>
                 </div>
@@ -79,95 +87,7 @@
     </div>
 </body>
 <script>
-    var menus = [
-        {
-            id: 10,
-            name: '首页',
-            icon: 'iconfont icon-yemian-copy-copy',
-            url: '/pages_five/home/index.html',
-            children: null
-        },
-        {
-            id: 20,
-            name: '薪资核算',
-            icon: 'iconfont icon-huijihesuan',
-            url: '/pages_five/accounts/adjust.html',
-            children: null
-        },
-        {
-            id: 80,
-            name: '薪资期结',
-            icon: 'iconfont icon-huijihesuan',
-            url: '/pages_five/accounts/settlement.html',
-            children: null
-        },
-        {
-            id: 30,
-            name: '导出银行报盘文件',
-            icon: 'iconfont icon-wenjiandaochu',
-            url: '/pages_five/accounts/uploadInfo.html',
-            children: null
-        },
-        {
-            id: 40,
-            name: '成本分摊',
-            icon: 'iconfont icon-yueduchengbenhesuan',
-            url: '/pages_five/accounts/costShare.html',
-            children: null
-        },
-        {
-            id: 50,
-            name: '历史薪资数据',
-            icon: 'iconfont icon-icon_huabanfuben',
-            url: '/pages_five/accounts/historyDate.html',
-            children: null
-        },
-        {
-            id: 60,
-            name: '薪资报表',
-            icon: 'iconfont icon-icon-p_mrpbaobiao',
-            url: '/pages_five/report/index.html',
-            children: null
-        },
-        {
-            id: 70,
-            name: '薪资设置',
-            icon: 'iconfont icon-icon',
-            url: '/pages_five/operation/delPeople.html',
-            children: [
-            //     {
-            //     id: 701,
-            //     name: '薪资政策',
-            //     icon: null,
-            //     url: '/pages_five/operation/delPeople.html'
-            // },
-            {
-                id: 702,
-                name: '银行信息',
-                icon: null,
-                url: '/pages_five/setting/bankInfo.html'
-            },
-            {
-                id: 703,
-                name: '薪资单',
-                icon: null,
-                url: '/pages_five/setting/costOrder.html'
-            },
-            {
-                id: 704,
-                name: '税务地区信息',
-                icon: null,
-                url: '/pages_five/setting/taxation.html'
-            },
-            {
-                id: 705,
-                name: '薪资回退',
-                icon: null,
-                url: '/pages_five/setting/costBack.html'
-            }
-        ]
-        },
-    ]
+    var menus = [];
 
     init_menu(menus);
 

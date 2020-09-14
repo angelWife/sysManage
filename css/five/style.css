@@ -54,8 +54,101 @@ button.btn {
   color: #fff;
 }
 .comHead .logo {
+  float: left;
   line-height: 65px;
   font-size: 24px;
   padding: 0 15px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.comHead .headMenu {
+  float: right;
+  margin: 0;
+}
+.comHead .headMenu li {
+  float: left;
+}
+.comHead .headMenu li > a {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  min-width: 60px;
+  text-align: center;
+  color: #EBF4FF;
+}
+.comHead .headMenu li > a:hover {
+  color: #ffffff;
+}
+.comHead .headMenu li.more {
+  position: relative;
+  padding: 0 20px;
+}
+.comHead .headMenu li.more > a {
+  width: auto;
+  padding-right: 20px;
+  line-height: 60px;
+}
+.comHead .headMenu li.more > a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+}
+.comHead .headMenu li.more > .childNav {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 150px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  top: 70px;
+  right: 0;
+  padding: 10px 5px;
+}
+.comHead .headMenu li.more > .childNav a {
+  display: block;
+  line-height: 30px;
+  padding: 0 20px;
+}
+.comHead .headMenu li.more > .childNav a:hover {
+  color: #FF4400;
+}
+.comBody {
+  height: calc(100% - 70px);
+  background: #ffffff;
+  padding: 5px;
+  position: relative;
+}
+.comBody .m_left {
+  float: left;
+  width: 240px;
+  height: 100%;
+  background: #2a83cf;
+}
+.comBody .m_left .menuItem li {
+  height: 36px;
+  line-height: 36px;
+}
+.comBody .m_left .menuItem li a {
+  color: #ffffff;
+}
+.comBody .m_left .menuItem li a::before {
+  width: 40px;
+  text-align: center;
+}
+.comBody .m_oper {
+  position: absolute;
+  width: 5px;
+  background: #70db93;
+  color: #fff;
+}
+.comBody .m_right {
+  float: left;
+  width: calc(100% - 245px);
+  height: 100%;
+}
+.comBody .m_right .main {
+  height: 100%;
 }
