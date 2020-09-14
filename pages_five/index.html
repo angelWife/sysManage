@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <link rel="stylesheet" href="../dist/layui/css/layui.css">
-    <link rel="stylesheet" href="../dist/bootstrap4/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/five/style.css">
     <link rel="stylesheet" href="../dist/fonts/iconfont.css">
     <script src="../js/jquery-2.1.1.js"></script>
     <script src="../js/common.js"></script>
@@ -28,11 +26,11 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="head row">
-            <div class="logo">
+    <div class="container comPage">
+        <div class="comHead layui-row">
+            <div class="logo layui-md-">
                 <!-- <img src="../images/icon-logo.png" /> -->
-                泉铸智慧管网管理平台
+                智慧农业运维管理系统
             </div>
 
             <!-- <div class="headBar" id="head_menu"></div> -->
@@ -60,80 +58,7 @@
         <div class="body row">
             <div class="m_left" id="body_left" style="overflow: auto;">
                 <div class="menuBox" id="menuBox">
-                    <ul class="menuItem">
-                        <li class="active">
-                            <a class="iconfont icon-yemian-copy-copy" href="javascript:void(0);" data-name="首页"
-                                data-src="/html/newPage/index.html">
-                                <text id="navHome">首页</text>
-                            </a>
-                        </li>
-                        <li class="hasChild">
-                            <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="列表数据"
-                                data-src="">
-                                <text id="navHome">监控中心</text>
-                                <i class="iconfont icon-down"></i>
-                            </a>
-                            <ul class="childMenu">
-                                <li class="hasChild">
-                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="列表数据"
-                                        data-src="/html/newPage/mapList.html">
-                                        <text id="navHome">菜单一</text>
-                                        <i class="iconfont icon-down"></i>
-                                    </a>
-                                    <ul class="childMenu">
-                                        <li>
-                                            <a href="javascript:void(0);" data-name="列表数据"
-                                                data-src="/html/newPage/mapList.html">
-                                                <text id="navHome">菜单一</text>
-                                            </a>
-                                            <li></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="列表数据"
-                                    data-src="/html/newPage/list.html">
-                                    <text id="navHome">菜单二</text>
-                                </a>
-                                </li>
-                                <li>
-                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="新增"
-                                    data-src="/html/newPage/form.html">
-                                        <text id="navHome">新增表单</text>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="iconfont icon-xitongpeizhi" href="javascript:void(0);" data-name="新增"
-                                    data-src="/html/newPage/dialogDemo.html">
-                                        <text id="navHome">新增弹窗</text>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="状态数据"
-                                data-src="html/newPage/statuList.html">
-                                <text id="page_statuList">报警处理</text>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="添加设备"
-                                data-src="html/newPage/addEquipment.html">
-                                <text id="page_statuList">添加设备</text>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="上传工单"
-                                data-src="html/newPage/uploadPage.html">
-                                <text id="page_statuList">上传工单</text>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="iconfont icon-shangpu" href="javascript:void(0);" data-name="新增角色"
-                                data-src="html/newPage/addUser.html">
-                                <text id="page_statuList">新增角色</text>
-                            </a>
-                        </li>
-                    </ul>
+                    
                 </div>
             </div>
             <div class="m_right col" id="body_right">
@@ -141,13 +66,13 @@
                     <div class="home" id="menuClick">《</div>
                     <div class="treeList">
                         <div class="treeMain" id="headTree">
-                            <a class="active" href="javascript:;" data-url="/html/newPage/index.html" style="padding:0 10px;">首页</a>
+                            <a class="active" href="javascript:;" data-url="/pages_five/home/index.html" style="padding:0 10px;">首页</a>
                         </div>
                     </div>
                     <div class="closeAll glyphicon glyphicon-off"></div>
                 </div>
                 <div class="main" id="mainIframe">
-                    <iframe src="/html/newPage/index.html" class="iframe" width="100%" height="100%" frameBorder="0"></iframe>
+                    <iframe src="/pages_five/home/index.html" class="iframe" width="100%" height="100%" frameBorder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -155,136 +80,96 @@
 </body>
 <script>
     var menus = [
-        // {"id":"1","name":"营销管理","icon":"iconfont icon-yingxiaozhongxin","img_icon":"/images/yingxiao@2x.png","children":[
-        //       {"name":"营销管理","icon":"iconfont icon-yingxiaozhongxin","img_icon":"/images/yingxiao@2x.png","children":[
-        //         {"name":"粉丝管理","url":"html/marketing/funs_list.html"},
-        //         {"name":"私信管理","url":"html/marketing/private_letter_list.html"},
-        //         {"name":"发帖管理","url":"html/marketing/post_list.html"},
-        //         {"name":"广告管理","url":"html/marketing/ad_manage_list.html"},
-        //         {"name":"广告购买","url":"html/marketing/ad_list.html"},
-        //         {"name":"客服管理","url":"html/marketing/kefu_list.html"},
-        //         {"name":"在线客服","url":"html/marketing/chat.html"},
-        //         {"name":"知识库管理","url":"html/marketing/knowledge_list.html"},
-        //         {"name":"消息管理","url":"html/marketing/news_list.html"},
-        //       ]}
-
-        //       ]
-        // },
         {
-            "id": "2",
-            "name": "商铺管理",
-            "icon": "iconfont icon-shangpu",
-            "children": [{
-                "name": "商铺管理",
-                "icon": "iconfont icon-shangpu",
-                "children": [{
-                    "name": "商品管理",
-                    "url": "html/shop/goods_list.html"
-                },
-                {
-                    "name": "优惠券管理",
-                    "url": "html/shop/coupon_list.html"
-                },
-                {
-                    "name": "订单管理",
-                    "url": "html/shop/order_list.html"
-                },
-                {
-                    "name": "退换货管理",
-                    "url": "html/shop/order_refund_list.html"
-                },
-                {
-                    "name": "商品评价管理",
-                    "url": "html/shop/evaluate_list.html"
-                },
-                {
-                    "name": "商品销售管理",
-                    "url": "html/shop/goods_sale_list.html"
-                },
-                {
-                    "name": "运费模板管理",
-                    "url": "html/shop/freight_template_list.html"
-                },
-
-                ]
-            }]
+            id: 10,
+            name: '首页',
+            icon: 'iconfont icon-yemian-copy-copy',
+            url: '/pages_five/home/index.html',
+            children: null
         },
         {
-            "id": "3",
-            "name": "财务管理",
-            "icon": "iconfont icon-caiwuguanli",
-            "children": [{
-                "name": "财务管理",
-                "icon": "iconfont icon-caiwuguanli",
-                "children": [{
-                    "name": "会员返利",
-                    "url": "html/finance/rebate_list.html"
-                },
-                {
-                    "name": "对账单管理",
-                    "url": "html/finance/reconciliation_list.html"
-                },
-                {
-                    "name": "人民币账户管理",
-                    "url": "html/finance/account_rmb.html"
-                },
-                {
-                    "name": "星票账户管理",
-                    "url": "html/finance/account_xingpiao.html"
-                },
-                {
-                    "name": "其他支付订单",
-                    "url": "html/finance/qita_pay.html"
-                },
-                ]
-            }]
+            id: 20,
+            name: '薪资核算',
+            icon: 'iconfont icon-huijihesuan',
+            url: '/pages_five/accounts/adjust.html',
+            children: null
         },
         {
-            "id": "4",
-            "name": "统计",
-            "icon": "iconfont icon-web-icon-",
-            "children": [{
-                "name": "统计",
-                "icon": "iconfont icon-web-icon-",
-                "children": [{
-                    "name": "商品评价统计",
-                    "url": "statistics/evaluation_list.html"
-                },
-                {
-                    "name": "帖子统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                {
-                    "name": "返利统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                {
-                    "name": "订单统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                {
-                    "name": "粉丝统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                {
-                    "name": "退换货统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                {
-                    "name": "财务支出统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                {
-                    "name": "财务收入统计",
-                    "url": "html/statistics/evaluation_list.html"
-                },
-                ]
-            }]
-        }
+            id: 80,
+            name: '薪资期结',
+            icon: 'iconfont icon-huijihesuan',
+            url: '/pages_five/accounts/settlement.html',
+            children: null
+        },
+        {
+            id: 30,
+            name: '导出银行报盘文件',
+            icon: 'iconfont icon-wenjiandaochu',
+            url: '/pages_five/accounts/uploadInfo.html',
+            children: null
+        },
+        {
+            id: 40,
+            name: '成本分摊',
+            icon: 'iconfont icon-yueduchengbenhesuan',
+            url: '/pages_five/accounts/costShare.html',
+            children: null
+        },
+        {
+            id: 50,
+            name: '历史薪资数据',
+            icon: 'iconfont icon-icon_huabanfuben',
+            url: '/pages_five/accounts/historyDate.html',
+            children: null
+        },
+        {
+            id: 60,
+            name: '薪资报表',
+            icon: 'iconfont icon-icon-p_mrpbaobiao',
+            url: '/pages_five/report/index.html',
+            children: null
+        },
+        {
+            id: 70,
+            name: '薪资设置',
+            icon: 'iconfont icon-icon',
+            url: '/pages_five/operation/delPeople.html',
+            children: [
+            //     {
+            //     id: 701,
+            //     name: '薪资政策',
+            //     icon: null,
+            //     url: '/pages_five/operation/delPeople.html'
+            // },
+            {
+                id: 702,
+                name: '银行信息',
+                icon: null,
+                url: '/pages_five/setting/bankInfo.html'
+            },
+            {
+                id: 703,
+                name: '薪资单',
+                icon: null,
+                url: '/pages_five/setting/costOrder.html'
+            },
+            {
+                id: 704,
+                name: '税务地区信息',
+                icon: null,
+                url: '/pages_five/setting/taxation.html'
+            },
+            {
+                id: 705,
+                name: '薪资回退',
+                icon: null,
+                url: '/pages_five/setting/costBack.html'
+            }
+        ]
+        },
+    ]
 
-    ];
-
-    init_menu([]);
+    init_menu(menus);
 
     // addTab('首页', 'html/newPage/index.html');
 

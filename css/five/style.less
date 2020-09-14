@@ -1,0 +1,68 @@
+@import '../base.less';
+* {
+    box-sizing: border-box;
+}
+
+a {
+    cursor: pointer;
+
+    &:hover {
+        color: @blue;
+        text-decoration: none;
+    }
+
+    &.picBox {
+        display: block;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    overflow-x: auto;
+    &.body_gray {
+        background: #eff3f6;
+    }
+    &.hasFoot {
+        padding-bottom: 70px;
+        position: relative;
+    }
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+    margin: 0;
+}
+
+button {
+    i {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+
+    &.btn {
+        height: 33.5px;
+        line-height: 33.5px;
+        padding: 0 0.75rem;
+    }
+}
+.comPage {
+    width: 100vw;
+    height: 100vh;
+    border: 5px solid #2a83cf;
+}
+.comHead {
+    height:70px;
+    background:#2a83cf;
+    color:#fff;
+    .logo{
+        line-height: 65px;
+        font-size:24px;
+        padding:0 15px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+}

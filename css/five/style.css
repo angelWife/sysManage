@@ -1,0 +1,61 @@
+@charset 'utf-8';
+* {
+  box-sizing: border-box;
+}
+a {
+  cursor: pointer;
+}
+a:hover {
+  color: #4C8FF7;
+  text-decoration: none;
+}
+a.picBox {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  overflow-x: auto;
+}
+html.body_gray,
+body.body_gray {
+  background: #eff3f6;
+}
+html.hasFoot,
+body.hasFoot {
+  padding-bottom: 70px;
+  position: relative;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+}
+button i {
+  font-size: 12px;
+  margin-right: 5px;
+}
+button.btn {
+  height: 33.5px;
+  line-height: 33.5px;
+  padding: 0 0.75rem;
+}
+.comPage {
+  width: 100vw;
+  height: 100vh;
+  border: 5px solid #2a83cf;
+}
+.comHead {
+  height: 70px;
+  background: #2a83cf;
+  color: #fff;
+}
+.comHead .logo {
+  line-height: 65px;
+  font-size: 24px;
+  padding: 0 15px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
