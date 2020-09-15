@@ -3,7 +3,7 @@
 @black: #000000;
 @green: #25C471;
 @blue: #4C8FF7;
-@dark_blue:#145DCF;
+@dark_blue:#3479DF;
 @light_blue:#EBF4FF;
 @sky_blue: #00aeef;
 @red: #B40000;
@@ -26,8 +26,28 @@
 @foot_bg:#ECEEF0;
 @body_bg:#EFF3F6;
 
-
-.block(@block: block, @w: 100%, @h: 100%) {
+.flexItem (@value:1){
+    -moz-flex-grow: value;
+    -webkit-flex-grow: value;
+    flex-grow: value;
+}
+.flexOrder(@value:1){
+    -webkit-box-ordinal-group: @value;
+    -moz-order: @value;
+    -webkit-order: @value;
+    order: @value;
+}
+.flexShrink(@value:1){
+    flex-shrink:@value;
+    -moz-flex-shrink: @value;
+    -webkit-flex-shrink: @value;
+}
+.flexBasis(@value){
+    flex-basis:@value;
+    -moz-flex-basis: @value;
+    -webkit-flex-basis: @value;
+}
+.block(@block, @w: 100%, @h: 100%) {
   display: @block;
   width: @w;
   height: @h;

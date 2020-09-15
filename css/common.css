@@ -58,7 +58,7 @@ button.btn {
 }
 .comTitle {
   line-height: 40px;
-  color: #145DCF;
+  color: #3479DF;
   font-size: 16px;
 }
 .myTable {
@@ -97,7 +97,7 @@ button.btn {
 }
 .container .head {
   height: 60px;
-  background: #145DCF;
+  background: #3479DF;
   position: relative;
 }
 .container .head .logo {
@@ -137,10 +137,10 @@ button.btn {
   font-size: 20px;
 }
 .container .head .headBar a.active {
-  background: #145DCF;
+  background: #3479DF;
 }
 .container .head .headBar a:hover {
-  background: #145DCF;
+  background: #3479DF;
 }
 .container .head .col-md {
   position: absolute;
@@ -337,7 +337,7 @@ button.btn {
   width: calc(100% - 250px);
 }
 .container .body .m_right .headData .map_head {
-  border-left: 1px solid #145DCF;
+  border-left: 1px solid #3479DF;
   width: 100%;
   height: auto;
   background: #4C8FF7;
@@ -411,7 +411,7 @@ button.btn {
   font-weight: 600;
 }
 .container .body .m_right .treeBox .treeList .treeMain a.active {
-  border-top-color: #145DCF;
+  border-top-color: #3479DF;
 }
 .container .body .m_right .treeBox .home {
   width: 40px;
@@ -430,7 +430,7 @@ button.btn {
   color: #B40000;
 }
 .container .body .m_right .treeBox .home.active {
-  border-top-color: #145DCF;
+  border-top-color: #3479DF;
 }
 .container .body .m_right .treeBox .closeAll {
   width: 40px;
@@ -592,6 +592,160 @@ button.btn {
 .footOper button {
   width: 120px;
 }
+/*新架构*/
+.comPage {
+  width: 100vw;
+  height: 100vh;
+  border: 5px solid #2a83cf;
+}
+.comHead {
+  height: 70px;
+  background: #2a83cf;
+  color: #fff;
+}
+.comHead .logo {
+  float: left;
+  line-height: 65px;
+  font-size: 24px;
+  padding: 0 15px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.comHead .headMenu {
+  float: right;
+  margin: 0;
+}
+.comHead .headMenu li {
+  float: left;
+}
+.comHead .headMenu li > a {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  min-width: 60px;
+  text-align: center;
+  color: #EBF4FF;
+}
+.comHead .headMenu li > a:hover {
+  color: #ffffff;
+}
+.comHead .headMenu li.more {
+  position: relative;
+  padding: 0 20px;
+}
+.comHead .headMenu li.more > a {
+  width: auto;
+  padding-right: 20px;
+  line-height: 60px;
+}
+.comHead .headMenu li.more > a::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+}
+.comHead .headMenu li.more > .childNav {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 150px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  top: 70px;
+  right: 0;
+  padding: 10px 5px;
+}
+.comHead .headMenu li.more > .childNav a {
+  display: block;
+  line-height: 30px;
+  padding: 0 20px;
+}
+.comHead .headMenu li.more > .childNav a:hover {
+  color: #FF4400;
+}
+.comBody {
+  background: #ffffff;
+  height: 100%;
+  padding: 5px;
+  position: relative;
+}
+.comBody .m_left {
+  width: 175px;
+  flex-basis: 175px;
+  -moz-flex-basis: 175px;
+  -webkit-flex-basis: 175px;
+  height: 100%;
+  background: #F1F8FC;
+  margin-right: 5px;
+}
+.comBody .m_left .menuItem li {
+  height: 36px;
+  line-height: 36px;
+  -webkit-transition: color 0.1s linear 0s;
+  -moz-transition: color 0.1s linear 0s;
+  -ms-transition: color 0.1s linear 0s;
+  -o-transition: color 0.1s linear 0s;
+  transition: color 0.1s linear 0s;
+}
+.comBody .m_left .menuItem li .iconfont {
+  float: left;
+  height: 36px;
+  width: 30px;
+  text-align: center;
+  -webkit-transition: color 0.1s linear 0s;
+  -moz-transition: color 0.1s linear 0s;
+  -ms-transition: color 0.1s linear 0s;
+  -o-transition: color 0.1s linear 0s;
+  transition: color 0.1s linear 0s;
+}
+.comBody .m_left .menuItem li span {
+  float: left;
+}
+.comBody .m_left .menuItem li a {
+  color: #666666;
+  display: block;
+  -webkit-transition: color 0.1s linear 0s;
+  -moz-transition: color 0.1s linear 0s;
+  -ms-transition: color 0.1s linear 0s;
+  -o-transition: color 0.1s linear 0s;
+  transition: color 0.1s linear 0s;
+}
+.comBody .m_left .menuItem li.active {
+  background: #3479DF;
+}
+.comBody .m_left .menuItem li.active .iconfont {
+  color: #fff;
+}
+.comBody .m_left .menuItem li.active a {
+  color: #fff;
+}
+.comBody .m_oper {
+  position: absolute;
+  width: 7px;
+  background: #70db93;
+  height: 50px;
+  left: 180px;
+  top: 50%;
+  margin-top: -25px;
+  cursor: pointer;
+}
+.comBody .m_oper .sanjiao {
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+  right: 1px;
+  top: 20px;
+}
+.comBody .m_right {
+  height: 100%;
+  width: 100%;
+}
+.comBody .m_right .main {
+  height: 100%;
+}
 .left {
   float: left !important;
 }
@@ -615,10 +769,10 @@ button.btn {
 }
 /*修改选项卡的样式*/
 .layui-tab .layui-this {
-  color: #145DCF !important;
+  color: #3479DF !important;
 }
 .layui-tab .layui-this::after {
-  border-color: #145DCF !important;
+  border-color: #3479DF !important;
 }
 /*上传图片*/
 .uploadPicBox .picList li {

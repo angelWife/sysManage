@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14656249",
+      "name": "技术服务商",
+      "font_class": "jishufuwushang",
+      "unicode": "e72e",
+      "unicode_decimal": 59182
+    },
+    {
+      "icon_id": "1275453",
+      "name": "任务",
+      "font_class": "renwu",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "1761534",
+      "name": "设备",
+      "font_class": "shebei",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "3761554",
+      "name": "操作",
+      "font_class": "icon-test",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "7155364",
+      "name": "状态",
+      "font_class": "zhuangtai3",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "8634400",
+      "name": "单位管理",
+      "font_class": "danweiguanli",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
       "icon_id": "169943",
       "name": "文件导出",
       "font_class": "wenjiandaochu",
