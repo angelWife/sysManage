@@ -1,1 +1,63 @@
 @charset 'utf-8';
+.combody {
+  background: #ffffff;
+}
+.combody .graphic {
+  height: calc(100% - 40px);
+  min-height: 420px;
+}
+.combody .layui-btn .iconfont {
+  font-size: 14px;
+  float: left;
+  margin-right: 5px;
+}
+.combody .layui-btn .text {
+  float: left;
+}
+.combody .layui-form-label {
+  width: auto !important;
+  min-width: 80px;
+  padding: 8px 0;
+}
+.combody .layui-row {
+  padding-right: 40px;
+}
+.combody .delForm {
+  padding: 20px 50px;
+}
+.combody .echatsBox {
+  padding: 30px 50px;
+  height: 100%;
+}
+.combody .echatsBox > div {
+  height: 100%;
+}
+.combody .formTitle {
+  padding: 10px 15px;
+  font-size: 16px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #d6d6d6;
+}
+.searchBox {
+  padding: 20px 20px 0;
+  border: 1px solid #e6e6e6;
+  background: #f5f5f5;
+}
+.searchBox .searchBtn {
+  padding: 0 20px;
+}
+.layui-dialog {
+  display: none;
+  padding: 15px 40px;
+}
+.layui-tree-icon {
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+.dialog-btn-box {
+  margin-top: 40px;
+}
+.dialog-btn-box .layui-btn {
+  width: 120px !important;
+}

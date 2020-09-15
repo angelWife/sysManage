@@ -739,6 +739,14 @@ button.btn {
   right: 1px;
   top: 20px;
 }
+.comBody .m_oper.move .sanjiao {
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+  left: 1px;
+  top: 20px;
+}
 .comBody .m_right {
   height: 100%;
   width: 100%;

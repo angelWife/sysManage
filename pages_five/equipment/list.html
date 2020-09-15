@@ -1,268 +1,324 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="renderer" content="webkit" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <title></title>
-    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
-    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
-    <link rel="stylesheet" href="../../css/common.css" />
-    <link rel="stylesheet" href="../../css/two/style.css" />
-    <script src="../../js/jquery-2.1.1.js"></script>
-    <script src="../../dist/layui/layui.all.js"></script>
-    <script>
-      var layer = layui.layer;
-      var form = layui.form;
-      var carousel = layui.carousel;
-      var laydate = layui.laydate;
-      var table = layui.table;
-      var laytree = layui.tree;
-      var layTreeSelect = layui.treeSelect;
-      var layUpload = layui.upload;
-      var layElement = layui.element;
-    </script>
-  </head>
 
-  <body class="combody">
-    <div class="searchBox">
-      <div class="layui-form">
-        <div class="layui-form-item layui-inline">
-            <input
-              type="text"
-              name=""
-              placeholder="请输服务商名称"
-              autocomplete="off"
-              class="layui-input"
-            />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title></title>
+  <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+  <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+  <link rel="stylesheet" href="../../css/common.css" />
+  <link rel="stylesheet" href="../../css/five/style.css" />
+  <script src="../../js/jquery-2.1.1.js"></script>
+  <script src="../../dist/layui/layui.all.js"></script>
+  <script>
+    var layer = layui.layer;
+    var form = layui.form;
+    var carousel = layui.carousel;
+    var laydate = layui.laydate;
+    var table = layui.table;
+    var laytree = layui.tree;
+    var layTreeSelect = layui.treeSelect;
+    var layUpload = layui.upload;
+    var layElement = layui.element;
+  </script>
+</head>
+
+<body class="combody">
+  <div class="searchBox">
+    <div class="layui-form">
+      <div class="layui-form-item layui-inline">
+        <input type="text" name="" placeholder="请输服务商名称" autocomplete="off" class="layui-input" />
+      </div>
+      <div class="layui-form-item layui-inline">
+        <div class="layui-input-block">
+          <button type="button" class="layui-btn layui-btn-normal">
+            搜索
+          </button>
+          <button type="button" class="layui-btn layui-btn-warm" onclick="addEquipment();">
+            新增
+          </button>
         </div>
-        <div class="layui-form-item layui-inline">
+      </div>
+    </div>
+  </div>
+  <div class="p-l-r-15">
+    <table class="layui-hide" id="personList" lay-filter="personList"></table>
+  </div>
+  <div class="layui-dialog" id="addEquipment">
+    <div class="layui-form layui-row">
+      <div class="layui-col-md12">
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            供应商名称&nbsp;<span class="red">*</span>
+          </div>
           <div class="layui-input-block">
-            <button type="button" class="layui-btn layui-btn-normal">
-              搜索
-            </button>
-            <button type="button" class="layui-btn layui-btn-warm" onclick="addData();">
-                新增
-              </button>
+            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input" />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">供应商类型&nbsp;<span class="red">*</span></div>
+          <div class="layui-input-block">
+            <select name="company" lay-filter="company" id="company">
+              <option>请选择</option>
+              <option value="0">水电</option>
+              <option value="1">机械操作</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            供应商地址&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <div class="layui-input-inline">
+              <select name="quiz1">
+                <option value="">请选择省</option>
+                <option value="浙江" selected="">浙江省</option>
+                <option value="你的工号">江西省</option>
+                <option value="你最喜欢的老师">福建省</option>
+              </select>
+            </div>
+            <div class="layui-input-inline">
+              <select name="quiz2">
+                <option value="">请选择市</option>
+                <option value="杭州">杭州</option>
+                <option value="宁波" disabled="">宁波</option>
+                <option value="温州">温州</option>
+                <option value="温州">台州</option>
+                <option value="温州">绍兴</option>
+              </select>
+            </div>
+            <div class="layui-input-inline">
+              <select name="quiz3">
+                <option value="">请选择县/区</option>
+                <option value="西湖区">西湖区</option>
+                <option value="余杭区">余杭区</option>
+                <option value="拱墅区">临安市</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            联系人姓名&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input" />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            联系方式&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <input type="text" name="" placeholder="" autocomplete="off" class="layui-input" />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            备注
+          </div>
+          <div class="layui-input-block">
+            <textarea placeholder="" class="layui-textarea"></textarea>
+          </div>
+        </div>
+        <div class="layui-form-item dialog-btn-box">
+          <div class="layui-input-block text-center">
+            <button type="button" class="layui-btn layui-btn-normal">确认</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="p-l-r-15">
-      <div id="personList"></div>
+  </div>
+  <div class="layui-dialog" id="applyRepair">
+    <div class="layui-form layui-row">
+      <div class="layui-col-md12">
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            供应商名称&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <select name="equName">
+              <option value="">请选择</option>
+              <option value="">阿里巴巴集团</option>
+              <option value="">阿里妈妈集团</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">报修设备&nbsp;<span class="red">*</span></div>
+          <div class="layui-input-block">
+            <select name="company" lay-filter="company" id="company">
+              <option>请选择</option>
+              <option value="0">水管</option>
+              <option value="1">料槽</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            报修人&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <select name="company" lay-filter="company" id="company">
+              <option>请选择</option>
+              <option value="0">张三</option>
+              <option value="1">李四</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            报修时间&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <input type="text" name="date" id="applyDate" autocomplete="off" class="layui-input" />
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-form-label">
+            报修原因&nbsp;<span class="red">*</span>
+          </div>
+          <div class="layui-input-block">
+            <textarea placeholder="" class="layui-textarea"></textarea>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </body>
-  <script>
-    $(function () {
-      initTable();
-      laydate.render({
-        elem: "#uploadStar",
-      });
-      laydate.render({
-        elem: "#uploadEnd",
-      });
-      form.render("select");
+  </div>
+</body>
+<script>
+  $(function () {
+    initTable();
+    laydate.render({
+      elem: "#applyDate",
     });
-    function initTable() {
-      table.render({
-        elem: "#personList",
-        data: [
+    form.render("select");
+  });
+  function initTable() {
+    table.render({
+      elem: "#personList",
+      data: [
+        {
+          number: "NT0010",
+          name: "阿里巴巴集团",
+          type: '物联',
+          address: "上海",
+          people: "李四",
+          phone: "021-65151312",
+          remark: "我们的关系很铁",
+        },
+        {
+          number: "NT0010",
+          name: "阿里巴巴集团",
+          type: '物联',
+          address: "上海",
+          people: "李四",
+          phone: "021-65151312",
+          remark: "我们的关系很铁",
+        },
+        {
+          number: "NT0010",
+          name: "阿里巴巴集团",
+          type: '机械',
+          address: "上海",
+          people: "李四",
+          phone: "021-65151312",
+          remark: "我们的关系很铁",
+        },
+        {
+          number: "NT0010",
+          name: "阿里巴巴集团",
+          type: '机械',
+          address: "上海",
+          people: "李四",
+          phone: "021-65151312",
+          remark: "我们的关系很铁",
+        },
+        {
+          number: "NT0010",
+          name: "阿里巴巴集团",
+          type: '水电',
+          address: "上海",
+          people: "李四",
+          phone: "021-65151312",
+          remark: "我们的关系很铁",
+        },
+      ],
+      cellMinWidth: 80,
+      page: true,
+      cols: [
+        [
+          { field: "number", title: "编号" },
+          { field: "name", title: "服务商名称" },
+          { field: "type", title: "服务类型" },
+          { field: "address", title: "服务商地址" },
+          { field: "people", title: "负责人" },
+          { field: "phone", title: "联系方式" },
+          { field: "remark", title: "备注" },
           {
-            number: "NT0010",
-            name: "曹仁",
-            company: "阿里巴巴集团",
-            cost1: "杭州人事部",
-            cost2: "杭州研发部",
-            cost3: "杭州财务部",
-            scale: "10",
-            organize: "销售部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "李白",
-            company: "阿里巴巴集团",
-            cost1: "上海人事部",
-            cost2: "上海研发部",
-            cost3: "上海财务部",
-            scale: "10",
-            organize: "研发部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "曹仁",
-            company: "阿里巴巴集团",
-            cost1: "杭州人事部",
-            cost2: "杭州研发部",
-            cost3: "杭州财务部",
-            scale: "10",
-            organize: "销售部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "李白",
-            company: "阿里巴巴集团",
-            cost1: "上海人事部",
-            cost2: "上海研发部",
-            cost3: "上海财务部",
-            scale: "10",
-            organize: "研发部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "曹仁",
-            company: "阿里巴巴集团",
-            cost1: "杭州人事部",
-            cost2: "杭州研发部",
-            cost3: "杭州财务部",
-            scale: "10",
-            organize: "销售部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "李白",
-            company: "阿里巴巴集团",
-            cost1: "上海人事部",
-            cost2: "上海研发部",
-            cost3: "上海财务部",
-            scale: "10",
-            organize: "研发部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "曹仁",
-            company: "阿里巴巴集团",
-            cost1: "杭州人事部",
-            cost2: "杭州研发部",
-            cost3: "杭州财务部",
-            scale: "10",
-            organize: "销售部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "李白",
-            company: "阿里巴巴集团",
-            cost1: "上海人事部",
-            cost2: "上海研发部",
-            cost3: "上海财务部",
-            scale: "10",
-            organize: "研发部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "曹仁",
-            company: "阿里巴巴集团",
-            cost1: "杭州人事部",
-            cost2: "杭州研发部",
-            cost3: "杭州财务部",
-            scale: "10",
-            organize: "销售部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "李白",
-            company: "阿里巴巴集团",
-            cost1: "上海人事部",
-            cost2: "上海研发部",
-            cost3: "上海财务部",
-            scale: "10",
-            organize: "研发部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "曹仁",
-            company: "阿里巴巴集团",
-            cost1: "杭州人事部",
-            cost2: "杭州研发部",
-            cost3: "杭州财务部",
-            scale: "10",
-            organize: "销售部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
-          },
-          {
-            number: "NT0010",
-            name: "李白",
-            company: "阿里巴巴集团",
-            cost1: "上海人事部",
-            cost2: "上海研发部",
-            cost3: "上海财务部",
-            scale: "10",
-            organize: "研发部",
-            starDate: "2017-07-08",
-            endDate: "2017-08-09",
-            editUser: "lilong@163.com",
-            updateDate: "2017-07-10",
+            fixed: "right",
+            title: "操作",
+            align: "center",
+            toolbar: "#operList",
           },
         ],
-        cellMinWidth: 80,
-        page: true,
-        cols: [
-          [
-            { type: "checkbox", fix: "left" },
-            { field: "number", title: "工号" },
-            { field: "name", title: "中文名" },
-            { field: "company", title: "法人公司" },
-            { field: "cost1", title: "成本中心1" },
-            { field: "cost2", title: "成本中心2" },
-            { field: "cost3", title: "成本中心3" },
-            { field: "scale", title: "分摊比例" },
-            { field: "organize", title: "组织" },
-            { field: "starDate", title: "开始日期" },
-            { field: "endDate", title: "结束日期" },
-            { field: "editUser", title: "最后修改用户" },
-            { field: "updateDate", title: "最近更新时间" },
-          ],
-        ],
-      });
-    }
-    function addCost(){
-        parent.$.addTab('新增成本分摊','/pages_two/accounts/addCost.html')
-    }
+      ],
+    });
+    table.on("tool(personList)", function (obj) {
+      var data = obj.data;
+      //console.log(obj)
+      if (obj.event === "del") {
+        layer.confirm("确认删除该供应商吗？", function (index) {
+          obj.del();
+          layer.close(index);
+        });
+      } else if (obj.event === "edit") {
+        addData('edit');
+      } else if (obj.event === "repair") {
+        guarantee(obj.data);
+      }
+    });
+  }
+  function addEquipment() {
+    layer.open({
+      title: '新增供应商',
+      content: $("#addEquipment"),
+      type: 1,
+      area: ['840px', 'auto']
+    })
+  }
+  function guarantee(rowdata) {
+    layer.open({
+      title: '设备报修',
+      content: $("#applyRepair"),
+      type: 1,
+      area: ['840px', 'auto'],
+      btn: ['取消', '提交'],
+      yes: function (index, layero) {
+        layer.close(index);
+      },
+      btn2: function (index, layero) {
+        layer.msg('报修成功！');
+        layer.close(index);
+      },
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (error) {
+        console.log(error)
+      }
+    })
+  }
+</script>
+<script type="text/html" id="operList">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="repair">报修</a>
   </script>
+
 </html>
