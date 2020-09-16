@@ -785,7 +785,11 @@ button {
         }
     }
 }
-
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
 .left {
   float: left !important;
 }
@@ -811,6 +815,9 @@ button {
 }
 .m-t-20{
     margin-top:20px;
+}
+.m-l-20{
+  margin-left:20px;
 }
 
 /*修改选项卡的样式*/
@@ -995,7 +1002,9 @@ button {
 .m-t-15 {
   margin-top: 15px !important;
 }
-
+.m-l-10{
+  margin: 0 0 0 10px;
+}
 .m-l-15 {
   margin: 0 0 0 15px;
 }

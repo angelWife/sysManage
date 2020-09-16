@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/five/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+        var layer = layui.layer;
+        var form = layui.form;
+        var carousel = layui.carousel;
+        var laydate = layui.laydate;
+        var table = layui.table;
+        var laytree = layui.tree;
+        var layTreeSelect = layui.treeSelect;
+        var layUpload = layui.upload;
+        var layElement = layui.element;
+    </script>
+</head>
+
+<body class="combody">
+    <div class="searchBox">
+        <div class="layui-form">
+            <div class="layui-form-item layui-inline">
+                <input type="text" name="" placeholder="请输入单位备号" autocomplete="off" class="layui-input" />
+            </div>
+            <div class="layui-form-item layui-inline">
+                <input type="text" name="" placeholder="请输入单位名称" autocomplete="off" class="layui-input" />
+            </div>
+            <div class="layui-form-item layui-inline">
+                <button type="button" class="layui-btn layui-btn-normal">
+                    搜索
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="p-l-r-15">
+        <table class="layui-hide" id="personList" lay-filter="personList"></table>
+    </div>
+
+</body>
+<script>
+    $(function () {
+        initTable();
+        laydate.render({
+            elem: "#starDate",
+        });
+        laydate.render({
+            elem: "#endDate",
+        });
+        form.render("select");
+    });
+    function initTable() {
+        table.render({
+            elem: "#personList",
+            data: [
+                {
+                    number: "T00001",
+                    name: "老龙头企业",
+                    province: '江苏',
+                    city: "南京",
+                    area: "溧水",
+                    addDate: "2020-06-05",
+                    remark: "--",
+                },
+                {
+                    number: "T00002",
+                    name: "自然养鸡长",
+                    province: '江苏',
+                    city: "南京",
+                    area: "溧水",
+                    addDate: "2020-06-05",
+                    remark: "--",
+                },
+                {
+                    number: "T00001",
+                    name: "老龙头企业",
+                    province: '江苏',
+                    city: "南京",
+                    area: "溧水",
+                    addDate: "2020-06-05",
+                    remark: "--",
+                },
+                {
+                    number: "T00002",
+                    name: "自然养鸡长",
+                    province: '江苏',
+                    city: "南京",
+                    area: "溧水",
+                    addDate: "2020-06-05",
+                    remark: "--",
+                },
+            ],
+            cellMinWidth: 80,
+            page: true,
+            cols: [
+                [
+                    { field: "number", title: "单位编号" },
+                    { field: "name", title: "单位名称" },
+                    { field: "province", title: "省份名称" },
+                    { field: "city", title: "城市名称" },
+                    { field: "area", title: "区域名称" },
+                    { field: "addDate", title: "添加时间" },
+                    { field: "remark", title: "备注" },
+                ],
+            ],
+        });
+        table.on("tool(personList)", function (obj) {
+            var data = obj.data;
+            //console.log(obj)
+            if (obj.event === "del") {
+                layer.confirm("确认删除该供应商吗？", function (index) {
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if (obj.event === "edit") {
+                addData('edit');
+            } else if (obj.event === "repair") {
+                guarantee(obj.data);
+            }
+        });
+    }
+    function addEquipment() {
+        layer.open({
+            title: '新增供应商',
+            content: $("#addEquipment"),
+            type: 1,
+            area: ['840px', 'auto']
+        })
+    }
+    function guarantee(rowdata) {
+        layer.open({
+            title: '设备报修',
+            content: $("#applyRepair"),
+            type: 1,
+            area: ['840px', 'auto'],
+            btn: ['取消', '提交'],
+            yes: function (index, layero) {
+                layer.close(index);
+            },
+            btn2: function (index, layero) {
+                layer.msg('报修成功！');
+                layer.close(index);
+            },
+            success: function (res) {
+                console.log(res)
+            },
+            fail: function (error) {
+                console.log(error)
+            }
+        })
+    }
+    function addOrder(){
+        parent.changeSrc('/pages_five/addTask.html');
+    }
+</script>
+</html>

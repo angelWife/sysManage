@@ -61,3 +61,53 @@
 .dialog-btn-box .layui-btn {
   width: 120px !important;
 }
+.orderNav {
+  padding: 20px 20px 0;
+}
+.orderNav .item {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  background-color: #00aeef;
+  color: #ffffff;
+  position: relative;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.orderNav .item .text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+.orderNav .item .text_n {
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+}
+.orderNav .add {
+  float: left;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  background: #f5f5f5;
+  text-align: center;
+  line-height: 150px;
+}
+.orderNav .add .iconfont {
+  font-size: 50px;
+  color: #999999;
+}
+.formModal {
+  min-width: 800px;
+  width: 60%;
+}

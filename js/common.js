@@ -568,3 +568,8 @@ function init_left_menu(id, menus, active) {
 function switchChange(obj){
 	$(obj).toggleClass('on');
 }
+
+//切换iframe地址
+function changeSrc(url){
+	$("#mainIframe .iframe").attr('src',url);
+}

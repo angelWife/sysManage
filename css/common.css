@@ -754,6 +754,11 @@ button.btn {
 .comBody .m_right .main {
   height: 100%;
 }
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
+}
 .left {
   float: left !important;
 }
@@ -774,6 +779,9 @@ button.btn {
 }
 .m-t-20 {
   margin-top: 20px;
+}
+.m-l-20 {
+  margin-left: 20px;
 }
 /*修改选项卡的样式*/
 .layui-tab .layui-this {
@@ -922,6 +930,9 @@ button.btn {
 }
 .m-t-15 {
   margin-top: 15px !important;
+}
+.m-l-10 {
+  margin: 0 0 0 10px;
 }
 .m-l-15 {
   margin: 0 0 0 15px;

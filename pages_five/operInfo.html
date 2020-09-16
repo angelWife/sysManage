@@ -30,22 +30,30 @@
     <div class="searchBox">
         <div class="layui-form">
             <div class="layui-form-item layui-inline">
-                <select name="company" lay-filter="company" id="company">
-                    <option>请选择部门</option>
-                    <option value="0">财务部</option>
-                    <option value="1">人事部</option>
-                </select>
+                <input
+                type="text"
+                name="date"
+                id="starDate"
+                autocomplete="off"
+                placeholder="开始时间"
+                class="layui-input"
+                />
             </div>
             <div class="layui-form-item layui-inline">
-                <select name="company" lay-filter="company" id="company">
-                    <option>请选择设备状态</option>
-                    <option value="0">保修</option>
-                    <option value="1">损坏</option>
-                    <option value="1">正常</option>
-                </select>
+                -
             </div>
             <div class="layui-form-item layui-inline">
-                <input type="text" name="" placeholder="请输入设备编号" autocomplete="off" class="layui-input" />
+                <input
+                type="text"
+                name="date"
+                id="endDate"
+                autocomplete="off"
+                placeholder="结束时间"
+                class="layui-input"
+                />
+            </div>
+            <div class="layui-form-item layui-inline">
+                <input type="text" name="" placeholder="请输入设备号" autocomplete="off" class="layui-input" />
             </div>
             <div class="layui-form-item layui-inline">
                 <input type="text" name="" placeholder="请输入设备名称" autocomplete="off" class="layui-input" />
@@ -54,14 +62,6 @@
                 <button type="button" class="layui-btn layui-btn-normal">
                     搜索
                 </button>
-                <button type="button" class="layui-btn layui-btn-warm" onclick="addEquipment();">
-                    新增
-                </button>
-            </div>
-            <div class="layui-form-item layui-inline right">
-                <button type="button" class="layui-btn layui-btn-primary">
-                    <i class="iconfont icon-xiazai"></i><span class="text">导出</span>
-                  </button>
             </div>
         </div>
     </div>
@@ -74,7 +74,10 @@
     $(function () {
         initTable();
         laydate.render({
-            elem: "#applyDate",
+            elem: "#starDate",
+        });
+        laydate.render({
+            elem: "#endDate",
         });
         form.render("select");
     });
@@ -82,59 +85,82 @@
         table.render({
             elem: "#personList",
             data: [
-            {
+                {
                     number: "NT0010",
-                    name: "自动饮水器",
-                    type: '畜牧类',
-                    status: "暂停",
-                    createDate: "2020-05-15",
-                    createBy: "李四",
-                    remark: "我们的关系很铁",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
                 },
                 {
                     number: "NT0010",
-                    name: "自动饮水器",
-                    type: '畜牧类',
-                    status: "暂停",
-                    createDate: "2020-05-15",
-                    createBy: "李四",
-                    remark: "我们的关系很铁",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
                 },
                 {
                     number: "NT0010",
-                    name: "自动饮水器",
-                    type: '畜牧类',
-                    status: "暂停",
-                    createDate: "2020-05-15",
-                    createBy: "李四",
-                    remark: "我们的关系很铁",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
                 },
                 {
                     number: "NT0010",
-                    name: "自动饮水器",
-                    type: '畜牧类',
-                    status: "暂停",
-                    createDate: "2020-05-15",
-                    createBy: "李四",
-                    remark: "我们的关系很铁",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
                 },
                 {
                     number: "NT0010",
-                    name: "自动饮水器",
-                    type: '畜牧类',
-                    status: "暂停",
-                    createDate: "2020-05-15",
-                    createBy: "李四",
-                    remark: "我们的关系很铁",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
                 },
                 {
                     number: "NT0010",
-                    name: "自动饮水器",
-                    type: '畜牧类',
-                    status: "暂停",
-                    createDate: "2020-05-15",
-                    createBy: "李四",
-                    remark: "我们的关系很铁",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
+                },
+                {
+                    number: "NT0010",
+                    name: "喷水头",
+                    type: '喷水设备',
+                    people: "张三",
+                    operType: "系统操作",
+                    operRes: "正常执行",
+                    errorInfo: "--",
+                    operTime: "2020-06-05",
+                    SIM: "SIM6351521",
                 },
             ],
             cellMinWidth: 80,
@@ -144,16 +170,12 @@
                     { field: "number", title: "设备编号" },
                     { field: "name", title: "设备名称" },
                     { field: "type", title: "设备类型" },
-                    { field: "status", title: "设备状态" },
-                    { field: "remark", title: "报警信息" },
-                    { field: "createBy", title: "添加人" },
-                    { field: "createDate", title: "添加时间" },
-                    // {
-                    //     fixed: "right",
-                    //     title: "操作",
-                    //     align: "center",
-                    //     toolbar: "#operList",
-                    // },
+                    { field: "people", title: "操作人员" },
+                    { field: "operType", title: "操作方式" },
+                    { field: "operRes", title: "执行结果" },
+                    { field: "errorInfo", title: "错误信息" },
+                    { field: "operTime", title: "执行时间" },
+                    { field: "SIM", title: "SIM号" },
                 ],
             ],
         });
@@ -201,6 +223,9 @@
                 console.log(error)
             }
         })
+    }
+    function addOrder(){
+        parent.changeSrc('/pages_five/addTask.html');
     }
 </script>
 </html>
