@@ -2,6 +2,38 @@
 
 .combody{
     background:@white;
+    .comTitle{
+        border-bottom: 2px solid @coldCopper;
+        margin-bottom:10px;
+        span{
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background: @coldCopper;
+            color:@white;
+            line-height: 42px;
+        }
+        .more{
+            float:right;
+            margin-right:20px;
+            font-size:14px;
+        }
+    }
+    .articList{
+        margin:0 15px;
+        li{
+            padding:10px 0;
+            span{
+                float:right;
+                color:@gray_99;
+            }
+            a:hover{
+                color:@blue;
+            }
+        }
+    }
     .graphic{
         height: calc(100% - 40px);
         min-height:420px;
@@ -42,7 +74,7 @@
     }
     
 }
-  .searchBox {
+.searchBox {
     padding: 20px 20px 0;
     border: 1px solid @gray_e6;
     background: @gray_f5;
@@ -63,52 +95,6 @@
     margin-top:40px;
     .layui-btn{
         width: 120px !important;
-    }
-}
-.orderNav{
-    padding:20px 20px 0;
-    .item{
-        float:left;
-        margin-right:20px;
-        margin-bottom:20px;
-        border-radius:10px;
-        width: 150px;
-        height:150px;
-        background-color: @sky_blue;
-        color:@white;
-        position: relative;
-        line-height: 1.4;
-        cursor: pointer;
-        .text{
-            position: absolute;
-            width: 100%;
-            top:50%;
-            text-align: center;
-            transform: translateY(-50%);
-            font-size:20px;
-        }
-        .text_n{
-            position: absolute;
-            text-align: center;
-            top:10px;
-            right:10px;
-        }
-    }
-    .add{
-        float:left;
-        cursor: pointer;
-        margin-right:20px;
-        margin-bottom:20px;
-        border-radius:10px;  
-        width: 150px;
-        height:150px;
-        background: @gray_f5;
-        text-align: center;
-        line-height: 150px;
-        .iconfont{
-            font-size:50px;
-            color:@gray_99;
-        }
     }
 }
 .formModal{
