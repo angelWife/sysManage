@@ -38,27 +38,27 @@
                 <div class="layui-form-item layui-inline">
                     <div class="layui-form-label">患者姓名</div>
                     <div class="layui-input-block">
-                        <input type="text" name="" placeholder="请输患者姓名" autocomplete="off" class="layui-input" />
+                        <input type="text" name="" placeholder="请输入患者姓名" autocomplete="off" class="layui-input" />
                     </div>
                 </div>
                 <div class="layui-form-item layui-inline">
-                    <div class="layui-form-label">科室</div>
+                    <div class="layui-form-label">订单编号</div>
                     <div class="layui-input-block">
-                        <input type="text" name="" placeholder="请输科室" autocomplete="off" class="layui-input" />
+                        <input type="text" name="" placeholder="请入订单编号" autocomplete="off" class="layui-input" />
                     </div>
                 </div>
                 <div class="layui-form-item layui-inline">
-                    <div class="layui-form-label">健康处方确实</div>
+                    <div class="layui-form-label">订单状态</div>
                     <div class="layui-input-block">
                         <select name="company" lay-filter="company" id="company">
-                            <option>请选择报警区大棚</option>
-                            <option value="0">否</option>
-                            <option value="1">是</option>
+                            <option>请选择订单状态</option>
+                            <option value="0">已完成</option>
+                            <option value="1">审核中</option>
                         </select>
                     </div>
                 </div>
                 <div class="layui-form-item layui-inline">
-                    <div class="layui-form-label">健康处方确实</div>
+                    <div class="layui-form-label">咨询日期</div>
                     <div class="layui-input-block">
                         <div class="layui-inline">
                             <input type="text" name="date" id="starDate" autocomplete="off" placeholder="开始时间"
@@ -105,75 +105,75 @@
         table.render({
             elem: "#table_dapeng",
             data: [
-                {
-                    number: "001",
+            {
+                    code: "001",
+                    number:"A202008072144",
                     date: "2018-05-19",
                     phone: "18888888888",
                     username: "三毛",
                     name: "张晓丽",
-                    sex: "男",
-                    age: "39",
-                    status: "是",
-                    keshi: "全科",
+                    clinic: "恪守莱昂",
+                    status: "已完成",
+                    price: "￥8.00",
                 },
                 {
-                    number: "002",
+                    code: "002",
+                    number:"A202008072144",
                     date: "2018-05-19",
                     phone: "18888888888",
                     username: "三毛",
                     name: "张晓丽",
-                    sex: "男",
-                    age: "39",
-                    status: "是",
-                    keshi: "全科",
+                    clinic: "恪守莱昂",
+                    status: "已完成",
+                    price: "￥8.00",
                 },
                 {
-                    number: "003",
+                    code: "003",
+                    number:"A202008072144",
                     date: "2018-05-19",
                     phone: "18888888888",
                     username: "三毛",
                     name: "张晓丽",
-                    sex: "男",
-                    age: "39",
-                    status: "是",
-                    keshi: "全科",
+                    clinic: "恪守莱昂",
+                    status: "已完成",
+                    price: "￥8.00",
                 },
                 {
-                    number: "004",
+                    code: "004",
+                    number:"A202008072144",
                     date: "2018-05-19",
                     phone: "18888888888",
                     username: "三毛",
                     name: "张晓丽",
-                    sex: "男",
-                    age: "39",
-                    status: "是",
-                    keshi: "全科",
+                    clinic: "恪守莱昂",
+                    status: "已完成",
+                    price: "￥8.00",
                 },
                 {
-                    number: "005",
+                    code: "005",
+                    number:"A202008072144",
                     date: "2018-05-19",
                     phone: "18888888888",
                     username: "三毛",
                     name: "张晓丽",
-                    sex: "男",
-                    age: "39",
-                    status: "是",
-                    keshi: "全科",
+                    clinic: "恪守莱昂",
+                    status: "已完成",
+                    price: "￥8.00",
                 },
             ],
             cellMinWidth: 80,
             page: true,
             cols: [
                 [
-                    { field: "number", title: "序号" },
-                    { field: "date", title: "咨询日期" },
+                    { field: "code", title: "序号" },
+                    { field: "number", title: "订单编号" },
+                    { field: "date", title: "下单时间" },
                     { field: "phone", title: "手机号" },
                     { field: "username", title: "用户名" },
                     { field: "name", title: "患者姓名" },
-                    { field: "sex", title: "性别" },
-                    { field: "age", title: "年龄" },
-                    { field: "status", title: "健康处方确实" },
-                    { field: "keshi", title: "咨询科室" },
+                    { field: "clinic", title: "医生" },
+                    { field: "status", title: "订单状态" },
+                    { field: "price", title: "订单金额",toolbar: '#priceInfo', },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
             ],
@@ -225,8 +225,11 @@
         });
     }
 </script>
+<script type="text/html" id="priceInfo">
+    <span class="red">{{d.price}}</span>
+  </script>
 <script type="text/html" id="operation">
     <a class="blue" lay-event="detail">查看</a>
-    <a class="" lay-event="chufang">健康处方 </a>
+    <a class="" lay-event="chufang">取消订单 </a>
   </script>
 </html>
