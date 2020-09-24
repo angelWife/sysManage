@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+	
+
+
+/***********************中间banner************************************/
+.middle_banner{
+	width:942px;
+	height:223px;
+	margin-bottom:35px;}
+/*********************底部banner、菜谱食品************************************/
+.bottom_banner{
+	width:942px;
+	height:223px;
+	text-align:center;
+	margin-bottom:35px;}
+
+

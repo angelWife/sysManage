@@ -1,0 +1,67 @@
+@charset "utf-8";
+/* CSS Document */
+.seller .input3{
+	background:url(../images/bg2.jpg) no-repeat center center}
+.seller .input4{
+	background:url(../images/bg1.jpg) no-repeat center center}
+.seller_list{
+	width:945px;}
+.seller_list li{
+	float:left;
+	display:block;
+	width:269px;
+	padding-bottom:40px;}
+.seller_list li .sellers{
+	width:262px;
+	height:239px;
+	background:url(../images/seller_bg.png) no-repeat center center;
+	display:block;
+	padding-top:6px;
+	padding-left:7px;
+	}
+.seller_list .li_2{
+	margin-left:69px;}
+.shop_name{
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#666666;
+	letter-spacing:1px;
+	line-height:18px;
+	margin-top:10px;
+	margin-bottom:17px;
+	margin-right:85px;
+	letter-spacing:1px}
+.seller_name{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#949494;
+	letter-spacing:1px;
+	padding-top:8px;
+	padding-bottom:11px;
+	border-top:1px dashed #8a8a8a;
+	border-bottom:1px dashed #8a8a8a;
+	margin-right:85px;
+	letter-spacing:1px;
+	margin-bottom:11px;}
+.seller_name span{
+	color:#f04e23}
+.shops{
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#949494;
+	line-height:15px;
+	margin-right:85px;
+	letter-spacing:1px;
+	margin-bottom:16px;}
+.go{
+	color:#f04e23;
+	font-family:"微软雅黑";
+	font-size:12px;
+	letter-spacing:1px;}
+.middle_banner{
+	width:942px;
+	height:192px;
+	margin-bottom:35px;
+	overflow:hidden}
+.m4{
+	margin-bottom:115px;}

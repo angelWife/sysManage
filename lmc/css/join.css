@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0 auto;
+	padding:0;}
+ul{
+	list-style:none}
+li{
+	vertical-align:middle;
+	list-style:none}
+a{
+	text-decoration:none}
+a:focus{
+	outline:none}
+img{
+	border:none;}
+.clear{
+	clear:both}
+input{
+	vertical-align:middle}
+.join{
+	width:100%;
+	height:50px;
+	background:#000}
+.join_title{
+	width:1150px;
+	height:50px;
+	background:url(../images/join_go.png) no-repeat right center;
+	text-align:right;
+	padding-right:50px;
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#fff;
+	line-height:50px;
+	position:relative;}
+.join_logo{
+	position:absolute;
+	width:207px;
+	height:121px;
+	top:0;
+	left:0}
+.join_banner{
+	width:100%;
+	height:600px;
+	background:url(../images/join.jpg) no-repeat top center}
+.banner_con{
+	width:1200px;
+	height:600px;
+	position:relative}
+.con{
+	position:absolute;
+	width:328px;
+	height:52px;
+	left:438px;
+	top:279px;}
+.con .join_input1{
+	width:220px;
+	background:#fff;
+	height:52px;
+	border:none;
+	line-height:52px;
+	padding-left:15px;
+	font-family:"微软雅黑";
+	font-size:13px;
+	color:#a9a9a9}
+.con .join_input2{
+	width:83px;
+	height:52px;
+	line-height:50px;
+	text-align:center;
+	background:#f14e23;
+	border:none;
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#fff;
+	margin-left:10px;
+	cursor:pointer}
+.join_cho{
+	width:100%;
+	height:45px;
+	padding:40px 0;
+	background:#eef8e3;}
+.join_con{
+	width:1199px;
+	height:45px;}
+.join_con li{
+	float:left;
+	line-height:22px;
+	font-size:17px;
+	letter-spacing:3px;
+	display:block;
+	text-align:left;
+	font-family:"微软雅黑";
+	font-size:17px;
+	line-height:22px;
+	color:#599810;
+	text-align:left}
+.join_one{
+	height:45px;
+	width:386px;
+	border-right:1px dashed #599810}
+.one{
+	background:url(../images/join_one.png) no-repeat left center;
+	height:45px;
+	padding-left:80px;}
+.two{
+	background:url(../images/join_two.png) no-repeat left center;
+	height:45px;
+	padding-left:80px;}
+.three{
+	background:url(../images/join_three.png) no-repeat left center;
+	height:45px;
+	padding-left:80px;
+	}
+.join_two{
+	height:45px;
+	width:420px;
+	padding-left:75px;
+	border-right:1px dashed #599810}
+.join_three{
+	height:45px;
+	width:240px;
+	border-left:1px dashed #599810;
+	padding-left:75px}
+.join_footer{
+	width:100%;
+	height:217px;
+	background:#000}
+.foot{
+	width:1200px;
+	height:130px;
+	padding-top:60px;
+	padding-bottom:27px;}
+.foot_left{
+	float:left;
+	width:885px;
+	height:130px;}
+.foot_right{
+	float:left;
+	width:315px;
+	height:130px;}
+.left_1{
+	float:left;
+	width:163px;
+	height:115px;
+	padding-top:15px;}
+.left_2{
+	float:left;
+	width:138px;
+	border-left:1px dashed #8b8a8a;
+	border-right:1px dashed #8b8a8a;
+	height:115px;
+	padding:0 70px;
+	padding-top:15px;}
+.left_3{
+	float:left;
+	padding-top:15px;
+	padding-left:40px;}
+.left_title{
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#f1f1f1;
+	line-height:16px;
+	margin-bottom:25px;}
+.left_1 li{
+	display:block;
+	text-align:left;
+	font-family:"微软雅黑";
+	font-size:12px;
+	line-height:18px;}
+.left_1 li a{
+	color:#a7a7a7}
+.left_1 li a:hover{
+	color:#fff}
+.li_1{
+	margin-bottom:5px;
+	background:url(../images/join_tel.jpg) no-repeat left center;
+	font-family:impact;
+	letter-spacing:1px;}
+.li_2{
+	background:url(../images/join_mail.jpg) no-repeat left center}
+.li_2 a{
+	color:#d7d7d7}
+.li_2 a:hover{
+	color:#fff}
+.left_2 li{
+	height:21px;
+	padding-left:34px;
+	color:#fff;
+	line-height:21px;}
+.li_3{
+	padding:0 9px;}
+.left_3 li{
+	float:left}
+.foot_right{
+	padding-top:15px;
+	font-family:"微软雅黑";
+	font-size:12px;
+	color:#575757}
+.foot_right span{
+	padding:0 5px;}
+.foot_right a{
+	color:#575757}
+.foot_right a:hover{
+	color:#fff}	
