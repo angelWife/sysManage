@@ -74,14 +74,14 @@
                     <div class="home" id="menuClick">《</div>
                     <div class="treeList">
                         <div class="treeMain" id="headTree">
-                            <a class="active" href="javascript:;" data-url="/pages_six/home/index.html"
+                            <a class="active" href="javascript:;" data-url="/pages_seven/home/index.html"
                                 style="padding:0 10px;">首页</a>
                         </div>
                     </div>
                     <div class="closeAll glyphicon glyphicon-off"></div>
                 </div>
                 <div class="main" id="mainIframe">
-                    <iframe src="/pages_six/home/index.html" class="iframe" width="100%" height="100%"
+                    <iframe src="/pages_seven/home/index.html" class="iframe" width="100%" height="100%"
                         frameBorder="0"></iframe>
                 </div>
             </div>
@@ -92,117 +92,62 @@
     var menus = [
         {
             id: 10,
-            name: '首页',
-            icon: 'iconfont icon-yemian-copy-copy',
-            url: '/pages_six/home/index.html',
-            children: null
+            name: '商家列表',
+            icon: 'iconfont icon-jishufuwushang',
+            url: '/pages_six/synthesize/consultation.html'
         },
         {
             id: 20,
-            name: '咨询管理',
-            icon: 'iconfont icon-jishufuwushang',
-            url: '/pages_six/consulWork/consultation.html'
+            name: '竞拍管理',
+            icon: 'iconfont icon-yonhu',
+            url: '/pages_six/synthesize/consultation.html'
         },
         {
             id: 30,
-            name: '个人账户',
-            icon: 'iconfont icon-yonhu',
-            children: [
-                {
-                    id: 301,
-                    name: '个人信息',
-                    icon: null,
-                    children: [
-                        {
-                            id: 3011,
-                            name: '诊所信息编辑',
-                            icon: null,
-                            url: '/pages_six/consulWork/consultation.html'
-                        },
-                        {
-                            id: 3012,
-                            name: '工作单位编辑',
-                            icon: null,
-                            url: '/pages_six/user/list.html'
-                        },
-                        {
-                            id: 3013,
-                            name: '基本信息',
-                            icon: null,
-                            url: '/pages_six/user/list.html'
-                        },
-                    ]
-                },
-                {
-                    id: 302,
-                    name: '修改密码',
-                    icon: null,
-                    url: '/pages_six/user/setAuth.html'
-                },
-                {
-                    id: 303,
-                    name: '结算',
-                    icon: null,
-                    children: [
-                        {
-                            id: 3031,
-                            name: '结算',
-                            icon: null,
-                            url: '/pages_six/consulWork/consultation.html'
-                        },
-                        {
-                            id: 3032,
-                            name: '添加银行卡',
-                            icon: null,
-                            url: '/pages_six/user/list.html'
-                        },
-                    ]
-                },
-            ]
+            name: '用户点评列表',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_six/user/list.html'
         },
         {
             id: 40,
-            name: '订单管理',
+            name: '促销信息列表',
             icon: 'iconfont icon-tieziguanli',
             url: '/pages_six/user/list.html'
         },
         {
             id: 50,
-            name: '服务管理',
-            icon: 'iconfont icon-kefu',
-            children: [
-                {
-                    id: 501,
-                    name: '模板管理',
-                    icon: null,
-                    url: '/pages_six/setting/editPassword.html'
-                },
-                {
-                    id: 502,
-                    name: '义诊服务',
-                    icon: null,
-                    url: '/pages_six/setting/bindPhone.html'
-                }
-            ]
+            name: '字典表管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_six/user/list.html'
         },
         {
             id: 60,
-            name: '发布',
-            icon: 'iconfont icon-caozuorizhi',
-            url: '/pages_six/operLog/list.html',
-            children: null
+            name: '意见建议管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_six/user/list.html'
         },
         {
             id: 70,
-            name: '统计分析',
-            icon: 'iconfont icon-icon-p_mrpbaobiao',
-            url: '/pages_six/operLog/list.html',
-            children: null
+            name: '注册用户管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_six/user/list.html'
+        },
+        {
+            id: 80,
+            name: '广告管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_six/user/list.html'
+        },
+        {
+            id: 90,
+            name: '消息管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_six/user/list.html'
         },
 
     ];
 
-    init_menu(menus);
+    init_menu(menus,true);
 
     // addTab('首页', 'html/newPage/index.html');
 

@@ -342,6 +342,7 @@ function loadMenuAfter() {
 		.on('click', function () {
             var li = $(this).parent('li')
             var href = $(this).data('src');
+            debugger
             var title = $(this).data('name')
             var hasChild = li.hasClass('hasChild');
             if(hasChild){
@@ -353,8 +354,11 @@ function loadMenuAfter() {
                 $('#menuBox li').removeClass('active');
                 setTimeout(function(){
 									li.addClass('active');
-								}, 100);
-                $.addTab(title, href);
+                                }, 100);
+                                if(href){
+                                    $.addTab(title, href);
+                                }
+                
             }
             return;
 			
@@ -449,16 +453,20 @@ function clickBack() {
 	$.removeTab(tab)
 }
 
-function init_menu (menus) {
+function init_menu (menus,needFrist) {
 	if(menus.length==0){
 		loadMenuAfter();
 		return false;
-	}
+    }
+    var active = 'active';
+    if(needFrist){
+        active = ''
+    }
     var str = '<ul  class="menuItem">'
     for (var i = 0; i < menus.length; i++) {
         var item = menus[i];
         if (i == 0) {
-            str += '<li class="active"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><span>' + item.name + '</span></a>'
+            str += '<li class="'+active+'"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><span>' + item.name + '</span></a>'
         } else {
             var li_c_class=item.children?'hasChild':'';
             if (item.icon) {

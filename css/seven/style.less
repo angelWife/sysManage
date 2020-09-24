@@ -32,6 +32,30 @@
         }
     }
     .body{
+        .m_left{
+            .menuBox{
+                ul{
+                    li{
+                        a{
+                            // border-bottom:1px solid @gray_d6;
+                            font-size:14px;
+                            height:50px;
+                            line-height: 50px;
+                            &::before{
+                                height:50px;
+                            line-height: 50px;
+                            }
+                        }
+                        &.active a{
+                            background: @gray_f5 !important;
+                            color:@gray_66;
+                            .boxShadow(2px,0px,2px,rgba(0,0,0,0.2));
+                            
+                        }
+                    }
+                }
+            }
+        }
         .m_right{
             .treeBox{
                 border:0;
