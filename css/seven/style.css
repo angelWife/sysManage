@@ -1,0 +1,36 @@
+@charset 'utf-8';
+.container .head {
+  background: #00aeef;
+  border-bottom: 1px solid #3479DF;
+}
+.container .head .headBar {
+  margin-left: 40px;
+}
+.container .head .headBar a {
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  min-width: 100px;
+  padding: 0 20px;
+  font-size: 15px;
+  color: #ffffff;
+}
+.container .head .headBar a .iconfont {
+  font-size: 16px;
+  position: relative;
+  top: 1px;
+}
+.container .head .headBar a.active {
+  background: #05a7e2 !important;
+}
+.container .head .headBar a:hover {
+  background: #00aeef;
+  opacity: 0.8;
+}
+.container .body .m_right .treeBox {
+  border: 0;
+}
+.container .body .m_right .treeBox .treeMain a {
+  border-top: 0 !important;
+  line-height: 40px !important;
+}

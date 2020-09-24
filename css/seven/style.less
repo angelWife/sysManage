@@ -1,0 +1,47 @@
+@import '../base.less';
+.container {
+    .head {
+        background: @sky_blue;
+        border-bottom: 1px solid @dark_blue;
+        .headBar {
+            margin-left:40px;
+            a {
+                float:left;
+                height: 60px;
+                line-height: 60px;
+                min-width:100px;
+                padding: 0 20px;
+                font-size: 15px;
+                color: @white;
+
+                .iconfont {
+                    font-size: 16px;
+                    position: relative;
+                    top:1px;
+                }
+
+                &.active {
+                    background: @sky_blue_dack !important;
+                }
+
+                &:hover {
+                    background:@sky_blue;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    .body{
+        .m_right{
+            .treeBox{
+                border:0;
+                .treeMain{
+                    a{
+                        border-top:0 !important;
+                        line-height: 40px !important;
+                    }
+                }
+            }
+        }
+    }
+}
