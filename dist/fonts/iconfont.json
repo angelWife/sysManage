@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "10194315",
+      "name": "减少",
+      "font_class": "jianshao",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "11664332",
+      "name": "增加",
+      "font_class": "zengjia",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "436017",
+      "name": "阅读",
+      "font_class": "yuedu",
+      "unicode": "e806",
+      "unicode_decimal": 59398
+    },
+    {
+      "icon_id": "873516",
+      "name": "文章转载",
+      "font_class": "wenzhangzhuanzai",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "4406931",
+      "name": "点赞",
+      "font_class": "dianzan",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
       "icon_id": "14656249",
       "name": "技术服务商",
       "font_class": "jishufuwushang",

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/flex.css" />
+    <link rel="stylesheet" href="../../css/six/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+        var layer = layui.layer;
+        var form = layui.form;
+        var carousel = layui.carousel;
+        var laydate = layui.laydate;
+        var table = layui.table;
+        var laytree = layui.tree;
+        var layTreeSelect = layui.treeSelect;
+        var layUpload = layui.upload;
+        var layElement = layui.element;
+    </script>
+    <style>
+        #addRelationPage .layui-form-label {
+            width: 180px !important;
+        }
+
+        #addRelationPage .layui-input-block {
+            margin-left: 190px !important;
+        }
+    </style>
+</head>
+
+<body class="combody" id="addRelationPage">
+    <div class="comTitle">
+        <span>工作单位</span>
+    </div>
+    <div class="layui-form p-t-20 flex flex-row flex-just-center">
+        <div class="formModal" style="width:600px;">
+            <div class="layui-form-item">
+                <div class="layui-form-label">医院</div>
+                <div class="layui-input-block">
+                    <div class="layui-input-inline">
+                        <select name="quiz1">
+                          <option value="">请选择省</option>
+                          <option value="浙江" selected="">浙江省</option>
+                          <option value="你的工号">江西省</option>
+                          <option value="你最喜欢的老师">福建省</option>
+                        </select>
+                      </div>
+                      <div class="layui-input-inline">
+                        <select name="quiz2">
+                          <option value="">请选择市</option>
+                          <option value="杭州">杭州</option>
+                          <option value="宁波" disabled="">宁波</option>
+                          <option value="温州">温州</option>
+                          <option value="温州">台州</option>
+                          <option value="温州">绍兴</option>
+                        </select>
+                      </div>
+                      <div class="layui-input-inline">
+                        <select name="quiz3">
+                          <option value="">请选择县/区</option>
+                          <option value="西湖区">西湖区</option>
+                          <option value="余杭区">余杭区</option>
+                          <option value="拱墅区">临安市</option>
+                        </select>
+                      </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+               <div class="layui-inline">
+                <div class="layui-form-label">科室</div>
+                <div class="layui-input-block">
+                    <select name="company" lay-filter="company" id="company">
+                        <option>请选择</option>
+                        <option value="0">妇科</option>
+                        <option value="1">放射科</option>
+                    </select>
+                </div>
+               </div>
+               <div class="layui-inline">
+                <div class="layui-form-label">其他</div>
+                <div class="layui-input-block">
+                    <input type="text" name="" placeholder="" autocomplete="off" class="layui-input" />
+                </div>
+               </div>
+            </div>
+            <div class="layui-form-item">
+                 <div class="layui-form-label">职称</div>
+                 <div class="layui-input-block">
+                     <select name="company" lay-filter="company" id="company">
+                         <option>请选择</option>
+                         <option value="0">实习医生</option>
+                         <option value="1">实习护士</option>
+                     </select>
+                 </div>
+             </div>
+            <div class="layui-form-item">
+                <div class="layui-form-label">入职时间</div>
+                <div class="layui-input-block">
+                    <input type="text" name="date" id="beginDate" autocomplete="off" placeholder="开始时间"
+                            class="layui-input" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block text-center submitBtn">
+                    <button type="button" class="layui-btn layui-btn-normal">保存</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    $(function () {
+        laydate.render({
+            elem: "#beginDate",
+        });
+        laydate.render({
+            elem: "#endDate",
+        });
+        form.render("select");
+        form.render("radio");
+        var uploadInst = layUpload.render({
+            elem: '#uploadPic'
+            , url: '' //改成您自己的上传接口
+            , before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    $('#demo1').attr('src', result); //图片链接（base64）
+                });
+            }
+            , done: function (res) {
+                //如果上传失败
+                if (res.code > 0) {
+                    return layer.msg('上传失败');
+                }
+                //上传成功
+            }
+            , error: function () {
+                //演示失败状态，并实现重传
+                var demoText = $('#demoText');
+                demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                demoText.find('.demo-reload').on('click', function () {
+                    uploadInst.upload();
+                });
+            }
+        });
+    });
+    function backIframe() {
+        parent.changeSrc('/pages_five/task.html')
+    }
+</script>
+
+</html>
