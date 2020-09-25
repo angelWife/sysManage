@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7556885",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "666906",
+      "name": "综合",
+      "font_class": "zonghe",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "7777218",
+      "name": "全选",
+      "font_class": "quanxuan",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
       "icon_id": "10194315",
       "name": "减少",
       "font_class": "jianshao",

@@ -1024,3 +1024,12 @@ button.btn {
   border-radius: 7px;
   background: #ededed;
 }
+/*去除input[type=number]的浏览器样式*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  /* firefox */
+}

@@ -342,7 +342,6 @@ function loadMenuAfter() {
 		.on('click', function () {
             var li = $(this).parent('li')
             var href = $(this).data('src');
-            debugger
             var title = $(this).data('name')
             var hasChild = li.hasClass('hasChild');
             if(hasChild){
@@ -465,10 +464,13 @@ function init_menu (menus,needFrist) {
     var str = '<ul  class="menuItem">'
     for (var i = 0; i < menus.length; i++) {
         var item = menus[i];
-        if (i == 0) {
-            str += '<li class="'+active+'"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><span>' + item.name + '</span></a>'
-        } else {
+        // if (i == 0) {
+        //     str += '<li class="'+active+'"><a id="' + item.id + '" class="' + item.icon + '" href="javascript:void(0);" data-src="'+item.url+'" data-name="'+item.name+'"><span>' + item.name + '</span></a>'
+        // } else {
             var li_c_class=item.children?'hasChild':'';
+            if(i==0){
+                li_c_class+=' '+active
+            }
             if (item.icon) {
                 str += '<li class="'+li_c_class+'"><a id="' + item.id + '" href="javascript:void(0);" class="' + item.icon + '" data-src="' +item.url + '" data-name="' + item.name + '"><span>'+ item.name + '</span>'
             } else {
@@ -505,7 +507,7 @@ function init_menu (menus,needFrist) {
             } else {
                 str += '</a>'
             }
-        }
+        // }
         str += '</li>'
     }
     str += '</ul>'

@@ -33,6 +33,7 @@
     }
     .body{
         .m_left{
+            background: @gray_f9;
             .menuBox{
                 ul{
                     li{
@@ -47,25 +48,73 @@
                             }
                         }
                         &.active a{
-                            background: @gray_f5 !important;
-                            color:@gray_66;
+                            background: @sky_blue_dack !important;
+                            // color:@gray_66;
                             .boxShadow(2px,0px,2px,rgba(0,0,0,0.2));
                             
+                        }
+                        i{
+                            height:50px;
+                            line-height: 50px;
                         }
                     }
                 }
             }
         }
+        
         .m_right{
             .treeBox{
                 border:0;
+                background: @gray_f9;
                 .treeMain{
                     a{
                         border-top:0 !important;
                         line-height: 40px !important;
+                        &.active{
+                            background: @white;
+                        }
                     }
+                }
+            }
+            .main{
+                background: @white;
+                .iframe{
+                    background: @white;
                 }
             }
         }
     }
+}
+.combody{
+    padding-right:10px;
+}
+.searchModal{
+    height:38px;
+    border:1px solid @gray_d6;
+    overflow: hidden;
+    .radius();
+    input{
+        float:left;
+        border:0;
+        line-height: 36px;
+        padding:0 10px;
+    }
+    span{
+        float:left;
+        width: 50px;
+        color:@gray_66;
+        background: @gray_f5;
+        line-height: 36px;
+        text-align: center;
+        border-left:1px solid @gray_d6;
+        cursor: pointer;
+        &:hover{
+            background: @sky_blue;
+            color:@white;
+            border-left-color: @sky_blue;
+        }
+    }
+}
+.formBox{
+    
 }

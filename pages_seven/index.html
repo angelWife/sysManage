@@ -82,80 +82,124 @@
                 </div>
                 <div class="main" id="mainIframe">
                     <iframe src="/pages_seven/home/index.html" class="iframe" width="100%" height="100%"
-                        frameBorder="0"></iframe>
+                        frameBorder="0">
+                    </iframe>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script>
-    var menus = [
-        {
-            id: 10,
-            name: '商家列表',
-            icon: 'iconfont icon-jishufuwushang',
-            url: '/pages_six/synthesize/consultation.html'
-        },
-        {
-            id: 20,
-            name: '竞拍管理',
-            icon: 'iconfont icon-yonhu',
-            url: '/pages_six/synthesize/consultation.html'
-        },
-        {
-            id: 30,
-            name: '用户点评列表',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-        {
-            id: 40,
-            name: '促销信息列表',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-        {
-            id: 50,
-            name: '字典表管理',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-        {
-            id: 60,
-            name: '意见建议管理',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-        {
-            id: 70,
-            name: '注册用户管理',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-        {
-            id: 80,
-            name: '广告管理',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-        {
-            id: 90,
-            name: '消息管理',
-            icon: 'iconfont icon-tieziguanli',
-            url: '/pages_six/user/list.html'
-        },
-
-    ];
-
-    init_menu(menus,true);
+   
 
     // addTab('首页', 'html/newPage/index.html');
 
 
 
     $(function () {
+        var menus0 = [
+        {
+            id: 10,
+            name: '商家列表',
+            icon: 'iconfont icon-jishufuwushang',
+            url: '/pages_seven/synthesize/business.html'
+        },
+        {
+            id: 20,
+            name: '竞拍管理',
+            icon: 'iconfont icon-yonhu',
+            url: '/pages_seven/synthesize/consultation.html'
+        },
+        {
+            id: 30,
+            name: '用户点评列表',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+        {
+            id: 40,
+            name: '促销信息列表',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+        {
+            id: 50,
+            name: '字典表管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+        {
+            id: 60,
+            name: '意见建议管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+        {
+            id: 70,
+            name: '注册用户管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+        {
+            id: 80,
+            name: '广告管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+        {
+            id: 90,
+            name: '消息管理',
+            icon: 'iconfont icon-tieziguanli',
+            url: '/pages_seven/user/list.html'
+        },
+
+    ];
+    
+    var menus1 = [
+        {
+            id: 201,
+            name: '系统管理',
+            icon: 'iconfont icon-jishufuwushang',
+            children:[
+                {
+                    id: 2011,
+                    name: '系统设置',
+                    icon: 'iconfont icon-jishufuwushang',
+                    url: '/pages_seven/user/list.html'
+                }
+            ]
+
+        },
+        {
+            id: 301,
+            name: '系统用户',
+            icon: 'iconfont icon-yonhu',
+            children:[
+                {
+                    id: 3011,
+                    name: '管理员管理',
+                    icon: 'iconfont icon-jishufuwushang',
+                    url: '/pages_seven/control/admin.html'
+                },
+                {
+                    id: 3012,
+                    name: '角色管理',
+                    icon: 'iconfont icon-jishufuwushang',
+                    url: '/pages_seven/control/user.html'
+                },
+            ]
+        },
+    ];
+    init_menu(menus0,true);
         $("#head_menu a").on('click',function(){
             $(this).addClass('active').siblings().removeClass('active');
+            var index = $(this).index();
+            if(index===0){
+                init_menu(menus0,true);
+            }else {
+                init_menu(menus1,true);
+            }
+            
         })
     })
 </script>

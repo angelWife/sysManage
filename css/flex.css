@@ -125,9 +125,9 @@
 /* 是否允许子元素伸缩 */
 .flex-item-1 {
   -webkit-box-flex: 1;
-  -moz-flex-grow: value;
-  -webkit-flex-grow: value;
-  flex-grow: value;
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
 }
 /* 子元素的显示次序 */
 .flex-order-0 {
