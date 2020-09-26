@@ -69,44 +69,44 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "001",
+                    beginDate: "2018-05-19",
+                    coupon: "九折优惠券",
+                    name: "金品铺子",
+                    endDate: "2018-05-30",
+                    status: "失效",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "002",
+                    beginDate: "2018-05-19",
+                    coupon: "九折优惠券",
+                    name: "金品铺子",
+                    endDate: "2018-05-30",
+                    status: "失效",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "003",
+                    beginDate: "2018-05-19",
+                    coupon: "九折优惠券",
+                    name: "金品铺子",
+                    endDate: "2018-05-30",
+                    status: "失效",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "004",
+                    beginDate: "2018-05-19",
+                    coupon: "九折优惠券",
+                    name: "金品铺子",
+                    endDate: "2018-05-30",
+                    status: "失效",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "005",
+                    beginDate: "2018-05-19",
+                    coupon: "九折优惠券",
+                    name: "金品铺子",
+                    endDate: "2018-05-30",
+                    status: "失效",
                 },
             ],
             cellMinWidth: 80,
@@ -114,11 +114,11 @@
             cols: [
                 [
                     {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
+                    { field: "number", title: "编号" },
+                    { field: "name", title: "商家姓名" },
+                    { field: "coupon", title: "优惠券名称" },
+                    { field: "beginDate", title: "开始时间" },
+                    { field: "endDate", title: "结束时间" },
                     { field: "status", title: "状态" },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
@@ -140,40 +140,11 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
-    }
-    function addEquipment() {
-        layer.open({
-            title: "新增供应商",
-            content: $("#addEquipment"),
-            type: 1,
-            area: ["840px", "auto"],
-        });
-    }
-    function guarantee(rowdata) {
-        layer.open({
-            title: "设备报修",
-            content: $("#applyRepair"),
-            type: 1,
-            area: ["840px", "auto"],
-            btn: ["取消", "提交"],
-            yes: function (index, layero) {
-                layer.close(index);
-            },
-            btn2: function (index, layero) {
-                layer.msg("报修成功！");
-                layer.close(index);
-            },
-            success: function (res) {
-                console.log(res);
-            },
-            fail: function (error) {
-                console.log(error);
-            },
-        });
+        parent.$.addTab('新增促销信息','/pages_seven/synthesize/addPromotion.html')
     }
 </script>
 <script type="text/html" id="operation">
+    <a class="yello" lay-event="detail">查看</a>
     <a class="blue" lay-event="detail">编辑</a>
   </script>
 </html>

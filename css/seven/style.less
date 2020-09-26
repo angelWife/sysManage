@@ -34,6 +34,7 @@
     .body{
         .m_left{
             background: @gray_f9;
+            .boxShadow(3px,0,5px,rgba(0,0,0,0.1));
             .menuBox{
                 ul{
                     li{
@@ -50,7 +51,7 @@
                         &.active a{
                             background: @sky_blue_dack !important;
                             // color:@gray_66;
-                            .boxShadow(2px,0px,2px,rgba(0,0,0,0.2));
+                            .boxShadow(2px,0px,2px,rgba(0,0,0,0.1));
                             
                         }
                         i{
@@ -78,6 +79,7 @@
             }
             .main{
                 background: @white;
+                padding:0;
                 .iframe{
                     background: @white;
                 }
@@ -86,7 +88,82 @@
     }
 }
 .combody{
-    padding-right:10px;
+    padding:15px !important;
+    &.hasfoot{
+        padding-bottom:70px;
+        position: relative;
+    }
+    .comTitle{
+        border-bottom: 2px solid @coldCopper;
+        margin-bottom:10px;
+        span{
+            display: inline-block;
+            width: 150px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            background: @coldCopper;
+            color:@white;
+            line-height: 42px;
+        }
+        .more{
+            float:right;
+            margin-right:20px;
+            font-size:14px;
+        }
+    }
+    .articList{
+        margin:0 15px;
+        li{
+            padding:10px 0;
+            span{
+                float:right;
+                color:@gray_99;
+            }
+            a:hover{
+                color:@blue;
+            }
+        }
+    }
+    .graphic{
+        height: calc(100% - 40px);
+        min-height:420px;
+    }
+    .comFoot{
+        position: fixed;
+        .boxShadow(0,-3px,5px,rgba(0,0,0,0.1));
+        width: 100%;
+        bottom:0;
+        left:0;
+        padding:10px;
+        background: @gray_f9;
+        text-align: right;
+    }
+}
+.comModal{
+    margin-bottom:20px;
+    padding:0 0 15px ;
+    .radius();
+    .boxShadow(0,0,5px,rgba(0,0,0,0.1));
+    .title{
+        height:40px;
+        line-height: 40px;
+        padding:0 15px;
+        font-size:15px;
+        border-bottom: 1px solid @gray_d6;
+    }
+    .layui-form-label {
+        width: 180px !important;
+    }
+
+    .layui-input-block {
+        margin-left: 190px !important;
+    }
+    .msg{
+        line-height: 38px;
+        color:@gray_99;
+        margin-left:15px;
+    }
 }
 .searchModal{
     height:38px;
@@ -115,6 +192,23 @@
         }
     }
 }
-.formBox{
-    
+.layui-table-cell{
+    > a{
+        display: inline;
+        margin:0 5px;
+    }
 }
+.layui-tab-title{
+    li{
+        border-top:1px solid @gray_d6;
+        &.layui-this{
+             border-color:@blue;
+        }
+    }
+}
+.layui-tree-icon{
+    width:15px;
+    height:15px;
+    line-height: 15px;
+}
+    

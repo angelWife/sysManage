@@ -925,6 +925,9 @@ button.btn {
 .p-t-b-10 {
   padding: 10px 0;
 }
+.p-t-10 {
+  padding: 10px 0 0 !important;
+}
 .m-t-10 {
   margin-top: 10px !important;
 }

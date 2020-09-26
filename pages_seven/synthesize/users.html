@@ -69,44 +69,59 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "",
+                    type: "普通",
+                    phone: "18888888888",
+                    loginName: "wangsan",
+                    name: "张晓丽",
+                    mail: "65455665@qq.com",
+                    jifen: "39",
                     status: "正常",
+                    createTime: "2015-05-15",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "",
+                    type: "普通",
+                    phone: "18888888888",
+                    loginName: "wangsan",
+                    name: "张晓丽",
+                    mail: "65455665@qq.com",
+                    jifen: "39",
                     status: "正常",
+                    createTime: "2015-05-15",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "",
+                    type: "普通",
+                    phone: "18888888888",
+                    loginName: "wangsan",
+                    name: "张晓丽",
+                    mail: "65455665@qq.com",
+                    jifen: "39",
                     status: "正常",
+                    createTime: "2015-05-15",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "",
+                    type: "普通",
+                    phone: "18888888888",
+                    loginName: "wangsan",
+                    name: "张晓丽",
+                    mail: "65455665@qq.com",
+                    jifen: "39",
                     status: "正常",
+                    createTime: "2015-05-15",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "",
+                    type: "普通",
+                    phone: "18888888888",
+                    loginName: "wangsan",
+                    name: "张晓丽",
+                    mail: "65455665@qq.com",
+                    jifen: "39",
                     status: "正常",
+                    createTime: "2015-05-15",
                 },
             ],
             cellMinWidth: 80,
@@ -114,12 +129,15 @@
             cols: [
                 [
                     {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
+                    { field: "number", title: "唯一码"},
+                    { field: "type", title: "注册类型" },
+                    { field: "loginName", title: "登录名" },
+                    { field: "name", title: "用户姓名" },
+                    { field: "phone", title: "移动电话" },
+                    { field: "mail", title: "用户邮箱" },
+                    { field: "jifen", title: "积分" },
                     { field: "status", title: "状态" },
+                    { field: "createTime", title: "创建时间" },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
             ],
@@ -140,7 +158,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
+        parent.$.addTab('新增用户','/pages_seven/synthesize/addUser.html')
     }
     function addEquipment() {
         layer.open({
@@ -174,6 +192,6 @@
     }
 </script>
 <script type="text/html" id="operation">
-    <a class="blue" lay-event="detail">编辑</a>
+    <a class="blue" lay-event="detail">修改</a>
   </script>
 </html>

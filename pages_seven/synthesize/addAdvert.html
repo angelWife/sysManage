@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/seven/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+        var layer = layui.layer;
+        var form = layui.form;
+        var carousel = layui.carousel;
+        var laydate = layui.laydate;
+        var table = layui.table;
+        var laytree = layui.tree;
+        var layTreeSelect = layui.treeSelect;
+        var layUpload = layui.upload;
+        var layElement = layui.element;
+    </script>
+    <style>
+        .comModal .layui-form-label {
+            width: 180px !important;
+        }
+
+        .comModal .layui-input-block {
+            margin-left: 190px !important;
+        }
+    </style>
+</head>
+
+<body class="combody formBox hasfoot">
+    <div class="comModal">
+        <div class="title">广告信息</div>
+        <div class="layui-form p-t-20">
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        商家标识
+                    </div>
+                    <div class="layui-input-block">
+                        <select name="people" lay-filter="people" id="people">
+                            <option>请选择</option>
+                            <option value="0">普通</option>
+                            <option value="1">第三方</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        广告类型
+                    </div>
+                    <div class="layui-input-block">
+                        <select name="people" lay-filter="people" id="people">
+                            <option>请选择</option>
+                            <option value="0">内容</option>
+                            <option value="1">链接</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        来源
+                    </div>
+                    <div class="layui-input-block">
+                        <select name="people" lay-filter="people" id="people">
+                            <option>请选择</option>
+                            <option value="0">系统</option>
+                            <option value="1">竞价</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        广告位置
+                    </div>
+                    <div class="layui-input-block">
+                        <select name="people" lay-filter="people" id="people">
+                            <option>请选择</option>
+                            <option value="0">首页</option>
+                            <option value="1">注册页</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        链接
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="text" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        开始时间&nbsp;<span class="red">*</span>
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="text" name="date" id="beginDate" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        结束时间&nbsp;<span class="red">*</span>
+                    </div>
+                    <div class="layui-input-block">
+                        <input type="text" name="date" id="endDate" autocomplete="off" class="layui-input" />
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md8">
+                    <div class="layui-form-label">
+                        广告内容
+                    </div>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md4">
+                    <div class="layui-form-label">
+                        状态
+                    </div>
+                    <div class="layui-input-block">
+                        <select name="people" lay-filter="people" id="people">
+                            <option>请选择</option>
+                            <option value="0">正常</option>
+                            <option value="1">锁定</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-row">
+                <div class="layui-col-md8">
+                    <div class="layui-form-label">
+                        广告图片
+                    </div>
+                    <div class="layui-input-block" style="padding-top:3px;">
+                        <div class="layui-upload">
+                          <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" id="chooseFile">选择文件</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comFoot">
+        <button type="button" class="layui-btn layui-btn-primary">取消</button>
+        <button type="button" class="layui-btn layui-btn-normal">提交</button>
+    </div>
+</body>
+<script>
+    $(function () {
+        laydate.render({
+            elem: "#beginDate",
+        });
+        laydate.render({
+            elem: "#endDate",
+        });
+        laydate.render({
+            elem: "#workDate",
+        });
+        form.render("select");
+        form.render("radio");
+        form.render("checkbox");
+        layUpload.render({
+            elem: "#chooseFile",
+            url: "",
+            auto: true,
+            done: function (res) {
+                layer.msg("上传成功");
+                console.log(res);
+            },
+        });
+    });
+</script>
+
+</html>

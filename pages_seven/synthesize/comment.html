@@ -30,11 +30,10 @@
 <body class="combody">
         <div class="searchBox flex">
             <div class="flex-item-1">
-                <div class="layui-btn-group">
+                <!-- <div class="layui-btn-group">
                     <button type="button" class="layui-btn layui-btn-primary" onclick="addDate();"><i class="iconfont icon-jia"></i>新增</button>
-                    <!-- <button type="button" class="layui-btn layui-btn-primary"><i class="iconfont icon-quanxuan"></i>全选</button> -->
                     <button type="button" class="layui-btn layui-btn-primary"><i class="iconfont icon-shanchu"></i>删除</button>
-                  </div>
+                </div> -->
             </div>
             <div class="searchModal">
                 <input type="search" />
@@ -69,58 +68,62 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "001",
+                    date: "2018-05-19",
+                    username: "三毛",
+                    name: "五妹子",
+                    content: "测试内容",
+                    grade: "39",
+                    status: "是",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "002",
+                    date: "2018-05-19",
+                    username: "三毛",
+                    name: "五妹子",
+                    content: "测试内容",
+                    grade: "39",
+                    status: "是",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "003",
+                    date: "2018-05-19",
+                    username: "三毛",
+                    name: "五妹子",
+                    content: "测试内容",
+                    grade: "39",
+                    status: "是",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "004",
+                    date: "2018-05-19",
+                    username: "三毛",
+                    name: "五妹子",
+                    content: "测试内容",
+                    grade: "39",
+                    status: "是",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "005",
+                    date: "2018-05-19",
+                    username: "三毛",
+                    name: "五妹子",
+                    content: "测试内容",
+                    grade: "39",
+                    status: "是",
                 },
             ],
             cellMinWidth: 80,
             page: true,
             cols: [
                 [
-                    {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
+                    { field: "number", title: "编号" },
+                    { field: "name", title: "商家名称" },
+                    { field: "username", title: "用户名称" },
+                    { field: "grade", title: "综合评价级别" },
+                    { field: "content", title: "评价内容" },
+                    { field: "date", title: "评级时间" },
                     { field: "status", title: "状态" },
-                    { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
             ],
         });
@@ -140,7 +143,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
+        parent.$.addTab('新增','/pages_seven/synthesize/addAuction.html')
     }
     function addEquipment() {
         layer.open({
@@ -174,6 +177,7 @@
     }
 </script>
 <script type="text/html" id="operation">
+    <a class="yello" lay-event="detail">查看</a>
     <a class="blue" lay-event="detail">编辑</a>
   </script>
 </html>

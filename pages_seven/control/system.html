@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="../../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../../dist/fonts/iconfont.css" />
+    <link rel="stylesheet" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../css/flex.css" />
+    <link rel="stylesheet" href="../../css/seven/style.css" />
+    <script src="../../js/jquery-2.1.1.js"></script>
+    <script src="../../dist/layui/layui.all.js"></script>
+    <script>
+        var layer = layui.layer;
+        var form = layui.form;
+        var carousel = layui.carousel;
+        var laydate = layui.laydate;
+        var table = layui.table;
+        var laytree = layui.tree;
+        var layTreeSelect = layui.treeSelect;
+        var layUpload = layui.upload;
+        var layElement = layui.element;
+    </script>
+</head>
+
+<body class="combody">
+    <div class="comModal layui-tab layui-tab-card">
+        <ul class="layui-tab-title">
+          <li class="layui-this">网站基本信息</li>
+          <li>功能权限设置</li>
+          <li>短信平台设置</li>
+          <li>邮件发送设置</li>
+          <li>文件上传设置</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">
+            <div class="layui-form p-t-20">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            网站名称
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*任意字符控制在255个字符内</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            网站域名
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*已https://开头，不能绑定到频道分类</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            网站LOGO
+                        </div>
+                        <div class="layui-input-block" style="padding-top:3px;">
+                            <div class="layui-upload">
+                              <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" id="chooseFile">选择文件</button>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            公司名称
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            通讯地址
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                        联系电话
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*非必填，区号加电话号码</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                        传真
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*非必填，区号加电话号码</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            管理员邮箱
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            网站备案号
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row text-center m-t-20">
+                    <div class="layui-col-md8">
+                        <button type="button" class="layui-btn layui-btn-primary">取消</button>
+                    <button type="button" class="layui-btn layui-btn-normal">提交保存</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-form p-t-20">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            网站安装目录
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*根目录输入“/”，其他输入“/目录名/”</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            后台管理目录
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*默认admin,其他请输入目录名</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            URL重写开启
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="radio" name="open" value="关闭" title="关闭"">
+                            <input type="radio" name="open" value="伪URL重写" title="伪URL重写">
+                            <input type="radio" name="open" value="生成静态" title="生成静态">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*URL配置规则，点击这里查看说明</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            静态URL后缀
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*扩展名，不包含“.”，访问或生成将会替代此值</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            开启会员功能
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*关闭后，关联的会员内容将消失</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            开启评论审核
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*开启后，评论审核才会展示</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            开启管理日志
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*开启后，将会记录管理员操作日志</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            是否开启网站
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*关闭后，网站前台将不能访问</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            网站关闭原因
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row text-center m-t-20">
+                    <div class="layui-col-md8">
+                        <button type="button" class="layui-btn layui-btn-primary">取消</button>
+                    <button type="button" class="layui-btn layui-btn-normal">提交保存</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-form p-t-20">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            短信剩余数量
+                        </div>
+                        <div class="layui-input-block msg">
+                           错误代码：101 尚未申请，<a href="">请点击这里注册</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            平台登录账户
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*短信平台注册用户名</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            平台登陆密码
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*短信平台注册密码</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md6">
+                        <div class="layui-form-label">
+                            短信平台说明
+                        </div>
+                        <div class="layui-input-block c999 p-t-10">
+                            <p>请不要使用系统默认账户test，因为他是公用的测试账户</p>
+                            <p>请在短信平台修改账户资料中绑定签名可使用的签名功能</p>
+                            <p>如果您尚未申请开通，<a>请点击这里注册</a>成功后填写您的用户名合密码均可正常使用</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-form p-t-20">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            SMTP服务器
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*发送邮件的SMTP服务器地址</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            SMTP端口
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*SMTP服务器的端口，大部分服务商都支持25端口</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            URL重写开启
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="radio" name="open" value="关闭" title="关闭"">
+                            <input type="radio" name="open" value="伪URL重写" title="伪URL重写">
+                            <input type="radio" name="open" value="生成静态" title="生成静态">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*URL配置规则，点击这里查看说明</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            发件人地址
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*发件人的邮箱地址</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            邮箱账户
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            邮箱密码
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            发件人昵称
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="close" lay-skin="switch" lay-text="是|否">
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*对方收到邮件时显示的昵称</div>
+                </div>
+                <div class="layui-form-item layui-row text-center m-t-20">
+                    <div class="layui-col-md8">
+                        <button type="button" class="layui-btn layui-btn-primary">取消</button>
+                    <button type="button" class="layui-btn layui-btn-normal">提交保存</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="layui-tab-item">
+            <div class="layui-form p-t-20">
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            文件上传目录
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*文件保存的目录名，自动创建根目录下”</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            问价保存方式
+                        </div>
+                        <div class="layui-input-block">
+                            <select name="people" lay-filter="people" id="people">
+                                <option>请选择</option>
+                                <option value="0">不同目录</option>
+                                <option value="1">同一目录</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-label">
+                            文件上传类型
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="text" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-md4 msg">*以英文逗号分割开</div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            附件上传大侠
+                        </div>
+                        <div class="layui-input-block">
+                            <div class="layui-inline">
+                                <input type="text" autocomplete="off" class="layui-input" />
+                            </div>
+                           
+                            <div class="layui-inline c999">kb</div>
+                            <div class="layui-inline c999">*超过设定的文件，不予上传</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            图片上传大侠
+                        </div>
+                        <div class="layui-input-block">
+                            <div class="layui-inline">
+                                <input type="text" autocomplete="off" class="layui-input" />
+                            </div>
+                           
+                            <div class="layui-inline c999">kb</div>
+                            <div class="layui-inline c999">*超过设定的图片，不予上传</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            图片最大尺寸
+                        </div>
+                        <div class="layui-input-block">
+                            <div class="layui-inline">
+                                <input type="text" autocomplete="off" class="layui-input" />
+                            </div>
+                            <div class="layui-inline">X</div>
+                            <div class="layui-inline">
+                                <input type="text" autocomplete="off" class="layui-input" />
+                            </div>
+                            <div class="layui-inline c999">px</div>
+                            <div class="layui-inline c999">*左边宽度，右边宽度，超出自动裁剪</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            生成缩略图尺寸
+                        </div>
+                        <div class="layui-input-block">
+                            <div class="layui-inline">
+                                <input type="text" autocomplete="off" class="layui-input" />
+                            </div>
+                            <div class="layui-inline">X</div>
+                            <div class="layui-inline">
+                                <input type="text" autocomplete="off" class="layui-input" />
+                            </div>
+                            <div class="layui-inline c999">px</div>
+                            <div class="layui-inline c999">*左边宽度，右边宽度，0为不生成</div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            图片水印类型
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="radio" name="picType" value="关闭水印" title="关闭水印"">
+                            <input type="radio" name="picType" value="文字水印" title="文字水印">
+                            <input type="radio" name="picType" value="图片水印" title="图片水印">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row">
+                    <div class="layui-col-md8">
+                        <div class="layui-form-label">
+                            图片水印位置
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="radio" name="picIndex" value="左上" title="左上">
+                            <input type="radio" name="picIndex" value="中上" title="中上">
+                            <input type="radio" name="picIndex" value="右上" title="右上">
+                            <input type="radio" name="picIndex" value="左中" title="左中">
+                            <input type="radio" name="picIndex" value="居中" title="居中">
+                            <input type="radio" name="picIndex" value="右中" title="右中">
+                            <input type="radio" name="picIndex" value="左下" title="左下">
+                            <input type="radio" name="picIndex" value="中下" title="中下">
+                            <input type="radio" name="picIndex" value="右下" title="右下">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-row text-center m-t-20">
+                    <div class="layui-col-md8">
+                        <button type="button" class="layui-btn layui-btn-primary">取消</button>
+                    <button type="button" class="layui-btn layui-btn-normal">提交保存</button>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+<script>
+    $(function () {
+        initTable_one();
+        laydate.render({
+            elem: "#starDate",
+        });
+        laydate.render({
+            elem: "#endDate",
+        });
+        form.render("select");
+        form.render("radio");
+        form.render("checkbox");
+        //触发事件
+        layElement.on("tab(topTabBrief)", function (res) {
+            if (res.index == 1) {
+                initTable_two();
+            } else {
+                initTable_one();
+            }
+        });
+    });
+    function initTable_one() {
+        table.render({
+            elem: "#table_dapeng",
+            data: [
+                {
+                    number: "001",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
+                },
+                {
+                    number: "002",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
+                },
+                {
+                    number: "003",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
+                },
+                {
+                    number: "004",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
+                },
+                {
+                    number: "005",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
+                },
+            ],
+            cellMinWidth: 80,
+            page: true,
+            cols: [
+                [
+                    {type:'checkbox', fixed: 'left'},
+                    { field: "number", title: "编号" },
+                    { field: "date", title: "标题" },
+                    { field: "phone", title: "竞拍类型" },
+                    { field: "username", title: "开始时间" },
+                    { field: "name", title: "结束时间" },
+                    { field: "status", title: "状态" },
+                    { fixed: 'right', title:'操作',toolbar: '#operation',},
+                ],
+            ],
+        });
+        table.on("tool(personList)", function (obj) {
+            var data = obj.data;
+            //console.log(obj)
+            if (obj.event === "del") {
+                layer.confirm("确认删除该供应商吗？", function (index) {
+                    obj.del();
+                    layer.close(index);
+                });
+            } else if (obj.event === "edit") {
+                addData("edit");
+            } else if (obj.event === "repair") {
+                guarantee(obj.data);
+            }
+        });
+    }
+    function addDate(){
+        parent.$.addTab('新增','/pages_seven/synthesize/addAuction.html')
+    }
+    function addEquipment() {
+        layer.open({
+            title: "新增供应商",
+            content: $("#addEquipment"),
+            type: 1,
+            area: ["840px", "auto"],
+        });
+    }
+    function guarantee(rowdata) {
+        layer.open({
+            title: "设备报修",
+            content: $("#applyRepair"),
+            type: 1,
+            area: ["840px", "auto"],
+            btn: ["取消", "提交"],
+            yes: function (index, layero) {
+                layer.close(index);
+            },
+            btn2: function (index, layero) {
+                layer.msg("报修成功！");
+                layer.close(index);
+            },
+            success: function (res) {
+                console.log(res);
+            },
+            fail: function (error) {
+                console.log(error);
+            },
+        });
+    }
+</script>
+<script type="text/html" id="operation">
+    <a class="yello" lay-event="detail">查看</a>
+    <a class="blue" lay-event="detail">编辑</a>
+  </script>
+</html>

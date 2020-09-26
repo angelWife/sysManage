@@ -69,43 +69,43 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    type: "系统",
+                    mark:'桃源里',
+                    from:'指定用户',
+                    send: "10",
+                    createDate: "2018-05-20",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    type: "系统",
+                    mark:'桃源里',
+                    from:'指定用户',
+                    send: "10",
+                    createDate: "2018-05-20",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    type: "系统",
+                    mark:'桃源里',
+                    from:'指定用户',
+                    send: "10",
+                    createDate: "2018-05-20",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    type: "系统",
+                    mark:'桃源里',
+                    from:'指定用户',
+                    send: "10",
+                    createDate: "2018-05-20",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    type: "系统",
+                    mark:'桃源里',
+                    from:'指定用户',
+                    send: "10",
+                    createDate: "2018-05-20",
                     status: "正常",
                 },
             ],
@@ -114,12 +114,12 @@
             cols: [
                 [
                     {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
+                    { field: "type", title: "类型" },
+                    { field: "mark", title: "商家标识" },
+                    { field: "from", title: "发送类型" },
+                    { field: "send", title: "发送对象" },
                     { field: "status", title: "状态" },
+                    { field: "createDate", title: "创建时间" },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
             ],
@@ -140,7 +140,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
+        parent.$.addTab('新增消息','/pages_seven/synthesize/addNews.html')
     }
     function addEquipment() {
         layer.open({

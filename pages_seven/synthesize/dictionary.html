@@ -36,10 +36,10 @@
                     <button type="button" class="layui-btn layui-btn-primary"><i class="iconfont icon-shanchu"></i>删除</button>
                   </div>
             </div>
-            <div class="searchModal">
+            <!-- <div class="searchModal">
                 <input type="search" />
                 <span class="iconfont icon-sousuo"></span>
-            </div>
+            </div> -->
         </div>
         <div class="">
             <table class="layui-hide" id="table_dapeng" lay-filter="table_dapeng"></table>
@@ -69,43 +69,48 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "001",
+                    name: "张晓丽",
+                    mark: "name_type",
+                    value: "120",
+                    prevVal:'',
+                    sort: "0",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "002",
+                    name: "张晓丽",
+                    mark: "name_type",
+                    value: "120",
+                    prevVal:'',
+                    sort: "0",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "003",
+                    name: "张晓丽",
+                    mark: "name_type",
+                    value: "120",
+                    prevVal:'',
+                    sort: "0",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "004",
+                    name: "张晓丽",
+                    mark: "name_type",
+                    value: "120",
+                    prevVal:'',
+                    sort: "0",
                     status: "正常",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
+                    number: "005",
+                    name: "张晓丽",
+                    mark: "name_type",
+                    value: "120",
+                    prevVal:'',
+                    sort: "0",
                     status: "正常",
                 },
             ],
@@ -114,12 +119,13 @@
             cols: [
                 [
                     {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
-                    { field: "status", title: "状态" },
+                    { field: "number", title: "编号" },
+                    { field: "name", title: "名称" },
+                    { field: "mark", title: "编码" },
+                    { field: "value", title: "字典值" },
+                    { field: "prevVal", title: "所属上级" },
+                    { field: "sort",width:100, title: "排序" },
+                    { field: "status",width:100, title: "状态" },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
             ],
@@ -140,7 +146,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
+        parent.$.addTab('新增字典','/pages_seven/synthesize/addDictionary.html')
     }
     function addEquipment() {
         layer.open({
@@ -174,6 +180,8 @@
     }
 </script>
 <script type="text/html" id="operation">
+    <a class="blue" lay-event="detail">查看下级</a>
     <a class="blue" lay-event="detail">编辑</a>
+    <a class="blue" lay-event="detail">新增上级</a>
   </script>
 </html>

@@ -31,7 +31,7 @@
         <div class="searchBox flex">
             <div class="flex-item-1">
                 <div class="layui-btn-group">
-                    <button type="button" class="layui-btn layui-btn-primary" onclick="addDate();"><i class="iconfont icon-jia"></i>新增</button>
+                    <!-- <button type="button" class="layui-btn layui-btn-primary" onclick="addDate();"><i class="iconfont icon-jia"></i>新增</button> -->
                     <!-- <button type="button" class="layui-btn layui-btn-primary"><i class="iconfont icon-quanxuan"></i>全选</button> -->
                     <button type="button" class="layui-btn layui-btn-primary"><i class="iconfont icon-shanchu"></i>删除</button>
                   </div>
@@ -69,44 +69,44 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "001",
+                    mark:'',
+                    from:'ios',
+                    title:'慧心之翼',
+                    status:'正常',
+                    createTime:'2019-05-06'
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "002",
+                    mark:'',
+                    from:'ios',
+                    title:'慧心之翼',
+                    status:'正常',
+                    createTime:'2019-05-06'
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "003",
+                    mark:'',
+                    from:'ios',
+                    title:'慧心之翼',
+                    status:'正常',
+                    createTime:'2019-05-06'
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "004",
+                    mark:'',
+                    from:'ios',
+                    title:'慧心之翼',
+                    status:'正常',
+                    createTime:'2019-05-06'
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "005",
+                    mark:'',
+                    from:'ios',
+                    title:'慧心之翼',
+                    status:'正常',
+                    createTime:'2019-05-06'
                 },
             ],
             cellMinWidth: 80,
@@ -114,12 +114,11 @@
             cols: [
                 [
                     {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
+                    { field: "mark", title: "用户标识" },
+                    { field: "from", title: "来源" },
+                    { field: "title", title: "标题" },
                     { field: "status", title: "状态" },
+                    { field: "createTime", title: "创建时间" },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
             ],
@@ -140,7 +139,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
+        parent.$.addTab('新增','/pages_seven/synthesize/addAuction.html')
     }
     function addEquipment() {
         layer.open({
@@ -174,6 +173,6 @@
     }
 </script>
 <script type="text/html" id="operation">
-    <a class="blue" lay-event="detail">编辑</a>
+    <a class="yello" lay-event="detail">查看</a>
   </script>
 </html>

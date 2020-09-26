@@ -69,44 +69,59 @@
             elem: "#table_dapeng",
             data: [
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "001",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "002",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "003",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "004",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
                 },
                 {
-                    user: "testAdmin",
-                    name: "好好管理员",
-                    role: "系统管理",
-                    phone: "188888888",
-                    addDate: "2018-05-15",
-                    status: "正常",
+                    number: "005",
+                    date: "2018-05-19",
+                    phone: "18888888888",
+                    username: "三毛",
+                    name: "张晓丽",
+                    sex: "男",
+                    age: "39",
+                    status: "是",
+                    keshi: "全科",
                 },
             ],
             cellMinWidth: 80,
@@ -114,11 +129,11 @@
             cols: [
                 [
                     {type:'checkbox', fixed: 'left'},
-                    { field: "user", title: "用户名" },
-                    { field: "name", title: "姓名" },
-                    { field: "role", title: "角色" },
-                    { field: "phone", title: "电话" },
-                    { field: "addDate", title: "添加时间" },
+                    { field: "number", title: "编号" },
+                    { field: "date", title: "标题" },
+                    { field: "phone", title: "竞拍类型" },
+                    { field: "username", title: "开始时间" },
+                    { field: "name", title: "结束时间" },
                     { field: "status", title: "状态" },
                     { fixed: 'right', title:'操作',toolbar: '#operation',},
                 ],
@@ -140,7 +155,7 @@
         });
     }
     function addDate(){
-        parent.$.addTab('新增管理员','/pages_seven/control/addAdmin.html')
+        parent.$.addTab('新增','/pages_seven/synthesize/addAuction.html')
     }
     function addEquipment() {
         layer.open({
@@ -174,6 +189,7 @@
     }
 </script>
 <script type="text/html" id="operation">
+    <a class="yello" lay-event="detail">查看</a>
     <a class="blue" lay-event="detail">编辑</a>
   </script>
 </html>
