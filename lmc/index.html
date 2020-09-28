@@ -7,11 +7,14 @@
     <title>来买菜</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="css/fonts/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/top.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.css" />
     <script language="javascript" type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/index.js"></script>
     <script language="javascript" type="text/javascript" src="js/Scroll_top.js"></script>
+    <script language="javascript" type="text/javascript" src="js/swiper.js"></script>
 </head>
 
 <body>
@@ -54,29 +57,17 @@
                     <span>欢迎来到来买菜！<a href="#">【登陆】</a><a href="#">【注册】</a></span>
                 </div>
                 <div class="right_right">
-                    <div class="right_con"><span class="m1">￥</span><input type="text" class="text1" value="0"
-                            readonly="readonly" />(<input type="text" class="text2" value="0"
-                            readonly="readonly" />件)</span></div>
-                    <div class="gouwuche4">
-                        <div class="gouwuche">
-                            <div class="gouwuche2">
-                                <div class="gouwuche3">
-                                    <div class="shop_list">
-                                        <ul>
-                                            <li>数量</li>
-                                            <li>数量</li>
-                                            <li>价格</li>
-                                            <li>删除</li>
-                                        </ul>
-                                        <div class="clear"></div>
-                                    </div>
-                                    <div class="shop_good">
-                                        <ul>
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="right_con">
+                        <i class="iconfont icongouwuche"></i><span class="text1">0</span>&nbsp;件
+                    </div>
+                    <div class="gouwuche">
+                        <div class="title">最新加入商品</div>
+                        <div class="goodsList"></div>
+                        <div class="null">
+                            您的购物车 中暂无商品!
+                        </div>
+                        <div class="gw_foot">
+                            <button>去购物车结算</button>
                         </div>
                     </div>
                 </div>
@@ -88,27 +79,45 @@
     </div>
     <!--banner-->
     <div class="banner">
-        <div class="banner_con">
-            <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt="来买菜" /></a></div>
-            <div class="time">
-                <div class="time_title">选择为您送货的时间和配送货物的菜场</div>
-                <div class="time_con">
-                    <div class="select">2014/06/18<span>星期三</span>上午</div>
-                    <div class="selsct_con">
-                        <ul>
-                            <li>2014/06/18<span>星期三</span>下午</li>
-                            <li>2014/06/19<span>星期四</span>上午</li>
-                            <li>2014/06/19<span>星期四</span>下午</li>
-                            <li>2014/06/20<span>星期五</span>上午</li>
-                            <li>2014/06/20<span>星期五</span>下午</li>
-                        </ul>
-                    </div>
-                    <div class="market">宝翔菜场<a href="#">[更换]</a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo.jpg" alt="来买菜" /></a></div>
+        <div class="time">
+            <div class="time_title">选择为您送货的时间和配送货物的菜场</div>
+            <div class="time_con">
+                <div class="select">2014/06/18<span>星期三</span>上午</div>
+                <div class="selsct_con">
+                    <ul>
+                        <li>2014/06/18<span>星期三</span>下午</li>
+                        <li>2014/06/19<span>星期四</span>上午</li>
+                        <li>2014/06/19<span>星期四</span>下午</li>
+                        <li>2014/06/20<span>星期五</span>上午</li>
+                        <li>2014/06/20<span>星期五</span>下午</li>
+                    </ul>
                 </div>
+                <div class="market">宝翔菜场<a href="#">[更换]</a></div>
             </div>
         </div>
+        <div class="swiper-container" id="index_banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="javascripr:;">
+                    <img src="images/1.png">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascripr:;">
+                    <img src="images/2.png">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascripr:;">
+                    <img src="images/3.jpg">
+                  </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
-    <div class="search">
+    <div class="index-search">
         <input type="text" value="马陆葡萄" class="input1" /><input type="button" value="搜索" class="input2" />
     </div>
     <div class="list">

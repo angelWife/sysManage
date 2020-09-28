@@ -1,134 +1,161 @@
 @charset "utf-8";
 /* CSS Document */
 /***********************商品详情页********************************/
-.goods{
-	margin-bottom:65px;}
-.good_content{
-	width:945px;
-	margin-bottom:63px;}
-.goods_left{
-	width:380px;
-	float:left;
-	line-height:45px;}
-.good_img{
-	width:370px;
-	height:370px;
-	padding:5px;
-	background:url(../images/good_content.png) no-repeat center center;}
-.goods_right{
-	width:544px;
-	float:left;
-	margin-left:21px;}
-.good_name{
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif;
-	font-size:14px;}
-.name{
-	color:#666666}
-.from{
-	color:#949494;
-	margin:0 15px;}
-.where{
-	font-weight:bold;}
-.where a{
-	color:#f16325}
-.goods_right .good_money{
-	line-height:45px;
-	color:#666666;
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif;
-	font-size:24px;}
-.good_size{
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif;
-	color:#787878;
-	line-height:24px;
-	font-size:14px;
-	padding:10px 0;
-	border-bottom:1px solid #c4c4c4}
-.good_redues{
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif;
-	color:#787878;
-	font-size:12px;
-	line-height:20px;
-	letter-spacing:1px;
-	padding:10px 0;
-	border-bottom:1px solid #c4c4c4;
-	margin-bottom:20px;}
-.good_redues .redu{
-	font-weight:bold;}
-.good_redues span span{ 
-	margin-right:10px;}
-.good_buy span{
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif;
-	font-size:14px;
-	color:#939393;
-	line-height:18px;
-	margin-bottom:15px;
-	display:block}
-.buy_1{
-	float:left;
-	width:50px;
-	height:30px;
-	background:url(../images/sum.jpg) no-repeat center center;
-	line-height:30px;
-	font-size:14px;
-	color:#555555;
-	padding-left:10px;
-	position:relative}
-.add{
-	width:15px;
-	height:13px;
-	background:url(../images/add.jpg) no-repeat center center;
-	position:absolute;
-	right:2px;
-	top:2px;
-	cursor:pointer}
-.reduce{
-	width:15px;
-	height:13px;
-	background:url(../images/reduce.jpg) no-repeat center center;
-	position:absolute;
-	right:2px;
-	top:15px;
-	cursor:pointer}
-.buy_2{
-	float:left;
-	background:url(../images/gouruche.jpg) no-repeat center center;
-	width:107px;
-	height:30px;
-	text-indent:-9999px;
-	display:inline-block}
-.buy_3{
-	float:left;
-	width:70px;
-	height:30px;
-	background:url(../images/fanhui.jpg) no-repeat center center;
-	text-align:center;
-	line-height:30px;
-	font-size:12px;
-	color:#333333;
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif}
-.buy_3{
-	cursor:pointer}
+.goods {
+    margin-bottom: 65px;
+}
+.good_content {
+    width: 945px;
+    margin-bottom: 63px;
+}
+.goods_left {
+    width: 380px;
+    float: left;
+    line-height: 45px;
+}
+.good_img {
+    width: 370px;
+    height: 370px;
+    padding: 5px;
+    background: url(../images/good_content.png) no-repeat center center;
+}
+.goods_right {
+    width: 544px;
+    float: left;
+    margin-left: 21px;
+    margin-top: 50px;
+}
+.good_name {
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+    font-size: 14px;
+}
+.name {
+    color: #666666;
+}
+.from {
+    color: #949494;
+    margin: 0 15px;
+}
+.where {
+    font-weight: bold;
+}
+.where a {
+    color: #f16325;
+}
+.goods_right .good_money {
+    line-height: 45px;
+    color: #f16325;
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+    font-size: 24px;
+}
+.good_size {
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+    color: #787878;
+    line-height: 24px;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #c4c4c4;
+}
+.good_redues {
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+    color: #787878;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    border-bottom: 1px solid #c4c4c4;
+    margin-bottom: 20px;
+}
+.good_redues .redu {
+    font-weight: bold;
+}
+.good_redues span span {
+    margin-right: 10px;
+}
+.good_buy span {
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    color: #939393;
+    line-height: 18px;
+    margin-bottom: 15px;
+    display: block;
+}
+.buy_1 {
+    float: left;
+    width: 50px;
+    height: 30px;
+    background: url(../images/sum.jpg) no-repeat center center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #555555;
+    padding-left: 10px;
+    position: relative;
+}
+.add {
+    width: 15px;
+    height: 13px;
+    background: url(../images/add.jpg) no-repeat center center;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+}
+.reduce {
+    width: 15px;
+    height: 13px;
+    background: url(../images/reduce.jpg) no-repeat center center;
+    position: absolute;
+    right: 2px;
+    top: 15px;
+    cursor: pointer;
+}
+.buy_2 {
+    float: left;
+    background: url(../images/gouruche.jpg) no-repeat center center;
+    width: 107px;
+    height: 30px;
+    text-indent: -9999px;
+    display: inline-block;
+}
+.buy_3 {
+    float: left;
+    width: 70px;
+    height: 30px;
+    background: url(../images/fanhui.jpg) no-repeat center center;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #333333;
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+}
+.buy_3 {
+    cursor: pointer;
+}
 
 /*******************************你可能喜欢*************************/
-.like{
-	overflow:hidden;
-	width:945px;
-	position:relative;
-	height:33px;
-	border-bottom:1px solid #c6cbc5;}
-.like_con{
-	position:absolute;
-	font-family:"微软雅黑",Verdana, Geneva, sans-serif;
-	font-size:14px;
-	height:33px;
-	line-height:33px;
-	width:108px;
-	border:1px solid #c6cbc5;
-	border-bottom:none;
-	left:12px;
-	top:0;
-	text-align:center;
-	color:#000;}
-.like_m{
-	margin-top:15px;
-	margin-bottom:150px;}
+.like {
+    overflow: hidden;
+    width: 945px;
+    position: relative;
+    height: 33px;
+    border-bottom: 1px solid #c6cbc5;
+}
+.like_con {
+    position: absolute;
+    font-family: '微软雅黑', Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px;
+    width: 108px;
+    border: 1px solid #c6cbc5;
+    border-bottom: none;
+    left: 12px;
+    top: 0;
+    text-align: center;
+    color: #000;
+}
+.like_m {
+    margin-top: 15px;
+    margin-bottom: 150px;
+}
+

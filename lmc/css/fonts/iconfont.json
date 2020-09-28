@@ -1,0 +1,254 @@
+{
+  "id": "1501690",
+  "name": "myshop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "小程序",
+  "glyphs": [
+    {
+      "icon_id": "5269217",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "4076437",
+      "name": "全屏",
+      "font_class": "quanping-copy",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "467288",
+      "name": "推荐人",
+      "font_class": "iconfonttuijianren",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "7738371",
+      "name": "操作",
+      "font_class": "caozuo",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "3670097",
+      "name": "客服",
+      "font_class": "-kefu",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "7473687",
+      "name": "店铺管理",
+      "font_class": "-shop",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "356446",
+      "name": "减号",
+      "font_class": "-minus",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "9974761",
+      "name": "加",
+      "font_class": "-plus",
+      "unicode": "e711",
+      "unicode_decimal": 59153
+    },
+    {
+      "icon_id": "2570213",
+      "name": "钱袋",
+      "font_class": "-shang",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "4070850",
+      "name": "新增",
+      "font_class": "-add",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "5367082",
+      "name": "照相机",
+      "font_class": "-camaer",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "6690967",
+      "name": "星星",
+      "font_class": "-star",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "11109308",
+      "name": "htb－Arrow right02",
+      "font_class": "-right",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "11935812",
+      "name": "htb－Arrow right02",
+      "font_class": "-down",
+      "unicode": "e8b5",
+      "unicode_decimal": 59573
+    },
+    {
+      "icon_id": "6402740",
+      "name": "地址",
+      "font_class": "-dizhi",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "6440369",
+      "name": "share",
+      "font_class": "share2",
+      "unicode": "e767",
+      "unicode_decimal": 59239
+    },
+    {
+      "icon_id": "3426713",
+      "name": "定位",
+      "font_class": "-location",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "4082525",
+      "name": "叶子",
+      "font_class": "-yezi",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "10958739",
+      "name": "连接管理",
+      "font_class": "-link",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "9844054",
+      "name": "search close",
+      "font_class": "-remove",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "151640",
+      "name": "通知",
+      "font_class": "-notice",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "10533857",
+      "name": "退出",
+      "font_class": "-exit",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "7741297",
+      "name": "分享",
+      "font_class": "-share-b",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "10550826",
+      "name": "评 论",
+      "font_class": "-comment",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "3950916",
+      "name": "微信",
+      "font_class": "-weixin",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6194203",
+      "name": "举报",
+      "font_class": "-jubao",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "7774955",
+      "name": "删 除",
+      "font_class": "-delete",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6872716",
+      "name": "图片",
+      "font_class": "-tupian",
+      "unicode": "e734",
+      "unicode_decimal": 59188
+    },
+    {
+      "icon_id": "6611218",
+      "name": "发帖",
+      "font_class": "-article",
+      "unicode": "e759",
+      "unicode_decimal": 59225
+    },
+    {
+      "icon_id": "1020788",
+      "name": "发帖入口_图文",
+      "font_class": "-fatie",
+      "unicode": "e695",
+      "unicode_decimal": 59029
+    },
+    {
+      "icon_id": "380382",
+      "name": "search",
+      "font_class": "-search",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "8078268",
+      "name": "clear",
+      "font_class": "-clear",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "1646226",
+      "name": "分享",
+      "font_class": "-share",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "9512706",
+      "name": "点赞",
+      "font_class": "-dianzan",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "11372687",
+      "name": "评论",
+      "font_class": "-pinglun",
+      "unicode": "e8b4",
+      "unicode_decimal": 59572
+    }
+  ]
+}

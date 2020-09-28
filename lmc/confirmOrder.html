@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>来买菜 - 商品详情页</title>
+<title>来买菜 - 确认订单</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="stylesheet" type="text/css" href="css/top.css"/>
@@ -49,21 +49,6 @@
             <div class="right_left">
                 <span>欢迎来到来买菜！<a href="#">【登陆】</a><a href="#">【注册】</a></span>
             </div>
-            <!-- <div class="right_right">
-                <div class="right_con">
-                    <i class="iconfont icongouwuche"></i><span class="text1">0</span>&nbsp;件
-                </div>
-                <div class="gouwuche">
-                    <div class="title">最新加入商品</div>
-                    <div class="goodsList"></div>
-                    <div class="null">
-                        您的购物车 中暂无商品!
-                    </div>
-                    <div class="gw_foot">
-                        <button>去购物车结算</button>
-                    </div>
-                </div>
-            </div> -->
             <div class="clear"></div>
         </div>
     </div>
@@ -80,90 +65,89 @@
                 <input type="text"/>
                 <span class="btn">搜索</span>
             </div>
-            <button class="myCart" onclick="myCart()">
+            <button class="myCart">
                 <i class="iconfont icongouwuche"></i>
                 购物车 <span>0</span>
             </button>
         </div>
     </div>
-    <div class="good_content">
-    	<div class="goods_left">
-            <div class="good_name"><span class="name">无公害西兰花</span><span class="from">来自</span><span class="where"><a href="javascript:;">小范蔬菜专卖</a></span></div>
-            <div class="good_img"><img src="images/big_good.jpg" alt="西兰花" /></div>
-            
-        </div>
-        <div class="goods_right">
-        	<div class="good_money">￥8</div>
-            <div class="good_size">
-            	<span>规格：500g</span><span>产地：上海</span><br /><span>这里写的是卖点</span>
-            </div>
-            <div class="good_redues">
-            	<span class="redu">产品详细介绍:</span><br />
-                <span>来自上海专业有机农场，承诺无农药污染、使用天然化肥、健康好口味，保证您的身体健康。</span><br />
-                <span class="redu">存储方式：</span><br />
-                <span>请置于冰箱冷藏保存</span><br />
-                <span class="redu">标签：</span><br />
-                <span><span>促销</span><span>有机</span><span>无坚</span><span>热卖</span></span><br />
-            </div>
-            <div class="good_buy">
-            	<span>购买数量：</span>
-                <div class="buy">
-                    <div class="buy_1">1
-                    <div class="add"></div>
-                    <div class="reduce"></div>
-                    </div>
-                    <div class="buy_2">加入购物车</div>
-                    <div class="buy_3">返回</div>
-                    <div class="clear"></div>
+    <div class="cart-goos-list">
+        <div class="info-item">
+            <div class="title">收货人信息</div>
+            <div class="info-content address">
+                <div class="item">
+                    <span>张三</span>
+                    <span>江苏省 苏州市 高新区 人名大会堂18街</span>
+                    <span>1888888888</span>
+                    <span class="oper c999">删除</span>
+                    <span class="oper c999">编辑</span>
                 </div>
             </div>
         </div>
-        <div class="clear"></div>
-    </div>
-    <div class="like">
-    	<div class="like_con">你可能喜欢</div>
-    </div>
-    
-    <div class="list_goods like_m">
-        <ul>
-            <li>
-                <a href="javascript:;"><img src="images/good_1.jpg" alt="" /></a>
-                <div class="good">
-                    <div class="good_name">健康玉米</div>
-                    <div class="good_much">规格：2个(500g~750g)</div>
-                    <div class="good_from"><span>来自</span><span class="c1">小范蔬菜专卖</span></div>
-                    <div class="good_money"><span class="f1">￥10</span><span class="f2">￥8</span></div>
-                </div>                
-            </li>
-            <li class="li_1">
-                <a href="javascript:;"><img src="images/good_2.jpg" alt="" /></a>
-                <div class="good">
-                    <div class="good_name">健康玉米</div>
-                    <div class="good_much">规格：2个(500g~750g)</div>
-                    <div class="good_from"><span>来自</span><span class="c1">小范蔬菜专卖</span></div>
-                    <div class="good_money"><span class="f1">￥10</span><span class="f2">￥8</span></div>
-                </div>    
-            </li>
-            <li class="li_1">
-                <a href="javascript:;"><img src="images/good_3.jpg" alt="" /></a>
-                <div class="good">
-                    <div class="good_name">健康玉米</div>
-                    <div class="good_much">规格：2个(500g~750g)</div>
-                    <div class="good_from"><span>来自</span><span class="c1">小范蔬菜专卖</span></div>
-                    <div class="good_money"><span class="f1">￥10</span><span class="f2">￥8</span></div>
-                </div>    
-            </li>
-            <li class="li_1">
-                <a href="javascript:;"><img src="images/good_4.jpg" alt="" /></a>
-                <div class="good">
-                    <div class="good_name">健康玉米</div>
-                    <div class="good_much">规格：2个(500g~750g)</div>
-                    <div class="good_from"><span>来自</span><span class="c1">小范蔬菜专卖</span></div>
-                    <div class="good_money"><span class="f1">￥10</span><span class="f2">￥8</span></div>
-                </div>    
-            </li>
-        </ul>
-    <div class="clear"></div>
+        <div class="info-item">
+            <div class="title">商品信息</div>
+            
+                <table class="cart_table">
+                    <thead>
+                     <tr>
+                         <td width="300px">商品</td>
+                         
+                         <td width="120px">单价</td>
+                         <td width="120px">数量</td>
+                         <td width="120px">小计</td>
+                     </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td>
+                             <img src="images/good_2.jpg"/>
+                             <span>西瓜</span>
+                         </td>
+                         <td>¥3.00</td>
+                         <td>2</td>
+                         <td class="red">¥6.00</td>
+                     </tr>
+                    </tbody>
+                 </table>
+            
+        </div>
+        <div class="info-item">
+            <div class="title">支付方式</div>
+            <div class="info-content address">
+                <div class="payway active">
+                    到货支付
+                </div>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="title">配方式</div>
+            <div class="info-content address">
+                <div class="payway active">
+                    商家配送
+                </div>
+            </div>
+        </div>
+        <div class="info-item">
+            <div class="title">结算信息</div>
+            <div class="info-content clearfix">
+                <div class="remark">
+                    <div>留言:</div>
+                    <div>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div class="info">
+                    <div>共<span class="red">1</span>商品 总计: <span class="price">¥6.00</span></div>
+                    <div> 运费: <span class="price">¥6.00</span></div>
+                    <div> 总优惠: <span class="price">¥0.00</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="confirmFoot">
+            <span class="c999">应付金额:</span>
+            <span class="red price">¥6.00</span>
+            <button type="button">提交订单</button>
+        </div>
     </div>
     <!--来买菜网优点-->
     <div class="lmc_good">
@@ -260,12 +244,4 @@
         </div>
     </div>
 </body>
-<script>
-    $(function(){
-
-    });
-    function myCart(){
-        window.open('cart.html')
-    }
-</script>
 </html>

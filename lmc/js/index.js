@@ -1,16 +1,12 @@
 // JavaScript Document
 $(function(){
-// $(".right_right").mouseover(function(){
-//		var siblings=$(this).find(".gouwuche4")
-//			siblings.show()//fadeIn("fast")	
-//		})
-//	$(".right_right").mouseout(function(){
-//		var siblings=$(this).find(".gouwuche4")
-//			siblings.hide()//.fadeOut("fast")	
-//		})
-
-
-	//$(".shop_good .shop_3").next().addClass("shop_4")
+    var swiper = new Swiper('#index_banner', {
+        autoplay:true,
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+        },
+      });
 	var gouwuche=$(".shop_good ul").html()
 //	$(".shop_good ul li").remove()
 	
