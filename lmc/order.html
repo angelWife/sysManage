@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>来买菜 - 确认订单</title>
+<title>来买菜 - 我的订单</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link rel="stylesheet" type="text/css" href="css/top.css"/>
@@ -71,83 +71,93 @@
             </button>
         </div>
     </div>
-    <div class="cart-goos-list">
-        <div class="info-item">
-            <div class="title">收货人信息</div>
-            <div class="info-content address">
-                <div class="item">
-                    <span>张三</span>
-                    <span>江苏省 苏州市 高新区 人名大会堂18街</span>
-                    <span>1888888888</span>
-                    <span class="oper c999">删除</span>
-                    <span class="oper c999">编辑</span>
-                </div>
-            </div>
+    <div class="order-content">
+        <div class="order-nav">
+            <span class="active">全部(10)</span>
+            <span>代付款(0)</span>
+            <span>待发货(1)</span>
+            <span>待收货(1)</span>
+            <span>已收货(1)</span>
+            <span>退款/售后(1)</span>
+            <span>待评价(1)</span>
         </div>
-        <div class="info-item">
-            <div class="title">商品信息</div>
-            
-                <table class="cart_table">
-                    <thead>
-                     <tr>
-                         <td width="300px">商品</td>
-                         
-                         <td width="120px">单价</td>
-                         <td width="120px">数量</td>
-                         <td width="120px">小计</td>
-                     </tr>
-                    </thead>
-                    <tbody>
-                     <tr>
-                         <td>
-                             <img src="images/good_2.jpg"/>
-                             <span>西瓜</span>
-                         </td>
-                         <td>¥3.00</td>
-                         <td>2</td>
-                         <td class="red">¥6.00</td>
-                     </tr>
-                    </tbody>
-                 </table>
-            
-        </div>
-        <div class="info-item">
-            <div class="title">支付方式</div>
-            <div class="info-content address">
-                <div class="payway active">
-                    到货支付
-                </div>
-            </div>
-        </div>
-        <div class="info-item">
-            <div class="title">配方式</div>
-            <div class="info-content address">
-                <div class="payway active">
-                    商家配送
-                </div>
-            </div>
-        </div>
-        <div class="info-item">
-            <div class="title">结算信息</div>
-            <div class="info-content clearfix">
-                <div class="remark">
-                    <div>留言:</div>
-                    <div>
-                        <textarea></textarea>
-                    </div>
-                </div>
-                <div class="info">
-                    <div>共<span class="red">1</span>商品 总计: <span class="price">¥6.00</span></div>
-                    <div> 运费: <span class="price">¥6.00</span></div>
-                    <div> 总优惠: <span class="price">¥0.00</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="confirmFoot">
-            <span class="c999">应付金额:</span>
-            <span class="red price">¥6.00</span>
-            <button type="button" onclick="myOrder()">提交订单</button>
-        </div>
+        <table class="order-table">
+            <thead>
+             <tr>
+                 <td width="300px">蔬菜</td>
+                 
+                 <td width="150px">属性</td>
+                 <td width="100px">单价</td>
+                 <td width="100px">数量</td>
+                 <td width="100px">售后</td>
+                 <td width="100px">订单总金额</td>
+                 <td width="100px">状态</td>
+                 <td width="100px">操作</td>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+                 <td colspan="8">
+                    订单编号：2020092819240001   成交时间：2020-09-28 19:24:32
+                 </td>
+             </tr>   
+             <tr class="table-info">
+                 <td>
+                     <img src="images/good_2.jpg"/>
+                     <span>西瓜</span>
+                 </td>
+                 <td></td>
+                 <td>¥3.00</td>
+                 <td>2</td>
+                 <td></td>
+                 <td class="red">¥6.00</td>
+                 <td>待发货</td>
+                 <td>
+                     <span class="c999">取消订单</span>
+                 </td>
+             </tr>
+             <tr>
+                <td colspan="8">
+                   订单编号：2020092819240001   成交时间：2020-09-28 19:24:32
+                </td>
+            </tr>   
+            <tr class="table-info">
+                <td>
+                    <img src="images/good_2.jpg"/>
+                    <span>西瓜</span>
+                </td>
+                <td></td>
+                <td>¥3.00</td>
+                <td>2</td>
+                <td></td>
+                <td class="red">¥6.00</td>
+                <td>待发货</td>
+                <td>
+                    <span class="c999">取消订单</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                   订单编号：2020092819240001   成交时间：2020-09-28 19:24:32
+                </td>
+            </tr>   
+            <tr class="table-info">
+                <td>
+                    <img src="images/good_2.jpg"/>
+                    <span>西瓜</span>
+                </td>
+                <td></td>
+                <td>¥3.00</td>
+                <td>2</td>
+                <td></td>
+                <td class="red">¥6.00</td>
+                <td>待发货</td>
+                <td>
+                    <span class="c999">取消订单</span>
+                </td>
+            </tr>
+            </tbody>
+         </table>
     </div>
     <!--来买菜网优点-->
     <div class="lmc_good">
@@ -244,12 +254,4 @@
         </div>
     </div>
 </body>
-<script>
-    $(function(){
-
-    });
-    function myOrder(){
-        window.open('order.html')
-    }
-</script>
 </html>

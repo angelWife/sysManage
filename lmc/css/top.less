@@ -1112,3 +1112,56 @@ input {
         cursor: pointer;
     }
 }
+.order-content{
+    margin:20px auto 50px;
+    width: 1000px;
+}
+.order-nav{
+    height:36px;
+    line-height: 36px;
+    margin-bottom:20px;
+    span{
+        float:left;
+        margin:0 20px;
+        text-align: center;
+        color:#666;
+        border-bottom:2px solid #fff;
+        &.active{
+            border-color:#f04f23;
+            color:#f04f23;
+        }
+    }
+}
+.order-table{
+    width: 100%;
+    border:1px solid #d6d6d6;
+    table-layout: fixed;
+    border-collapse: collapse !important;
+    td{
+        border:0;
+        padding:10px;
+        img{
+            height:60px;
+            float:left;
+        }
+        span{
+            float:left;
+            margin-left:10px;
+        }
+    }
+    thead{
+        border-bottom:1px solid #d6d6d6;
+        background: #f6f6f6;
+    }
+    tbody{
+        td{
+            border-bottom:1px solid #d6d6d6;
+        }
+    }
+    tfoot{
+        border-top:1px solid #d6d6d6;
+    }
+    .table-info td{
+        border-left:1px solid #d6d6d6;
+    }
+}

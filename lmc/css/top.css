@@ -1092,3 +1092,54 @@ input {
   border: 0;
   cursor: pointer;
 }
+.order-content {
+  margin: 20px auto 50px;
+  width: 1000px;
+}
+.order-nav {
+  height: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+.order-nav span {
+  float: left;
+  margin: 0 20px;
+  text-align: center;
+  color: #666;
+  border-bottom: 2px solid #fff;
+}
+.order-nav span.active {
+  border-color: #f04f23;
+  color: #f04f23;
+}
+.order-table {
+  width: 100%;
+  border: 1px solid #d6d6d6;
+  table-layout: fixed;
+  border-collapse: collapse !important;
+}
+.order-table td {
+  border: 0;
+  padding: 10px;
+}
+.order-table td img {
+  height: 60px;
+  float: left;
+}
+.order-table td span {
+  float: left;
+  margin-left: 10px;
+}
+.order-table thead {
+  border-bottom: 1px solid #d6d6d6;
+  background: #f6f6f6;
+}
+.order-table tbody td {
+  border-bottom: 1px solid #d6d6d6;
+}
+.order-table tfoot {
+  border-top: 1px solid #d6d6d6;
+}
+.order-table .table-info td {
+  border-left: 1px solid #d6d6d6;
+}
